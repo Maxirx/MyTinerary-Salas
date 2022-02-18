@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Gallery from './Componentes/Carrusel';
+import ButtonAppBar from './Componentes/NavBar'
 
 
 
@@ -13,6 +14,7 @@ import Gallery from './Componentes/Carrusel';
 function App() {
   return (
     <div className="App">
+      <ButtonAppBar />
       <Gallery />
 
     </div>

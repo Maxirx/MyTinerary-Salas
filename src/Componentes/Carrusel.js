@@ -17,14 +17,13 @@ const Gallery = () => {
 
     return (
         <div className='gallery'>
-            <Carousel cols={2} rows={2} gap={10} loop
+            <Carousel cols={4} rows={1} gap={10} loop
                 showDots={true}
                 hideArrow={true}
                 responsiveLayout={[
                     {
                         breakpoint: 1200,
                         cols: 3,
-
                     },
                     {
                         breakpoint: 900,
@@ -33,7 +32,12 @@ const Gallery = () => {
                     {
                         breakpoint: 620,
                         cols: 1,
-                        rows: 2
+                        rows: 1
+                    },
+                    {
+                        breakpoint: 620,
+                        cols: 1,
+                        gap: 5
                     }
                 ]}
                 mobileBreakpoint={320}
@@ -41,7 +45,7 @@ const Gallery = () => {
             >
                 {ciudades.map(ciudades =>
                     <Carousel.Item>
-                        <img width={700} height={500} src={ciudades.image} />
+                        <img width={450} height={300} src={ciudades.image} />
                         <h3>{ciudades.name} - {ciudades.country}</h3>
                     </Carousel.Item>)}
                 <Carousel dot={MyDot} />
