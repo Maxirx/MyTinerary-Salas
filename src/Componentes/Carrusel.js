@@ -7,17 +7,19 @@ const MyDot = ({ isActive }) => (
     <span
         style={{
             display: 'inline-block',
-            height: isActive ? '8px' : '5px',
-            width: isActive ? '8px' : '5px',
+            height: isActive ? '8px #795548' : '5px #ccc',
+            width: isActive ? '16px #795548' : '5px #ccc',
             background: '#1890ff'
         }}
-    >...</span>)
+    ></span>)
 
 const Gallery = () => {
 
     return (
         <div className='gallery'>
             <Carousel cols={2} rows={2} gap={10} loop
+                showDots={true}
+                hideArrow={true}
                 responsiveLayout={[
                     {
                         breakpoint: 1200,
@@ -40,7 +42,7 @@ const Gallery = () => {
                 {ciudades.map(ciudades =>
                     <Carousel.Item>
                         <img width={700} height={500} src={ciudades.image} />
-                        <p>{ciudades.name} - {ciudades.country}</p>
+                        <h3>{ciudades.name} - {ciudades.country}</h3>
                     </Carousel.Item>)}
                 <Carousel dot={MyDot} />
             </Carousel>
