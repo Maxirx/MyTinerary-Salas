@@ -121,7 +121,7 @@ const ciudades = [
     },
     {
         "id": 16,
-        "image": "https://vamonos.asia/wp-content/uploads/2019/08/rangun-to-mandalay.jpg",
+        "image": 'https://vamonos.asia/wp-content/uploads/2019/08/rangun-to-mandalay.jpg',
         "name": "Rangun",
         "description": "Disfruta de tus platos favoritos, de los diferentes paises, en un evento unico para toda la familia",
         "continent": "Asia",

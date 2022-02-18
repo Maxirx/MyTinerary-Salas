@@ -1,31 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
 import './index.css'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Gallery from './Componentes/Carrusel';
+
+
+
 
 function App() {
-  function suma() {
-    return edad + 1
-  }
-  const nombre = "Negra"
-  const edad = 10
-  /*   const boton = document.getElementById("boton")
-  
-    boton.addEventListener("click", testAlert) */
-
-  function testAlert() {
-
-    alert("presionaste el boton " + suma())
-  }
-
   return (
     <div className="App">
-      <div className='zero'>
-        <p> Mi nombre es {nombre}</p>
-        <p>Mi edad es {edad}</p>
-        <button onClick={testAlert}>Presionar</button>
-      </div>
-    </div >
-  );
+      <Gallery />
+
+    </div>
+  )
 }
 
 export default App;
