@@ -11,6 +11,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import { red } from '@mui/material/colors';
 
 export default function MenuAppBar() {
     const [auth, setAuth] = React.useState(true);
@@ -29,7 +30,7 @@ export default function MenuAppBar() {
     };
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} style={{ background: "chedarChest" }}>
             <FormGroup>
                 <FormControlLabel
                     control={
@@ -42,7 +43,7 @@ export default function MenuAppBar() {
                     label={auth ? 'Logout' : 'Login'}
                 />
             </FormGroup>
-            <AppBar position="static">
+            <AppBar position="static" style={{ background: "red" }}>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -54,7 +55,7 @@ export default function MenuAppBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Photos
+                        MyTinerary
                     </Typography>
                     {auth && (
                         <div>
@@ -90,6 +91,6 @@ export default function MenuAppBar() {
                     )}
                 </Toolbar>
             </AppBar>
-        </Box>
+        </Box >
     );
 }

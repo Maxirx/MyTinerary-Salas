@@ -7,16 +7,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Gallery from './Componentes/Carrusel';
 import ButtonAppBar from './Componentes/NavBar'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 
 function App() {
   return (
     <div className="App">
-      <ButtonAppBar />
-      <Gallery />
-
+      <BrowserRouter>
+        <ButtonAppBar />
+        <Routes>
+          <Route path='/' element={<Gallery />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
