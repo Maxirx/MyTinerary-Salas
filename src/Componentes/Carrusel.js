@@ -3,13 +3,22 @@ import Carousel from 'react-grid-carousel'
 import ciudades from '../Datos'
 /* import MyDot from './dots' */
 
-const MyDot = ({ isActive }) => (
+const MyDot = ({ isActive }) => (ciudades.map(ciudades =>
     <span
         style={{
             display: 'inline-block',
-            height: isActive ? '8px #795548' : '5px #ccc',
-            width: isActive ? '16px #795548' : '5px #ccc',
-            background: '#1890ff'
+            height: isActive ? '8px' : '5px #ccc',
+            width: isActive ? '16px {ciudades.image}' : '5px #ccc',
+            background: ciudades.image
+        }}
+
+    ></span>))
+
+const MyLeftArrow = ({ isActive }) => (
+    <span
+        style={{
+            height: isActive ? '100% #795548' : '5px #ccc',
+            /*                 width: isActive ? '16px #795548' : '5px #ccc', */
         }}
     ></span>)
 
@@ -48,6 +57,7 @@ const Gallery = () => {
                         <img width={450} height={300} src={ciudades.image} />
                         <h3>{ciudades.name} - {ciudades.country}</h3>
                     </Carousel.Item>)}
+                <Carousel dot={MyLeftArrow} />
                 <Carousel dot={MyDot} />
             </Carousel>
         </div >

@@ -21,7 +21,7 @@ const ciudades = [
         "name": "Taipéi",
         "description": "Disfruta de tus platos favoritos, de los diferentes paises, en un evento unico para toda la familia",
         "continent": "Asia",
-        "country": "Salón A",
+        "country": "Taiwan",
     },
     {
         "id": 4,

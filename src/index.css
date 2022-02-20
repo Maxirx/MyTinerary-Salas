@@ -32,3 +32,76 @@ code {
 .qbpMB {
   background-color: pink !important;
 }
+
+#fondo {
+  height: 110%;
+  width: 100%;
+  z-index: -1;
+  margin-top: 0%;
+  position: absolute;
+  top: -5%;
+  left: 0%;
+  bottom: 0%;
+}
+
+#principal {
+  width: 100%;
+  height: 95vh;
+  display: block;
+  position: relative;
+  background-image: url("./recursos/peakpx\(1\).jpg");
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  color: #cc2f41;
+  font-size: 3rem;
+}
+
+h2 {
+  color: #995d81;
+  font-size: 1.7rem;
+  margin-top: 2%;
+  margin-bottom: 7%;
+}
+
+h3 {
+  color: #e61821;
+  background-color: #6689a1;
+}
+
+#llamada {
+  width: 15%;
+  background-color: fuchsia;
+  /*   border-radius: 30rem; */
+  border-radius: 100em;
+  margin-top: 5%;
+  color: beige;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+#llamada:hover {
+  width: 15%;
+  background-color: #995d81;
+  /*   border-radius: 30rem; */
+  border-radius: 100em;
+  margin-top: 5%;
+  color: beige;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+#abajo {
+  display: flex;
+  background-color: #6689a1;
+}
+
+.social {
+  display: block;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
