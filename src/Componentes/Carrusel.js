@@ -28,7 +28,7 @@ const Gallery = () => {
         <div className='gallery'>
             <Carousel cols={4} rows={1} gap={10} loop
                 showDots={true}
-                hideArrow={true}
+                hideArrow={false}
                 responsiveLayout={[
                     {
                         breakpoint: 1200,
@@ -37,6 +37,7 @@ const Gallery = () => {
                     {
                         breakpoint: 900,
                         cols: 2,
+                        rows: 1
                     },
                     {
                         breakpoint: 620,
@@ -46,7 +47,8 @@ const Gallery = () => {
                     {
                         breakpoint: 620,
                         cols: 1,
-                        gap: 5
+                        rows: 1,
+                        gap: 10
                     }
                 ]}
                 mobileBreakpoint={320}

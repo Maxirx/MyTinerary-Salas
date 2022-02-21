@@ -5,10 +5,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import Gallery from './Componentes/Carrusel';
-import ButtonAppBar from './Componentes/NavBar'
+
+import ButtonAppBar from './Componentes/BarraNavegacion'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Side from './Componentes/sideBar';
+
 import Main from './Componentes/Main';
 import Footer from './Componentes/footer'
 

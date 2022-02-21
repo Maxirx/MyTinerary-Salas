@@ -1,17 +1,16 @@
 import React from "react";
 
-import Gallery from './Carrusel';
-import fondo from '../recursos/peakpx(1).jpg'
+import Galeria from './Carrusel';
+
 
 const Main = () => {
     return (
         <main id="principal">
-            <img id="fondo" src={fondo} />
             <h1>
                 MyTinerary
             </h1>
             <h2>Find your perfect trip, designed by insiders who know and love their cities!</h2>
-            <Gallery />
+            <Galeria />
 
             <button id="llamada">Fly to your dreams</button>
         </main>

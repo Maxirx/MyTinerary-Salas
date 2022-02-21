@@ -6,19 +6,19 @@ const Footer = () => {
         <footer id="abajo">
             <div>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Discover the World</a> </li>
+                    <li className="item"><a href="#">Home</a></li>
+                    <li className="item"><a href="#">Discover the World</a> </li>
                 </ul>
             </div>
 
             <aside id="social">
                 <ul class="menu">
-                    <li class="social-item">
-                        <span class="screen-reader-text">Twitter</span>
+                    <li class="item">
+                        <span class="screen">Twitter</span>
                     </li>
-                    <li class="social-item"><span class="screen-reader-text">Facebook</span></li>
-                    <li class="social-item"><span class="screen-reader-text">Pinterest</span></li>
-                    <li class="social-item"><span class="screen-reader-text">Whatsapp</span></li>
+                    <li className="item"><span class="screen">Facebook</span></li>
+                    <li className="item"><span class="screen">Pinterest</span></li>
+                    <li className="item"><span class="screen">Whatsapp</span></li>
 
                 </ul>
             </aside>
