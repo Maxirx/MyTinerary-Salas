@@ -82,20 +82,24 @@ h3 {
   /*   border-radius: 30rem; */
   border-radius: 100em;
   margin-top: 5%;
-  color: beige;
+  color: white !important;
   font-size: 1.5rem;
   position: relative;
 }
 
 #llamada:hover {
   width: 15rem;
-  background-color: #995d81;
+  background-color: red;
   /*   border-radius: 30rem; */
   border-radius: 100em;
   margin-top: 5%;
-  color: beige;
+  color: white !important;
   font-size: 1.5rem;
   position: relative;
+}
+
+#LetrasEnBlanco {
+  color: white;
 }
 
 #abajo {

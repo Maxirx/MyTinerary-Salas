@@ -13,7 +13,7 @@ const Main = () => {
             <h2>Find your perfect trip, designed by insiders who know and love their cities!</h2>
             <Galeria />
 
-            <button id="llamada"><LinkRouter to='/cities' >Fly to your dreams </LinkRouter></button>
+            <button id="llamada"><LinkRouter to='/cities' id="LetrasEnBlanco">Fly to your Dreams! </LinkRouter></button>
         </main>
     )
 

@@ -116,7 +116,7 @@ const Barra = () => {
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
-                            anchorEl={anchorElUser}
+                            anchorEl={anchorElNav}
                             anchorOrigin={{
                                 vertical: 'top',
                                 horizontal: 'right',

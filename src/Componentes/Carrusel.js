@@ -22,7 +22,7 @@ const MyLeftArrow = ({ isActive }) => (
         }}
     ></span>)
 
-const Gallery = () => {
+const Galeria = () => {
 
     return (
         <div className='gallery'>
@@ -69,10 +69,10 @@ const Gallery = () => {
     return (
         ciudades.map(ciudades =>
 
-            <Gallery image={ciudades.image} widht={150} height={150} />
+            <Galeria image={ciudades.image} widht={150} height={150} />
 
         ))
 
 } */
 
-export default Gallery
+export default Galeria
