@@ -1,6 +1,6 @@
 const Ciudades = () => {
     return (
-        <main id="principal">
+        <main id="principal2">
             <h1>
                 Under Construction
             </h1>
