@@ -1,6 +1,7 @@
 import React from "react";
 
 import Galeria from './Carrusel';
+import { Link as LinkRouter } from 'react-router-dom'
 
 
 const Main = () => {
@@ -12,7 +13,7 @@ const Main = () => {
             <h2>Find your perfect trip, designed by insiders who know and love their cities!</h2>
             <Galeria />
 
-            <button id="llamada">Fly to your dreams</button>
+            <button id="llamada"><LinkRouter to='/cities' >Fly to your dreams </LinkRouter></button>
         </main>
     )
 

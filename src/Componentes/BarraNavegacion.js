@@ -11,12 +11,13 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link as LinkRouter } from 'react-router-dom'
 import Logo from '../recursos/pngegg.png'
 
-const pages = ['Home', 'Search'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Home', 'Cities'];
+const settings = ['Login', 'Logout'];
 
-const Galeria = () => {
+const Barra = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -36,7 +37,7 @@ const Galeria = () => {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar style={{ background: "#E43024" }} position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -45,7 +46,7 @@ const Galeria = () => {
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                     >
-                        <img src={Logo} width={30} height={30} />   MyTinerary
+                        <img src={Logo} width={30} height={30} /> MyTinerary
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -78,9 +79,10 @@ const Galeria = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
+                                <LinkRouter to={page}>
+                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">{page}</Typography>
+                                    </MenuItem></LinkRouter>
                             ))}
                         </Menu>
                     </Box>
@@ -90,17 +92,18 @@ const Galeria = () => {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                     >
-                        <img src={Logo} width={30} height={30} />   MyTinerary
+                        <img src={Logo} width={30} height={30} /> MyTinerary
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
+                            <LinkRouter to={page}>
+                                <Button
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page}
+                                </Button></LinkRouter>
                         ))}
                     </Box>
 
@@ -138,4 +141,4 @@ const Galeria = () => {
         </AppBar>
     );
 };
-export default Galeria;
+export default Barra;
