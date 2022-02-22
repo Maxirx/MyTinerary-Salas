@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import Barra from './Componentes/BarraNavegacion'
+import Barra2 from './Componentes/BarraNavegacion2'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Main from './Componentes/Main';
@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Barra />
+        <Barra2 />
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/cities' element={<Ciudades />} />

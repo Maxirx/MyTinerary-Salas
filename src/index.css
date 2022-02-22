@@ -136,10 +136,48 @@ a {
 @media only screen and (max-width: 390px) {
   #principal {
     width: 100%;
-    height: 180vw;
+    height: 200vw;
     display: block;
     position: relative;
     background-image: url("./recursos/peakpx\(3\).jpg");
     margin-top: -9%;
+  }
+
+  #llamada {
+    width: 15rem;
+    background-color: fuchsia;
+    /*   border-radius: 30rem; */
+    border-radius: 100em;
+    margin-top: 2%;
+    color: white !important;
+    font-size: 1.5rem;
+    position: relative;
+  }
+
+  #llamada:hover {
+    width: 15rem;
+    background-color: red;
+    /*   border-radius: 30rem; */
+    border-radius: 100em;
+    margin-top: 2%;
+    color: white !important;
+    font-size: 1.5rem;
+    position: relative;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  #principal2 {
+    width: 100%;
+    height: 200vw;
+    display: block;
+    position: relative;
+    background-image: url("./recursos/peakpx\(3\).jpg");
+    margin-top: -7%;
   }
 }
