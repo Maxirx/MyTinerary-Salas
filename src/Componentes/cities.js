@@ -16,8 +16,8 @@ const CiudadesPag = () => {
                 <input type="text" id="text"></input>
             </form>
             <div id='contenedorCartas'>
-                {Ciudades.map(Ciudades =>
-                    (<div id='cartasPaises'><ActionAreaCard Ciudades={Ciudades} /></div>))}
+                {Ciudades.map(x =>
+                    (<div id='cartasPaises'><ActionAreaCard Ciudades={x} /></div>))}
             </div>
 
 

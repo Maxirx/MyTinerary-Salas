@@ -4,8 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import Ciudades from '../Datos'
-import ciudades from '../Datos';
+
 
 export default function ActionAreaCard(props) {
 
