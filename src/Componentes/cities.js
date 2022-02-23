@@ -1,4 +1,10 @@
-const Ciudades = () => {
+import * as React from 'react';
+import DerivedState from './Busqueda'
+import ActionAreaCard from './Carta'
+import Ciudades from '../Datos'
+import './barra.css'
+
+const CiudadesPag = () => {
 
 
     return (
@@ -6,13 +12,18 @@ const Ciudades = () => {
             <h1>
                 Under Construction
             </h1>
-            <h2>Find your perfect trip, designed by insiders who know and love their cities!</h2>
             <form action=""><label for="text">Buscar</label>
                 <input type="text" id="text"></input>
             </form>
+            <div id='contenedorCartas'>
+                {Ciudades.map(Ciudades =>
+                    (<div id='cartasPaises'><ActionAreaCard Ciudades={Ciudades} /></div>))}
+            </div>
+
+
         </main>
     )
 
 }
 
-export default Ciudades
+export default CiudadesPag

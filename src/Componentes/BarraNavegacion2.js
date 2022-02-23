@@ -96,7 +96,7 @@ export default function Barra2() {
 
                     </Menu>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Photos
+                        MyTinerary
                     </Typography>
                     {auth && (
                         <div>

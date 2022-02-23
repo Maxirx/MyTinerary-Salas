@@ -5,3 +5,15 @@
 #BarraArriba {
   background-color: #ea0504;
 }
+
+#contenedorCartas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+#cartasPaises {
+  width: 12rem;
+  height: 18rem;
+}

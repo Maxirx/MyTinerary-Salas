@@ -31,8 +31,8 @@ const Galeria = () => {
                 hideArrow={false}
                 responsiveLayout={[
                     {
-                        breakpoint: 1200,
-                        cols: 3,
+                        breakpoint: 1440,
+                        cols: 4,
                     },
                     {
                         breakpoint: 900,
@@ -56,7 +56,7 @@ const Galeria = () => {
             >
                 {ciudades.map(ciudades =>
                     <Carousel.Item>
-                        <img width={450} height={300} src={ciudades.image} />
+                        <img width={150} height={100} src={ciudades.image} />
                         <h3>{ciudades.name} - {ciudades.country}</h3>
                     </Carousel.Item>)}
                 <Carousel dot={MyLeftArrow} />
