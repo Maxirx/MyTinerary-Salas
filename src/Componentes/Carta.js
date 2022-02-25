@@ -7,6 +7,7 @@ import { CardActionArea } from '@mui/material';
 
 
 export default function ActionAreaCard(props) {
+    console.log(props);
 
     return (
         <Card sx={{ maxWidth: 345 }}>

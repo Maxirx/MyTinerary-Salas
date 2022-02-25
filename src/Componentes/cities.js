@@ -1,10 +1,15 @@
 import * as React from 'react';
+import { useState } from 'react'
 import DerivedState from './Busqueda'
 import ActionAreaCard from './Carta'
 import Ciudades from '../Datos'
 import './barra.css'
 
 const CiudadesPag = () => {
+    const [input, setinput] = useState("")
+    const [apiCiudades, setApiCiudades] = useState([...Ciudades])
+
+
 
 
     return (
@@ -13,11 +18,11 @@ const CiudadesPag = () => {
                 Under Construction
             </h1>
             <form action=""><label for="text">Buscar</label>
-                <input type="text" id="text"></input>
+                <input type="text" onKeyPress={(event) => setinput(event.target.value)} id="text"></input>
             </form>
             <div id='contenedorCartas'>
-                {Ciudades.map(x =>
-                    (<div id='cartasPaises'><ActionAreaCard Ciudades={x} /></div>))}
+
+                (<div id='cartasPaises'><ActionAreaCard buscador={input} Ciudades={apiCiudades} /></div>)
             </div>
 
 
