@@ -54,16 +54,16 @@ code {
   display: block;
   position: relative;
   background-image: url("./recursos/peakpx\(1\).jpg");
-  margin-top: -2%;
 }
 
 #principal2 {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: block;
   position: relative;
   background-image: url("./recursos/peakpx\(1\).jpg");
-  margin-top: -2%;
+  background-repeat: no-repeat;
+  background-color: blue;
 }
 
 h1 {
@@ -140,7 +140,6 @@ a {
     display: block;
     position: relative;
     background-image: url("./recursos/peakpx\(3\).jpg");
-    margin-top: -9%;
   }
 
   #llamada {
@@ -174,10 +173,11 @@ a {
 
   #principal2 {
     width: 100%;
-    height: 170vw;
+    min-height: 170vw;
     display: block;
     position: relative;
     background-image: url("./recursos/peakpx\(3\).jpg");
-    margin-top: -7%;
+    background-repeat: no-repeat;
+    background-color: aliceblue;
   }
 }

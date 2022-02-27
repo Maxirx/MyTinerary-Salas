@@ -1,11 +1,11 @@
-const { Description } = require('@mui/icons-material')
-const mongose = require('mongose')
-const ciudadesSchema = new mongose.schema({
 
-    nombre: { type: String, required: true },
-    pais: { type: String, required: true },
-    description: { type: String, required: true }
+const mongoose = require('mongoose')
+const ciudadesSchema = new mongoose.Schema({
+
+    name: { type: String, required: true },
+    country: { type: String, required: true },
+    image: { type: String, required: true },
 })
 
-const Ciudades = new mongose.model('ciudades', ciudadesSchema)
+const Ciudades = mongoose.model('Ciudades', ciudadesSchema)
 module.exports = Ciudades

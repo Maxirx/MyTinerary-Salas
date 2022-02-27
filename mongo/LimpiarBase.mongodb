@@ -1,9 +1,9 @@
 // MongoDB Playground
 //https://docs.mongodb.com/manual/crud/
 
-const database = 'alumnos';
+const database = 'Ciudades';
 
 use(database);
 
 // The drop() command destroys all data from a collection.
-db.acnur.drop();
+db.MyTinerary.drop();

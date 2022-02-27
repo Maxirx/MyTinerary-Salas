@@ -1,16 +1,25 @@
 import * as React from 'react';
 import { useState } from 'react'
-import DerivedState from './Busqueda'
+import { useEffect } from 'react'
+
 import ActionAreaCard from './Carta'
-import Ciudades from '../Datos'
+
 import './barra.css'
+import axios from 'axios';
 
 const CiudadesPag = () => {
     const [input, setinput] = useState("")
-    const [apiCiudades, setApiCiudades] = useState([...Ciudades])
+    const [apiCiudades, setApiCiudades] = useState([])
 
 
+    useEffect(() => {
+        axios.get(`http://localhost:4000/api/todaslasciudades`)
+            .then(response => setApiCiudades(response.data.respuesta.ciudades))
 
+
+        axios.get(`http://localhost:4000/api/todaslasciudades`)
+            .then(response => console.log(response.data.respuesta.ciudades))
+    }, [])
 
     return (
         <main id="principal2">
@@ -18,11 +27,13 @@ const CiudadesPag = () => {
                 Under Construction
             </h1>
             <form action=""><label for="text">Buscar</label>
-                <input type="text" onKeyPress={(event) => setinput(event.target.value)} id="text"></input>
+                <input type="text" onKeyUp={(event) => setinput(event.target.value)} id="text"></input>
             </form>
-            <div id='contenedorCartas'>
+            <div id="contenedorCartas">
 
-                (<div id='cartasPaises'><ActionAreaCard buscador={input} Ciudades={apiCiudades} /></div>)
+
+                <ActionAreaCard buscador={input} Ciudades={apiCiudades} />
+
             </div>
 
 
