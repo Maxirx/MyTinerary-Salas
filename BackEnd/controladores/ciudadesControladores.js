@@ -20,10 +20,26 @@ const ciudadesControladores = {
         })
 
     },
-    /*     modificarCiudad: async (required, modId) => {
-            console.log(required.body);
-        } */
+    agregarCiudad: async (required, response) => {
+        console.log(required.body);
+        const { ciudad, pais, imagen } = required.body.Input
+        new Ciudades({
+            name: ciudad,
+            country: pais,
+            continent: continente
+        }).save()
+            .tehn((respuesta) => response.json({ respuesta }))
+    },
+
+    borrarCiudad: async (required, response) => {
+        const id = required.params.id
+        console.log(required.params)
+
+        await Ciudades.findOneAndDelete({ _id: id })
+    }
 }
+
+
 
 
 

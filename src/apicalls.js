@@ -11,7 +11,7 @@ export const obtenerTodasLasCiudades = async () => {
     }
 }
 
-export const cargarDatos = async (input) => {
+export const agregarCiudad = async (input) => {
     console.log(input);
     try {
         let data = await axios.post('http://localhost:4000/api/todaslasciudades', { input })
