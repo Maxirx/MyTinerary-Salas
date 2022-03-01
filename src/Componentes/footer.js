@@ -7,8 +7,9 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Pin } from "@mui/icons-material";
 
 const Footer = () => {
-
+    window.scrollTo({ top: 0, behavior: "smooth" })
     return (
+
         <footer id="abajo">
             <div>
                 <ul>

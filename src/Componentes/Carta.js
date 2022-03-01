@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 
+
 export default function ActionAreaCard(props) {
     console.log(props);
     var textoParaBuscar = ""
@@ -56,6 +57,7 @@ export default function ActionAreaCard(props) {
                                     <Typography variant="body2" color="text.secondary">
                                         {resultado.country}
                                     </Typography>
+                                    <button><a href="./detalle.html?id='${resultado._id}'">Detail</a></button>
                                 </CardContent>
                             </CardActionArea>
                         </Card></div>)

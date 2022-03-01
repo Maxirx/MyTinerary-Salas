@@ -4,7 +4,7 @@ const Router = require('express').Router()
 
 
 
-const { consultarCiudades, agregarCiudad, borrarCiudad, modificarCiudad } = ciudadesControladores
+const { consultarCiudades, agregarCiudad, borrarCiudad, modificarCiudad, consultarCiudadePorID } = ciudadesControladores
 
 Router.route('/todaslasciudades')
     .get(consultarCiudades)
@@ -13,6 +13,7 @@ Router.route('/todaslasciudades')
 Router.route('/todaslasciudades/:id')
     .delete(borrarCiudad)
     .put(modificarCiudad)
+    .get(consultarCiudadePorID)
 
 
 module.exports = Router
