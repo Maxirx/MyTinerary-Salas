@@ -13,25 +13,13 @@ import Main from './Componentes/Main';
 import Footer from './Componentes/footer'
 import CiudadesPag from './Componentes/cities'
 import axios from 'axios'
+import CiudadDetalle from './Componentes/detalle';
+import PaginaDetalles from './Componentes/paginaDetalle';
 
 
 
 function App() {
-  /* 
-    const [input, setInput] = useState()
-    const [apidata, setApiData] = useState([])
-  
-  
-    console.log(input)
-  
-    useEffect(() => {
-  
-      axios.get(`https://rickandmortyapi.com/api/character/?page=1`)
-        .then(response => setApiData(response))
-  
-    }, [])
-    console.log(apidata)
-   */
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -40,6 +28,7 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='/cities' element={<CiudadesPag />} />
           <Route path='*' element={<Main />} />
+          <Route path="/cities/detalle/:id" element={<PaginaDetalles />} />
         </Routes>
         <Footer />
       </BrowserRouter>

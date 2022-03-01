@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { Link as LinkRouter } from "react-router-dom"
 
 
 
@@ -42,7 +43,7 @@ export default function ActionAreaCard(props) {
                 return (
                     <div id='cartasPaises'>
                         <Card sx={{ maxWidth: 345 }}>
-                            <CardActionArea>
+                            <CardActionArea><LinkRouter to={`detalle/${resultado._id}`}>
                                 <CardMedia
                                     component="img"
                                     height={140}
@@ -57,8 +58,8 @@ export default function ActionAreaCard(props) {
                                     <Typography variant="body2" color="text.secondary">
                                         {resultado.country}
                                     </Typography>
-                                    <button><a href="./detalle.html?id='${resultado._id}'">Detail</a></button>
-                                </CardContent>
+
+                                </CardContent></LinkRouter>
                             </CardActionArea>
                         </Card></div>)
             })
