@@ -32,3 +32,14 @@ export const eliminarCiudad = async (id) => {
 
     }
 }
+
+export const modificarCiudad = async (id, dataInput) => {
+    console.log(id, dataInput)
+    try {
+        let data = await axios.put(`http://localhost:4000/api/V1/allcities/${id}`, { dataInput })
+        return data
+    }
+    catch (error) {
+        throw error
+    }
+}

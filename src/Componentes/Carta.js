@@ -35,29 +35,38 @@ export default function ActionAreaCard(props) {
     console.log(ciudadesAMostrar);
 
     return (
-        ciudadesAMostrar.map((resultado) => {
-            /*       centinela.map((resultado) => { */
-            return (
-                <div id='cartasPaises'>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height={140}
-                                width={140}
-                                image={resultado.image}
-                                alt="green iguana"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {resultado.name}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {resultado.country}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card></div>)
-        })
-    );
+        ciudadesAMostrar.length > 0 ? (
+            ciudadesAMostrar.map((resultado) => {
+                /*       centinela.map((resultado) => { */
+                return (
+                    <div id='cartasPaises'>
+                        <Card sx={{ maxWidth: 345 }}>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height={140}
+                                    width={140}
+                                    image={resultado.image}
+                                    alt="green iguana"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {resultado.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {resultado.country}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card></div>)
+            })
+        ) :
+            (
+                <h2>No Found  :(</h2>
+            )
+
+
+    )
+
+        ;
 }
