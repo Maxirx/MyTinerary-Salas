@@ -20,7 +20,7 @@ const pages = ['Home', 'Cities'];
 
 export default function Barra2() {
     const [auth, setAuth] = React.useState(true);
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [AnchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorEl, setAnchorEl] = React.useState(null);
 
 
@@ -75,7 +75,7 @@ export default function Barra2() {
                     </IconButton>
                     <Menu
                         id="menu-appbar"
-                        anchorElNav={anchorElNav}
+                        anchorElNav={AnchorElNav}
                         anchorOrigin={{
                             vertical: 'calc(top -10)',
                             horizontal: 'left',
@@ -85,13 +85,13 @@ export default function Barra2() {
                             vertical: 'calc(top -10)',
                             horizontal: 'left',
                         }}
-                        open={Boolean(anchorElNav)}
+                        open={Boolean(AnchorElNav)}
                         onClose={handleCloseNavMenu}
                     >
                         {pages.map((page) => (
                             <LinkRouter to={page}>
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Typography textAlign="center" key={page}>{page}</Typography>
                                 </MenuItem></LinkRouter>))}
 
                     </Menu>

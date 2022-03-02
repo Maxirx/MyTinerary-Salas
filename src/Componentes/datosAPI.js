@@ -53,7 +53,7 @@ export default function datosAPI() {
     return (
 
         <><div>
-            {cities?.map(lugares => <ul>
+            {cities.map(lugares => <ul>
                 <li>{lugares.name}, {lugares.pais},{lugares.imagen}
                     <div><button onClick={() => suprimirCiudad(lugares._id)}>Delete</button></div></li>
             </ul>

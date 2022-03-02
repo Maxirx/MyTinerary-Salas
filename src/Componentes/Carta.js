@@ -17,7 +17,6 @@ export default function ActionAreaCard(props) {
     var ciudadesAMostrar = []
 
     apiCiudad.push(...props.Ciudades)
-    /*     props.Ciudades.map(ciudad => apiCiudad.push(...ciudad)) */
 
     textoSimple = props.buscador.toLowerCase()
     textoParaBuscar = textoSimple.trim()
@@ -39,7 +38,7 @@ export default function ActionAreaCard(props) {
     return (
         ciudadesAMostrar.length > 0 ? (
             ciudadesAMostrar.map((resultado) => {
-                /*       centinela.map((resultado) => { */
+
                 return (
                     <div id='cartasPaises'>
                         <Card sx={{ maxWidth: 345 }}>

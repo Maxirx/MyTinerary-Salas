@@ -17,3 +17,14 @@
   width: 14em;
   height: 22em;
 }
+
+#cartasPaises {
+  width: 14em;
+  height: 22em;
+}
+
+#redes {
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+}

@@ -57,7 +57,7 @@ const Galeria = () => {
                 {ciudades.map(ciudades =>
                     <Carousel.Item>
                         <img width={150} height={100} src={ciudades.image} />
-                        <h3>{ciudades.name} - {ciudades.country}</h3>
+                        <h3 key={ciudades}>{ciudades.name} - {ciudades.country}</h3>
                     </Carousel.Item>)}
                 <Carousel dot={MyLeftArrow} />
                 <Carousel dot={MyDot} />

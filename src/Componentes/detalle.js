@@ -18,7 +18,7 @@ export default function CiudadDetalle(props) {
     return (
 
 
-        <div id='cartasPaises'>
+        <div id='cartasPaises3'>
             {cartaID.map((carta) => (
                 <Card sx={{ maxWidth: 345 }}>
                     <CardActionArea>
@@ -30,10 +30,10 @@ export default function CiudadDetalle(props) {
                             alt="green iguana"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" component="div" key={carta}>
                                 {carta.name}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" key={carta}>
                                 {carta.country}
                             </Typography>
                             <LinkRouter to={"./cities"}> <button>volver</button></LinkRouter>
