@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './barra.css'
+import { Link as LinkRouter } from "react-router-dom"
 
 
 export default function CiudadDetalle(props) {
@@ -35,7 +36,7 @@ export default function CiudadDetalle(props) {
                             <Typography variant="body2" color="text.secondary">
                                 {carta.country}
                             </Typography>
-
+                            <LinkRouter to={"./cities"}> <button>volver</button></LinkRouter>
                         </CardContent>
                     </CardActionArea>
                 </Card>
