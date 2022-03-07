@@ -5,9 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import view from "./Componentes/Carrusel"
 
+import { Provider } from 'react-redux';
+import { createStore, apllyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import PrincipalReducer from './Redux/reduce/PrincipalReducer'
+
+
+const reduxStore = createStore(PrincipalReducer, apllyMiddleware(thunk))
+
 ReactDOM.render(
+
   <React.StrictMode>
-    <App />
+    <Provider store={reduxStore}>
+      <App />
+    </Provider>,
   </React.StrictMode>,
   document.getElementById('root')
 );

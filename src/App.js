@@ -17,11 +17,19 @@ import CiudadDetalle from './Componentes/detalle';
 import PaginaDetalles from './Componentes/paginaDetalle';
 
 
+/* import { Provider } from 'ract-redux';
+import { createStore, apllyMiddleware } from 'redux';
+import thunk from 'redux-thunk'
+import mainReducer from '.redux/reducers/mainReducer'
+
+const reduxStore = createStore(mainReducer, apllyMiddleware(thunk)) */
+
 
 function App() {
 
   return (
     <div className="App">
+      {/*       <Provider store={reduxStore} > */}
       <BrowserRouter>
         <Barra2 />
         <Routes>
@@ -32,7 +40,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-
+      {/*       </Provider> */}
 
     </div>
   )
