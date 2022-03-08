@@ -6,20 +6,28 @@ import ActionAreaCard from './Carta'
 
 import './barra.css'
 import axios from 'axios';
+import { connect } from 'react-redux';
+import CiudadesAct from '../Redux/action/CiudadesAct';
+import { Search } from '@mui/icons-material';
 
-const CiudadesPag = () => {
+const CiudadesPag = (props) => {
+
     const [input, setinput] = useState("")
     const [apiCiudades, setApiCiudades] = useState([])
 
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/api/todaslasciudades`)
-            .then(response => setApiCiudades(response.data.respuesta.ciudades))
-
-
-        axios.get(`http://localhost:4000/api/todaslasciudades`)
-            .then(response => console.log(response.data.respuesta.ciudades))
+        props.pushCiudades()
     }, [])
+
+    /*     const setBusqueda = (search) => {
+            setinput(search.target.value)
+            props.filtro(props.apiCiudades, search.target.value)
+        } */
+
+    console.log(props);
+
+
 
     return (
         <main id="principal2">
@@ -27,12 +35,12 @@ const CiudadesPag = () => {
                 Under Construction
             </h1>
             <form action=""><label for="text">Buscar</label>
-                <input type="text" onKeyUp={(event) => setinput(event.target.value)} id="text"></input>
+                <input type="text" /* onChange={(event) => setBusqueda(event.target.value)} */ id="text"></input>
             </form>
             <div id="contenedorCartas">
 
 
-                <ActionAreaCard buscador={input} Ciudades={apiCiudades} />
+                <ActionAreaCard buscador={props.input} Ciudades={props.ciudadesFiltradas} />
 
             </div>
 
@@ -42,4 +50,18 @@ const CiudadesPag = () => {
 
 }
 
-export default CiudadesPag
+const mapStateToProps = (state) => {
+    return {
+        ciudades: state,
+        /*         ciudadesFiltradas: state */
+    }
+}
+
+const mapDispatchToProps = {
+    pushCiudades: CiudadesAct.pushCiudades,
+    filtro: CiudadesAct.filtro
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CiudadesPag);

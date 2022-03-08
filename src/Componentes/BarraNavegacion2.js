@@ -115,7 +115,7 @@ export default function Barra2() {
                                 anchorEl={anchorEl}
                                 anchorOrigin={{
                                     vertical: 'top',
-                                    horizontal: 'right',
+                                    horizontal: 'left',
                                 }}
                                 keepMounted
                                 transformOrigin={{

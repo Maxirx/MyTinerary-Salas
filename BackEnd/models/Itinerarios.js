@@ -6,7 +6,7 @@ const itinerariosSchema = new mongoose.Schema({
     duration: { type: String, required: true },
     price: { type: String, required: true },
     places: { type: Array, required: true },
-    city: { type: String, required: true },
+    city: { type: mongoose.Types.ObjectId, ref: 'Ciudades' },
     hashtags: { type: String, required: true },
     user: { type: String, required: true }
 

@@ -36,7 +36,7 @@ export default function CiudadDetalle(props) {
                             <Typography variant="body2" color="text.secondary" key={carta}>
                                 {carta.country}
                             </Typography>
-                            <LinkRouter to={"./cities"}> <button>volver</button></LinkRouter>
+                            <LinkRouter to={"/cities"}> <button>volver</button></LinkRouter>
                         </CardContent>
                     </CardActionArea>
                 </Card>
