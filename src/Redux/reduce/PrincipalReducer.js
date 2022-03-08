@@ -2,14 +2,15 @@
 import { combineReducers } from 'redux'
 
 import CiudadesRedu from './CiudadesRedu'
-import authReducer from './authReducer'
+import ItinerariosRedu from './ItinerariosRedu'
+/* import authReducer from '' */
 
 
 
 const PrincipalReducer = combineReducers({
 
     CiudadesRedu,
-    authReducer
+    ItinerariosRedu
 
 })
 

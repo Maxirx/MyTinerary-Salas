@@ -1,38 +1,33 @@
 const initialState = {
-    name: [],
-    country: [],
-    image: [],
-    continent: []
+    ciudades: [],
+    aux: []
 
 }
 
 const CiudadesRedu = (state = initialState, action) => {
-
+    console.log(action);
     switch (action.type) {
         case 'push':
 
             return {
                 ...state,
-                name: action.payload,
-                country: action.payload,
-                image: action.payload,
-                continent: action.payload
+                ciudades: action.payload,
+                aux: action.payload
             }
         case 'deletear':
             return {
                 ...state,
-                name: action.payload
+                ciudades: action.payload,
             }
 
         case 'cargarCiudades':
-            let name = [...state.name]
-            name.push(action.payload)
+            let ciudades = [...state.ciudades]
+            ciudades.push(action.payload)
             return {
                 ...state,
-                name,
-                country,
-                image,
-                continent
+                ciudades,
+                aux: [...ciudades]
+
 
             }
 

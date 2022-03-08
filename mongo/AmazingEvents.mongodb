@@ -6,10 +6,73 @@ const database = 'MyTinerary';
 use(database);
 
 // The drop() command destroys all data from a collection.
-db.ciudades.drop();
+db.itinerario.drop();
 // Inserta los documentos que nosotros le indiquemos.
-db.ciudades.insertMany([
-    {
+/* db.ciudades.insertMany([ */
+db.itinerario.insertMany([
+
+    {"itinerary":"Tokyo HighView",
+    "duration": "3",
+    "price": "3",
+
+    "places":[
+        {
+        "name":"Tokyo Tower",
+        "image":"https://www.japanrailpass.com.au/wp-content/uploads/2016/09/Tokyo-Tower.jpg"},
+        {
+        "name":"shibuya sky",
+        "image":"https://www.tokyoweekender.com/wp-content/uploads/2020/07/The-Roof-Shibuya-Sky-Tokyo-Weekender.jpg"},
+        {
+            "name": "Tokyo Skytree",
+            "image":"https://carpediem.tours/wp-content/uploads/2019/08/tokyo-skytree.jpg"
+        }
+        ],
+
+    "city": "621921d63c9dfbaea66c2aa9",
+    "hashtags":"#Tower#Shibuya#Minato",
+    "user": "LapriMeli"
+    },
+
+    {"itinerary": "Tokyo Temples",
+    "duration": "2",
+    "price": "2",
+
+        "places":[
+        {
+        "name":"Sensō-ji",
+        "image":"https://www.101viajes.com/sites/default/files/templo-budista-sensoji.jpg"},
+        {
+        "name":"Kanda Shrine",
+        "image":"https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2015/01/kanda-myojin-shrine-ctk-2.jpg"},
+        {
+        "name": "Inokashira Benzaiten Shrine",
+        "image":"https://img.atlasobscura.com/N67qRQUcPXE5YsIMYmbeJUPEP2J-VBBnwU84I0GkMyM/rt:fit/h:390/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL3BsYWNl/X2ltYWdlcy82YzAx/Nzk3YS02ZWQ0LTRm/NWItODhiOS00YWYx/NzgwY2MyYzI2ZDVh/NDUxNjg0YzY0ZWM5/ZTRfSU1HXzEzNzMu/anBlZw.jpg"
+        }],
+    "city": "621921d63c9dfbaea66c2aa9",
+    "hashtags":"#Temple#Shrine#Budism",
+    "user": "MikJoky"
+    },
+    {"itinerary": "Tokyo Temples",
+    "duration": "2",
+    "price": "2",
+
+        "places":[
+        {
+        "name":"Sensō-ji",
+        "image":"https://www.101viajes.com/sites/default/files/templo-budista-sensoji.jpg"},
+        {
+        "name":"Kanda Shrine",
+        "image":"https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2015/01/kanda-myojin-shrine-ctk-2.jpg"},
+        {
+        "name": "Inokashira Benzaiten Shrine",
+        "image":"https://img.atlasobscura.com/N67qRQUcPXE5YsIMYmbeJUPEP2J-VBBnwU84I0GkMyM/rt:fit/h:390/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL3BsYWNl/X2ltYWdlcy82YzAx/Nzk3YS02ZWQ0LTRm/NWItODhiOS00YWYx/NzgwY2MyYzI2ZDVh/NDUxNjg0YzY0ZWM5/ZTRfSU1HXzEzNzMu/anBlZw.jpg"
+        }],
+    "city": "621921d63c9dfbaea66c2aa9",
+    "hashtags":"#Temple#Shrine#Budism",
+    "user": "MikJoky"
+    }
+    
+/*     {
         "id": 1,
         "image": "https://dam.ngenespanol.com/wp-content/uploads/2019/06/Beijing-china.png",
         "name": "Beijing",
@@ -168,7 +231,7 @@ db.ciudades.insertMany([
         "description": "Disfruta de tus platos favoritos, de los diferentes paises, en un evento unico para toda la familia",
         "continent": "Asia",
         "country": "Singapore",
-    }
+    } */
 ]
 );
 

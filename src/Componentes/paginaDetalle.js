@@ -17,8 +17,6 @@ const PaginaDetalles = () => {
     useEffect(() => {
         axios.get(`http://localhost:4000/api/todaslasciudades`)
             .then(response => setApiCiudades(response.data.respuesta.ciudades))
-
-
     }, [])
 
     const { id } = useParams()

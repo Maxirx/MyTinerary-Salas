@@ -7,7 +7,7 @@ const ciudadesControladores = {
         var error = null
 
         try {
-            ciudades = await Ciudades.find()
+            ciudades = await Ciudades.find()/* .populate('622748244d1a12d866f83838', '622748244d1a12d866f83837') */
         } catch (err) {
             error = err
             console.log(error);
@@ -45,7 +45,7 @@ const ciudadesControladores = {
         const ciudad = req.body
 
         var ciudadb
-        ciudadb = await Ciudades.findOneAndUpdate({ _id: id }, ciudad, { new: true })
+        ciudadb = await Ciudades.findOneAndUpdate({ _id: id }, ciudad, { new: true })/* .populate('622748244d1a12d866f83838', '622748244d1a12d866f83837') */
             .then((response) => res.json({ paso: "listo", respuesta: response }))
             .catch(error => res.json({ error }))
     },

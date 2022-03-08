@@ -6,12 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import view from "./Componentes/Carrusel"
 
 import { Provider } from 'react-redux';
-import { createStore, apllyMiddleware } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import PrincipalReducer from './Redux/reduce/PrincipalReducer'
 
 
-const reduxStore = createStore(PrincipalReducer, apllyMiddleware(thunk))
+const reduxStore = createStore(PrincipalReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
 
