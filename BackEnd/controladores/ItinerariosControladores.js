@@ -1,20 +1,20 @@
 const Itinerarios = require('../models/Itinerarios')
 
 
-const ItinerarariosControladores = {
+const ItinerariosControladores = {
     consultarItinerarios: async (require, response) => {
-        var Itinerararios
+        var itinerarios
         var error = null
 
         try {
-            Itinerarios = await Itinerararios.find()
+            itinerarios = await Itinerarios.find()
         } catch (err) {
             error = err
             console.log(error);
         }
         response.json({
 
-            respuesta: error ? 'ERROR' : { Itinerararios },
+            respuesta: error ? 'ERROR' : { itinerarios },
             succes: error ? false : true,
             error: error
         })
@@ -22,9 +22,9 @@ const ItinerarariosControladores = {
     },
     agregarItinerario: async (required, response) => {
 
-        const { name, country, image, continent } = required.body
-        new Itinerararios({
-            name, country, image, continent
+        const { itinerary, duration, price, places, city, hashtags, user } = required.body
+        new Itinerarios({
+            itinerary, duration, price, places, city, hashtags, user
         }).save()
             .then((respuesta) => response.json({ respuesta }))
             .catch(error => response.json({ error }))
@@ -35,7 +35,7 @@ const ItinerarariosControladores = {
 
         var itinerarioEliminada
 
-        itinerarioEliminada = await Itinerararios.findOneAndDelete({ _id: id })
+        itinerarioEliminada = await Itinerarios.findOneAndDelete({ _id: id })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
@@ -45,18 +45,18 @@ const ItinerarariosControladores = {
         const itinerario = req.body
 
         var itinerariob
-        itinerariob = await Itinerararios.findOneAndUpdate({ _id: id }, itinerario, { new: true })
+        itinerariob = await Itinerarios.findOneAndUpdate({ _id: id }, itinerario, { new: true })
             .then((response) => res.json({ paso: "listo", respuesta: response }))
             .catch(error => res.json({ error }))
     },
 
-    consultarItinerarioePorID: async (require, response) => {
+    consultarItinerariosPorID: async (require, response) => {
         const id = require.params.id
         var Itinerarios
 
 
 
-        Itinerarios = await Itinerararios.findOneAndDelete({ _id: id })
+        Itinerarios = await Itinerarios.findOneAndDelete({ _id: id })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
@@ -66,7 +66,7 @@ const ItinerarariosControladores = {
 
 
 
-        Itinerarios = await Itinerararios.findOneAndDelete({ _id: id })
+        Itinerarios = await Itinerarios.findOneAndDelete({ _id: id })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     }
@@ -75,4 +75,4 @@ const ItinerarariosControladores = {
 
 
 
-module.exports = ItinerarariosControladores
+module.exports = ItinerariosControladores

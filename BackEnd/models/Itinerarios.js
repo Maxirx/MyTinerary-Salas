@@ -12,5 +12,5 @@ const itinerariosSchema = new mongoose.Schema({
 
 })
 
-const Itinerarios = mongoose.model('Itinerarios', itinerariosSchema)
+const Itinerarios = mongoose.model('Itinerario', itinerariosSchema)
 module.exports = Itinerarios
