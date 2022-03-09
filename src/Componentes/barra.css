@@ -1,9 +1,11 @@
 #barraAbajo {
   background-color: red;
+  margin-bottom: 0% !important;
 }
 
 #BarraArriba {
   background-color: #ea0504;
+  margin-bottom: 0% !important;
 }
 
 #contenedorCartas {
@@ -27,4 +29,19 @@
   width: 15%;
   display: flex;
   justify-content: space-around;
+}
+
+.detalles {
+  margin-top: 0%;
+  height: 100%;
+}
+
+.pagDetalles {
+  margin-top: 0%;
+  height: 150vh;
+}
+
+.imagenPerdida {
+  height: 30rem;
+  width: 15rem;
 }
