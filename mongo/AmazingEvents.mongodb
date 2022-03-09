@@ -6,10 +6,10 @@ const database = 'MyTinerary';
 use(database);
 
 // The drop() command destroys all data from a collection.
-db.itinerarios.drop();
+db.Itinerario.drop();
 // Inserta los documentos que nosotros le indiquemos.
 /* db.ciudades.insertMany([ */
-db.itinerarios.insertMany([
+db.Itinerario.insertMany([
 
 {
             "itinerary": "Tokyo HighView",

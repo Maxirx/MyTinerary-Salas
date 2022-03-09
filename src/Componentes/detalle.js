@@ -30,15 +30,15 @@ export default function CiudadDetalle(props) {
                             component="img"
                             height={140}
                             width={140}
-                            image={carta.image}
+                            image={carta.imageCity}
                             alt="green iguana"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" key={carta}>
-                                {carta.name}
+                                {carta.itinerary}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" key={carta}>
-                                {carta.country}
+                                {carta.duration} <p>{"💸".repeat(parseInt(carta.price))}</p>
                             </Typography>
                             <LinkRouter to={"/cities"}> <button>volver</button></LinkRouter>
                             <div>
@@ -64,6 +64,21 @@ export default function CiudadDetalle(props) {
                                         id="panel2a-header"
                                     >
                                         <Typography>Accordion 2</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel2a-content"
+                                        id="panel2a-header"
+                                    >
+                                        <Typography>Accordion 3</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>

@@ -3,6 +3,8 @@ const itinerariosSchema = new mongoose.Schema({
 
 
     itinerary: { type: String, required: true },
+    nameCity: { type: String, required: true },
+    imageCity: { type: String, required: true },
     duration: { type: Number, required: true },
     price: { type: Number, required: true },
     places: { type: Array, required: true },
@@ -15,5 +17,6 @@ const itinerariosSchema = new mongoose.Schema({
 
 })
 
-const Itinerarios = mongoose.model('Itinerarios', itinerariosSchema)
+const Itinerarios = mongoose.model('itinerarios', itinerariosSchema)
+
 module.exports = Itinerarios
