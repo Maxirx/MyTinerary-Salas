@@ -14,9 +14,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 export default function CiudadDetalle(props) {
-    console.log(props);
+    console.log(props.dataR);
+
 
     const cartaID = (props.dataR)
+
 
 
 
@@ -24,7 +26,7 @@ export default function CiudadDetalle(props) {
     return (
         <div id='cartasPaises3'>
             {cartaID.map((carta) => (
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: 345 }} key={carta}>
                     <CardActionArea>
                         <CardMedia
                             component="img"
@@ -38,9 +40,11 @@ export default function CiudadDetalle(props) {
                                 {carta.itinerary}
                             </Typography>
                             <Typography variant="body2" color="text.secondary" key={carta}>
-                                {carta.duration} <p>{"💸".repeat(parseInt(carta.price))}</p>
+                                <p>{"⌛".repeat(parseInt(carta.duration))}</p> <p>{"💸".repeat(parseInt(carta.price))}
+                                    {carta.hashtags}</p>
                             </Typography>
                             <LinkRouter to={"/cities"}> <button>volver</button></LinkRouter>
+
                             <div>
                                 <Accordion>
                                     <AccordionSummary
@@ -48,45 +52,15 @@ export default function CiudadDetalle(props) {
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                     >
-                                        <Typography>Accordion 1</Typography>
+                                        <Typography>Activities</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                            Under Construction
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
-                                <Accordion>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel2a-content"
-                                        id="panel2a-header"
-                                    >
-                                        <Typography>Accordion 2</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                                <Accordion>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel2a-content"
-                                        id="panel2a-header"
-                                    >
-                                        <Typography>Accordion 3</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion>
+
 
                             </div>
                         </CardContent>

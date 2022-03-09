@@ -11,6 +11,7 @@ import CiudadDetalle from './detalle'
 import { connect } from 'react-redux';
 import CiudadesAct from '../Redux/action/CiudadesAct';
 import itinerariosAct from '../Redux/action/itinerariosAct'
+import MensajeNegativo from './MensajeNegativo';
 
 const PaginaDetalles = (props) => {
     console.log(props);
@@ -34,12 +35,9 @@ const PaginaDetalles = (props) => {
 
     return (
         <main id="principal2">
-            <h1>
-                Under Construction
-            </h1>
-
-
-            <CiudadDetalle dataR={props.itineraries} />
+            {props.itineraries.length !== 0 ?
+                <CiudadDetalle dataR={props.itineraries} />
+                : <MensajeNegativo />}
 
 
 
