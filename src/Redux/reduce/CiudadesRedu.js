@@ -1,12 +1,13 @@
 const initialState = {
     ciudades: [],
     ciudadesFiltradas: [],
-    aux: []
+    aux: [],
+    ciudad: {}
 
 }
 
 const CiudadesRedu = (state = initialState, action) => {
-    console.log(action);
+    // console.log(action);
 
     switch (action.type) {
         case 'push':
@@ -14,35 +15,22 @@ const CiudadesRedu = (state = initialState, action) => {
             return {
                 ...state,
                 ciudades: action.payload,
-                ciudadesFiltradas: action.payload,
-                aux: action.payload,
+                ciudadesFiltradas: action.payload
             }
-
-        case 'deletear':
-            return {
-                ...state,
-                ciudades: action.payload,
-            }
-
-        /*         case 'cargarCiudades':
-                    let ciudades = [...state.ciudades]
-                    ciudades.push(action.payload)
-                    return {
-                        ...state,
-                        ciudades,
-                        ciudadesFiltradas,
-                        aux: [...ciudades]
-        
-        
-                    } */
 
         case 'filtro':
-            const filtro = action.payload.ciudades.filter((ciudades => ciudades.name.toLowerCase().startWith(action.payload.value.toLowerCase().trim())))
+            const { citiesArray, value } = action.payload
+            const filtro = citiesArray.filter((ciudades => ciudades.name.toLowerCase().startsWith(value.toLowerCase().trim())))
             return {
                 ...state,
                 ciudadesFiltradas: filtro
             }
+        case 'traerUna':
+            return {
+                ...state,
+                ciudad: action.payload,
 
+            }
 
         default:
             return state

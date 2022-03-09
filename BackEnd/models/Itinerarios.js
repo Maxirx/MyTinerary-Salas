@@ -8,9 +8,12 @@ const itinerariosSchema = new mongoose.Schema({
     places: { type: Array, required: true },
     city: { type: mongoose.Types.ObjectId, ref: 'Ciudades' },
     hashtags: { type: Array, required: true },
-    user: { type: String, required: true }
+    user: { type: String, required: true },
+    photo: { type: String, required: true },
+    likes: { type: Number, required: true },
+    comment: { type: Array, required: true }
 
 })
 
-const Itinerarios = mongoose.model('Itinerario', itinerariosSchema)
+const Itinerarios = mongoose.model('Itinerarios', itinerariosSchema)
 module.exports = Itinerarios

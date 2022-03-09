@@ -12,9 +12,9 @@ const ItinerariosControladores = {
     },
     agregarItinerario: async (required, response) => {
 
-        const { itinerary, duration, price, places, city, hashtags, user } = required.body
+        const { itinerary, nameCity, imageCity, duration, price, places, city, hashtags, user, photo, likes, comments } = required.body
         new Itinerarios({
-            itinerary, duration, price, places, city, hashtags, user
+            itinerary, nameCity, imageCity, duration, price, places, city, hashtags, user, photo, likes, comments
         }).save()
             .then((respuesta) => response.json({ respuesta }))
             .catch(error => response.json({ error }))
@@ -42,21 +42,21 @@ const ItinerariosControladores = {
 
     consultarItinerariosPorID: async (require, response) => {
         const id = require.params.id
-        var Itinerarios
+        var itinerarios
 
 
 
-        Itinerarios = await Itinerarios.findOneAndDelete({ _id: id })
+        itinerarios = await Itinerarios.find({ city: id })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
     consultarItinerarioePorCiudad: async (require, response) => {
         const id = require.params.id
-        var Itinerarios
+        var itinerarios
 
 
 
-        Itinerarios = await Itinerarios.findOneAndDelete({ _id: id })
+        itinerarios = await Itinerarios.find({ _id: id })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     }

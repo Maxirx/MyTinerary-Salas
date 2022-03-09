@@ -13,35 +13,27 @@ import { Search } from '@mui/icons-material';
 const CiudadesPag = (props) => {
     console.log(props);
 
-    /*     const [input, setinput] = useState("")
-        const [apiCiudades, setApiCiudades] = useState([])
-    
-    
-        useEffect(() => {
-            props.pushCiudades()
-        }, [])
-    
-        const setBusqueda = (search) => {
-            setinput(search.target.value)
-            props.filtro(props.ciudades, search.target.value)
-        }
-    
-        console.log(props);
-    
-     */
+    useEffect(() => {
+        props.pushCiudades()
+    }, [])
 
+
+    const search = (e) => props.filtro(props.ciudades, e.target.value)
     return (
         <main id="principal2">
             <h1>
                 Under Construction
             </h1>
-            <form action=""><label for="text">Buscar</label>
-                <input type="text" /* onChange={(event) => setBusqueda(event.target.value)} */ id="text"></input>
+            <form action="">
+                <label for="text">Buscar</label>
+                <input type="text" onChange={search} id="text"></input>
             </form>
             <div id="contenedorCartas">
 
 
-                {/* <ActionAreaCard buscador={props.input} Ciudades={props.ciudadesFiltradas} /> */}
+                {
+                    props.ciudadesFiltradas.length && <ActionAreaCard ciudades={props.ciudadesFiltradas} />
+                }
 
             </div>
 
@@ -53,8 +45,8 @@ const CiudadesPag = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        /* ciudades: state.Data.ciudades, */
-        ciudadesFiltradas: state.Data.ciudadesFiltradas
+        ciudades: state.CiudadesRedu.ciudades,
+        ciudadesFiltradas: state.CiudadesRedu.ciudadesFiltradas
     }
 }
 

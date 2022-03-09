@@ -56,7 +56,7 @@ const ciudadesControladores = {
 
 
 
-        ciudades = await Ciudades.findOneAndDelete({ _id: id })
+        ciudades = await Ciudades.findOne({ _id: id })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     }

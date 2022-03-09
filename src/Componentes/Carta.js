@@ -11,11 +11,11 @@ import { Link as LinkRouter } from "react-router-dom"
 export default function ActionAreaCard(props) {
     console.log(props);
 
-    var ciudadesAMostrar = props.ciudadesFiltradas
+
 
     return (
-        ciudadesAMostrar.length > 0 ? (
-            ciudadesAMostrar.map((resultado) => {
+        props.ciudades.length > 0 ? (
+            props.ciudades.map((resultado) => {
 
                 return (
                     <div id='cartasPaises'>
@@ -42,7 +42,7 @@ export default function ActionAreaCard(props) {
             })
         ) :
             (
-                <h2>No Found  :(</h2>
+                <h2>Not Found  :(</h2>
             )
 
 

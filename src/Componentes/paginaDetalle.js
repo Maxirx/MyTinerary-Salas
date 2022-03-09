@@ -8,25 +8,26 @@ import ActionAreaCard from './Carta'
 import './barra.css'
 import axios from 'axios';
 import CiudadDetalle from './detalle'
+import { connect } from 'react-redux';
+import CiudadesAct from '../Redux/action/CiudadesAct';
+import itinerariosAct from '../Redux/action/itinerariosAct'
 
-const PaginaDetalles = () => {
+const PaginaDetalles = (props) => {
+    console.log(props);
 
     const [apiCiudades, setApiCiudades] = useState([])
-
-
-    useEffect(() => {
-        axios.get(`http://localhost:4000/api/todaslasciudades`)
-            .then(response => setApiCiudades(response.data.respuesta.ciudades))
-    }, [])
-
     const { id } = useParams()
 
-    console.log(id);
-    const carta = apiCiudades.filter(dato => dato._id == id)
-    console.log(carta);
-    var cartaR = []
-    cartaR.push(...carta)
-    console.log(cartaR);
+    useEffect(() => {
+        console.log(id);
+        props.buscarCiudadesPorID(id)
+        props.filtoPorItiCiudad(id)
+
+    }, []);
+
+
+
+
 
 
 
@@ -38,7 +39,7 @@ const PaginaDetalles = () => {
             </h1>
 
 
-            <CiudadDetalle datos={cartaR} />
+            <CiudadDetalle dataR={props.itineraries} />
 
 
 
@@ -48,4 +49,19 @@ const PaginaDetalles = () => {
 
 }
 
-export default PaginaDetalles
+const mapStateToProps = (state) => {
+
+    return {
+        ciudad: state.CiudadesRedu.ciudad,
+        itineraries: state.ItinerariosRedu.itineraries
+
+
+    }
+}
+const mapDispatchToProps = {
+    buscarCiudadesPorID: CiudadesAct.buscarCiudadesPorID,
+    filtoPorItiCiudad: itinerariosAct.filtoPorItiCiudad
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(PaginaDetalles)
