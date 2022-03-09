@@ -10,30 +10,8 @@ import { Link as LinkRouter } from "react-router-dom"
 
 export default function ActionAreaCard(props) {
     console.log(props);
-    var textoParaBuscar = ""
-    var textoSimple = ""
-    var apiCiudad = []
 
-    var ciudadesAMostrar = []
-
-    apiCiudad.push(...props.Ciudades)
-
-    textoSimple = props.buscador.toLowerCase()
-    textoParaBuscar = textoSimple.trim()
-    console.log(textoParaBuscar);
-    /*     const renderizar = [...apiCiudad.filter(ciudad => ciudad.nombre.substring(0, textoParaBuscar.length) == textoParaBuscar)]
-             console.log(renderizar);
-        const centinela = () => { if (renderizar.length == 0) { return [{ nombre: "aprende a escribir" }] } else { return (renderizar) } } */
-
-
-    var resultado = apiCiudad.filter(api => api.name.toLowerCase().startsWith(textoParaBuscar.toLowerCase()))
-
-    if (resultado == undefined) {
-        ciudadesAMostrar.push(...apiCiudad)
-    } else {
-        ciudadesAMostrar.push(...resultado)
-    }
-    console.log(ciudadesAMostrar);
+    var ciudadesAMostrar = props.ciudadesFiltradas
 
     return (
         ciudadesAMostrar.length > 0 ? (

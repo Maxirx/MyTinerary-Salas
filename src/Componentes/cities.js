@@ -11,23 +11,24 @@ import CiudadesAct from '../Redux/action/CiudadesAct';
 import { Search } from '@mui/icons-material';
 
 const CiudadesPag = (props) => {
-
-    const [input, setinput] = useState("")
-    const [apiCiudades, setApiCiudades] = useState([])
-
-
-    useEffect(() => {
-        props.pushCiudades()
-    }, [])
-
-    /*     const setBusqueda = (search) => {
-            setinput(search.target.value)
-            props.filtro(props.apiCiudades, search.target.value)
-        } */
-
     console.log(props);
 
-
+    /*     const [input, setinput] = useState("")
+        const [apiCiudades, setApiCiudades] = useState([])
+    
+    
+        useEffect(() => {
+            props.pushCiudades()
+        }, [])
+    
+        const setBusqueda = (search) => {
+            setinput(search.target.value)
+            props.filtro(props.ciudades, search.target.value)
+        }
+    
+        console.log(props);
+    
+     */
 
     return (
         <main id="principal2">
@@ -40,7 +41,7 @@ const CiudadesPag = (props) => {
             <div id="contenedorCartas">
 
 
-                <ActionAreaCard buscador={props.input} Ciudades={props.ciudadesFiltradas} />
+                {/* <ActionAreaCard buscador={props.input} Ciudades={props.ciudadesFiltradas} /> */}
 
             </div>
 
@@ -52,8 +53,8 @@ const CiudadesPag = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        ciudades: state,
-        /*         ciudadesFiltradas: state */
+        /* ciudades: state.Data.ciudades, */
+        ciudadesFiltradas: state.Data.ciudadesFiltradas
     }
 }
 

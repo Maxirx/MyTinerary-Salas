@@ -2,23 +2,13 @@ const Itinerarios = require('../models/Itinerarios')
 
 
 const ItinerariosControladores = {
-    consultarItinerarios: async (require, response) => {
-        var itinerarios
-        var error = null
-
+    consultarItinerarios: async (req, res) => {
         try {
-            itinerarios = await Itinerarios.find()
-        } catch (err) {
-            error = err
-            console.log(error);
+            let itineraries = await Itinerarios.find()
+            res.json({ succes: true, response: itineraries })
+        } catch (error) {
+            res.json({ success: false, response: error.message })
         }
-        response.json({
-
-            respuesta: error ? 'ERROR' : { itinerarios },
-            succes: error ? false : true,
-            error: error
-        })
-
     },
     agregarItinerario: async (required, response) => {
 

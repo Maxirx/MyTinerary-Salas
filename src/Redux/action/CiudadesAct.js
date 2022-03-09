@@ -30,9 +30,9 @@ const CiudadesAct = {
             }
         }
     },
-    filtro: (apiCiudades, value) => {
+    filtro: (ciudades, value) => {
         return (dispatch, getState) => {
-            dispatch({ type: 'filtro', payload: { apiCiudades, value } })
+            dispatch({ type: 'filtro', payload: { ciudades, value } })
         }
     },
 

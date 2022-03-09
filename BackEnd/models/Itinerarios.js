@@ -3,11 +3,11 @@ const itinerariosSchema = new mongoose.Schema({
 
 
     itinerary: { type: String, required: true },
-    duration: { type: String, required: true },
-    price: { type: String, required: true },
+    duration: { type: Number, required: true },
+    price: { type: Number, required: true },
     places: { type: Array, required: true },
     city: { type: mongoose.Types.ObjectId, ref: 'Ciudades' },
-    hashtags: { type: String, required: true },
+    hashtags: { type: Array, required: true },
     user: { type: String, required: true }
 
 })
