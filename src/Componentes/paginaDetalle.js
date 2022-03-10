@@ -39,7 +39,7 @@ const PaginaDetalles = (props) => {
 
     return (
         <main className='pagDetalles'><div style={{
-            backgroundImage: `url(${lugares})`
+            backgroundImage: `url(${lugares})`, backgroundPositionY: "-15 rem!"
         }} className="detalles">
             <div><h1>{props.ciudad.name}</h1></div>
             <div id='cartasPaises3'>

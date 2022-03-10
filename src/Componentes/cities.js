@@ -33,7 +33,7 @@ const CiudadesPag = (props) => {
 
 
                 {
-                    props.ciudadesFiltradas.length && <ActionAreaCard ciudades={props.ciudadesFiltradas} />
+                    <ActionAreaCard ciudades={props.ciudadesFiltradas} />
                 }
 
             </div>
