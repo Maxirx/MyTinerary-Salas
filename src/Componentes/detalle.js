@@ -35,7 +35,7 @@ export default function CiudadDetalle(props) {
             ? (cartaID.map((carta) => {
 
                 return (
-                    <div >
+                    <div kay={carta._id}>
                         <Card sx={{ maxWidth: 345 }} key={carta._id}>
                             <CardActionArea>
                                 <CardMedia
