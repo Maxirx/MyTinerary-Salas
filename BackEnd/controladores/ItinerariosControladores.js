@@ -50,7 +50,8 @@ const ItinerariosControladores = {
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
-    consultarItinerarioePorCiudad: async (require, response) => {
+
+    consultarItinerariosPorCiudad: async (require, response) => {
         const id = require.params.id
         var itinerarios
 
