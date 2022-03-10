@@ -12,6 +12,10 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MensajeNegativo from './MensajeNegativo';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+
+import Button from '@mui/material/Button';
 
 
 export default function CiudadDetalle(props) {
@@ -32,7 +36,7 @@ export default function CiudadDetalle(props) {
 
                 return (
                     <div >
-                        <Card sx={{ maxWidth: 345 }} key={carta}>
+                        <Card sx={{ maxWidth: 345 }} key={carta._id}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
@@ -50,9 +54,15 @@ export default function CiudadDetalle(props) {
                                         </p><p>{carta.hashtags}</p>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" key={carta}>
-                                        <p><img src={`${carta.photo}`} style={{ height: "3rem" }} /></p> <p>{carta.user}</p>
+                                        <p>subido por</p>
+                                        <p>   <Stack direction="row" spacing={0} display="flex" justifyContent="center">
+                                            <Avatar alt="avatar" src={`${carta.photo}`} />
+
+                                        </Stack></p> <p>{carta.user}</p>
                                     </Typography>
-                                    <LinkRouter to={"/cities"}> <button>volver</button></LinkRouter>
+                                    <Stack spacing={5} direction="row">
+                                        <LinkRouter to={"/cities"}> <Button>volver</Button></LinkRouter>
+                                    </Stack>
 
                                     <div>
                                         <Accordion>

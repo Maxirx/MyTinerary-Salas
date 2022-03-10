@@ -21,13 +21,14 @@ const CiudadesPag = (props) => {
     const search = (e) => props.filtro(props.ciudades, e.target.value)
     return (
         <main id="principal2">
-            <h1>
-                Under Construction
-            </h1>
-            <form action="">
-                <label for="text">Buscar</label>
-                <input type="text" onChange={search} id="text"></input>
-            </form>
+            <div style={{ marginBottom: "2rem" }}>
+                <h1>
+                    Search Cities
+                </h1>
+                <form action="">
+                    <label for="text" style={{ color: "white" }}>Search</label>
+                    <input type="text" onChange={search} id="text"></input>
+                </form></div>
             <div id="contenedorCartas">
 
 
@@ -38,7 +39,7 @@ const CiudadesPag = (props) => {
             </div>
 
 
-        </main>
+        </main >
     )
 
 }
