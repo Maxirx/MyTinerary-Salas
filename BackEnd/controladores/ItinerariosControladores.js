@@ -56,7 +56,7 @@ const ItinerariosControladores = {
 
 
 
-        itinerarios = await Itinerarios.find({ city: city })
+        itinerarios = await Itinerarios.find({ _id: city })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     }
