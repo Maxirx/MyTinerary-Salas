@@ -2,7 +2,7 @@ const ItinerariosControladores = require('../controladores/ItinerariosControlado
 
 const ItiRouter = require('express').Router()
 
-const { consultarItinerarios, agregarItinerario, borrarItinerario, modificarItinerario, consultarItinerariosPorID } = ItinerariosControladores
+const { consultarItinerarios, agregarItinerario, borrarItinerario, modificarItinerario, consultarItinerariosPorID, consultarItinerarioePorCiudad } = ItinerariosControladores
 
 ItiRouter.route('/itinerario')
     .get(consultarItinerarios)
@@ -12,6 +12,9 @@ ItiRouter.route('/itinerario/:id')
     .delete(borrarItinerario)
     .put(modificarItinerario)
     .get(consultarItinerariosPorID)
+
+ItiRouter.route('/itinerario/:city')
+    .get(consultarItinerarioePorCiudad)
 
 
 module.exports = ItiRouter

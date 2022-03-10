@@ -115,6 +115,8 @@ h3 {
   display: flex;
   justify-content: space-between;
   background-color: #6689a1;
+  margin-bottom: 0% !important;
+  height: 20%;
 }
 
 .social {

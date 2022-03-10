@@ -24,8 +24,8 @@ const ItinerariesRedu = (state = initialState, action) => {
             }
         default:
             return (
-                state
-            )
+                state)
+
     }
 }
 

@@ -51,12 +51,12 @@ const ItinerariosControladores = {
             .catch(error => response.json({ error }))
     },
     consultarItinerarioePorCiudad: async (require, response) => {
-        const id = require.params.id
+        const city = require.params.id
         var itinerarios
 
 
 
-        itinerarios = await Itinerarios.find({ _id: id })
+        itinerarios = await Itinerarios.find({ city: city })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     }

@@ -11,7 +11,10 @@ import CiudadDetalle from './detalle'
 import { connect } from 'react-redux';
 import CiudadesAct from '../Redux/action/CiudadesAct';
 import itinerariosAct from '../Redux/action/itinerariosAct'
-import MensajeNegativo from './MensajeNegativo';
+import { ClassNames } from '@emotion/react';
+import { BarChartSharp } from '@mui/icons-material';
+import "./barra.css"
+
 
 const PaginaDetalles = (props) => {
     console.log(props);
@@ -27,6 +30,7 @@ const PaginaDetalles = (props) => {
     }, []);
 
 
+    var lugares = props.ciudad.image
 
 
 
@@ -34,15 +38,14 @@ const PaginaDetalles = (props) => {
 
 
     return (
-        <main id="principal2">
-            {props.itineraries.length !== 0 ?
+        <main className='pagDetalles'><div style={{
+            backgroundImage: `url(${lugares})`
+        }} className="detalles">
+            <div><h1>{props.ciudad.name}</h1></div>
+            <div id='cartasPaises3'>
                 <CiudadDetalle dataR={props.itineraries} />
-                : <MensajeNegativo />}
-
-
-
-
-        </main>
+            </div> </div>
+        </main >
     )
 
 }

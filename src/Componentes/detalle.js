@@ -11,6 +11,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MensajeNegativo from './MensajeNegativo';
 
 
 export default function CiudadDetalle(props) {
@@ -18,56 +19,66 @@ export default function CiudadDetalle(props) {
 
 
     const cartaID = (props.dataR)
+    console.log(cartaID);
 
 
 
 
 
     return (
-        <div id='cartasPaises3'>
-            {cartaID.map((carta) => (
-                <Card sx={{ maxWidth: 345 }} key={carta}>
-                    <CardActionArea>
-                        <CardMedia
-                            component="img"
-                            height={140}
-                            width={140}
-                            image={carta.imageCity}
-                            alt="green iguana"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div" key={carta}>
-                                {carta.itinerary}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary" key={carta}>
-                                <p>{"⌛".repeat(parseInt(carta.duration))}</p> <p>{"💸".repeat(parseInt(carta.price))}
-                                    {carta.hashtags}</p>
-                            </Typography>
-                            <LinkRouter to={"/cities"}> <button>volver</button></LinkRouter>
 
-                            <div>
-                                <Accordion>
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel1a-content"
-                                        id="panel1a-header"
-                                    >
-                                        <Typography>Activities</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography>
-                                            Under Construction
-                                        </Typography>
-                                    </AccordionDetails>
-                                </Accordion>
+        cartaID.length > 0
+            ? (cartaID.map((carta) => {
+
+                return (
+                    <div >
+                        <Card sx={{ maxWidth: 345 }} key={carta}>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height={140}
+                                    width={140}
+                                    image={carta.imageCity}
+                                    alt="green iguana"
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div" key={carta}>
+                                        {carta.itinerary}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" key={carta}>
+                                        <p>Time:{"⌛".repeat(parseInt(carta.duration))}</p> <p>cost:{"💸".repeat(parseInt(carta.price))}
+                                        </p><p>{carta.hashtags}</p>
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" key={carta}>
+                                        <p><img src={`${carta.photo}`} style={{ height: "3rem" }} /></p> <p>{carta.user}</p>
+                                    </Typography>
+                                    <LinkRouter to={"/cities"}> <button>volver</button></LinkRouter>
+
+                                    <div>
+                                        <Accordion>
+                                            <AccordionSummary
+                                                expandIcon={<ExpandMoreIcon />}
+                                                aria-controls="panel1a-content"
+                                                id="panel1a-header"
+                                            >
+                                                <Typography>View More</Typography>
+                                            </AccordionSummary>
+                                            <AccordionDetails>
+                                                <Typography>
+                                                    Under Construction
+                                                </Typography>
+                                            </AccordionDetails>
+                                        </Accordion>
 
 
-                            </div>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            ))}
-        </div>
-    )
+                                    </div>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </div>)
+            })
+            ) : (<MensajeNegativo />)
+
+    );
 
 }
