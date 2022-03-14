@@ -6,8 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Link as LinkRouter } from "react-router-dom"
 
-function calcularMuchosArgumentos(unaVariableMuyLarga, otraVariableConUnNombreDeclarativo)
-calcularMuchosArgumentos()
+
 
 export default function ActionAreaCard(props) {
     console.log(props);
