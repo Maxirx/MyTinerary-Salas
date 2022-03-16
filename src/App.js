@@ -15,6 +15,7 @@ import CiudadesPag from './Componentes/cities'
 import axios from 'axios'
 import CiudadDetalle from './Componentes/detalle';
 import PaginaDetalles from './Componentes/paginaDetalle';
+import PagEntrada from './Componentes/PagEntrada';
 
 
 /* import { Provider } from 'ract-redux';
@@ -33,9 +34,12 @@ function App() {
       <BrowserRouter>
         <Barra2 />
         <Routes>
+
+
           <Route path='/' element={<Main />} />
           <Route path='/cities' element={<CiudadesPag />} />
           <Route path='*' element={<Main />} />
+          <Route path='/User' element={<PagEntrada />} />
           <Route path="/cities/detalle/:id" element={<PaginaDetalles />} />
         </Routes>
         <Footer />

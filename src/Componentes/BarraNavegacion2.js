@@ -14,11 +14,13 @@ import Menu from '@mui/material/Menu';
 import { Link as LinkRouter } from 'react-router-dom'
 import './barra.css'
 import red from '@mui/material/colors';
+/* import { connect } from '../../BackEnd/rutas/UserRutas'; */
+import { AppRegistrationOutlined } from '@mui/icons-material';
 
 
 const pages = ['Home', 'Cities'];
 
-export default function Barra2() {
+function Barra2() {
     const [auth, setAuth] = React.useState(true);
     const [AnchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -125,8 +127,8 @@ export default function Barra2() {
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
                             >
-                                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                <MenuItem onClick={handleClose}>My account</MenuItem>
+                                <MenuItem onClick={handleClose}>Sign In</MenuItem>
+                                <MenuItem onClick={handleClose}>Sign Out</MenuItem>
                             </Menu>
                         </div>
                     )}
@@ -135,3 +137,11 @@ export default function Barra2() {
         </Box >
     );
 }
+
+/* const mapDispatchToProps = {
+
+    signOut: RegistroAction.signOut
+
+} */
+
+export default /* connect(mapDispatchToProps, null) */(Barra2)

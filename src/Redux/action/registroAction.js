@@ -7,15 +7,15 @@ const UserActions = {
 
         return async (dispatch, getState) => {
 
-            const respuesta = await axios.post('http://localhost:4000/api/auth/signUp', { userData })
+            const respuesta = await axios.post('http://localhost:4000/api/auth/signUp', { datosUsuario })
             dispatch({ type: 'message', payload: respuesta.data })
         }
 
 
     },
-    singInUser: (logedUser) => {
+    singIn: (usuarioLogeado) => {
         return async (dispatch, getState) => {
-            const user = await axios.post('http://localhost:4000/api/auth/signIn', { logedUser })
+            const user = await axios.post('http://localhost:4000/api/auth/signIn', { usuarioLogeado })
             if (user.data.succes) {
                 dispatch({ type: 'user', payload: user.data.response.datosUsuario })
             } else {
@@ -36,4 +36,4 @@ const UserActions = {
 
 }
 
-export default UserActions
+export default UserActions 
