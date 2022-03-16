@@ -16,7 +16,7 @@ import { BarChartSharp } from '@mui/icons-material';
 import "./barra.css"
 
 
-const PaginaDetalles = (props) => {
+function PaginaDetalles(props) {
     console.log(props);
 
     const [apiCiudades, setApiCiudades] = useState([])

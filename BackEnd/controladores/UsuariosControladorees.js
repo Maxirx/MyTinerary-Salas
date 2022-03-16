@@ -5,7 +5,7 @@ const bcryptjs = require('brcyptsjs')
 
 const usuariosControlladores = {
     registroUsuarios: async (req, res) => {
-        let { Name, email, password, emailverify, from } = req.body.userData
+        let { Name, email, password, from } = req.body.userData
 
         try {
             const UsuarioYaExiste = await User.findOne({ email })

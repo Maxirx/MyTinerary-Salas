@@ -1,24 +1,25 @@
 import * as React from 'react';
 
-import { Link as LinkRouter } from 'react-router-dom';
+
 import UserActions from '../Redux/action/registroAction';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Registro from './Registro';
 import EntradaSesion from './entrada';
-
-
+import "./barra.css"
 
 function PagEntrada(props) {
+
     function CerrarSesion() {
         props.signOut(props.user.email)
     }
 
     return (
-        <div>
-            {props.user ? <>  <h1> Conected {props.user.Name} </h1>
+        <main className='pagDetalles'>
+
+            {props.user ? <div>  <h1> Conected {props.user.Name} </h1>
                 <div><button onClick={CerrarSesion}> signOut</button>
-                </div></>
+                </div></div>
                 : <h1>no conection</h1>}
             <div>
                 <article>
@@ -36,8 +37,7 @@ function PagEntrada(props) {
                 </article>
             </div>
 
-        </div>
-
+        </main>
     )
 
 
