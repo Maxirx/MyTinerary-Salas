@@ -2,11 +2,14 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 import { Link as LinkRouter } from 'react-router-dom';
 import UserActions from '../Redux/action/registroAction';
+import redirect from 'react-redux'
+
 
 function Registro(props) {
 
     const submit = (event) => {
         event.preventDefault()
+
 
 
         const datosUsuario = {

@@ -153,6 +153,12 @@ const usuariosControlladores = {
         console.log(req.body);
         try {
             const UsuarioYaExiste = await User.findOne({ email })
+            //Alternativa para recuperar Password
+            console.log(UsuarioYaExiste.from)
+            console.log(from);
+            const passwordIndex = UsuarioYaExiste.from.indexOf(from)
+            console.log(UsuarioYaExiste.password[passwordIndex]);
+
 
             if (!UsuarioYaExiste) {
                 res.json({ succes: false, message: "your are not registered, please do a sign In" })
@@ -248,6 +254,29 @@ const usuariosControlladores = {
         res.json(console.log('close session ' + email))
 
     },
+
+    verificarToken: (req, res) => {
+        console.log(req.user);
+        if (req.err) {
+            res.json({
+                succes: true,
+                response: {
+                    id: req.user.id,
+                    Name: req.user.name,
+                    email: req.user.email,
+                    from: "token",
+
+                },
+                message: "welcome again " + req.user.Name
+            })
+
+        } else {
+            res.json({
+                succes: false,
+                message: "Please login again"
+            })
+        }
+    }
 
 }
 

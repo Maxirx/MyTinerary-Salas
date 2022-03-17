@@ -33,6 +33,7 @@ function Barra2(props) {
     const handleChange = (event) => {
         setAuth(event.target.checked);
         props.signOut(props.usuario.email)
+
     };
 
     const handleMenu = (event) => {
@@ -65,7 +66,11 @@ function Barra2(props) {
                         />
                     }
                     label={auth ? 'Logout' : 'Login'}
-                />
+                />{auth ?
+                    <div class="modal-dialog modal-dialog-centered">
+                        Hola!
+                    </div>
+                    : ''}
             </FormGroup>
             <AppBar position="static" id='barraAbajo'>
                 <Toolbar>

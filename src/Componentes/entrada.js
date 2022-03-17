@@ -33,7 +33,7 @@ function EntradaSesion(props) {
                 <button>SignIn</button>
             </div>
             <div>
-                <p>Don't you have am account?</p><LinkRouter to="/user/signup">signUp</LinkRouter>
+                <p>Don't you have an account?</p><LinkRouter to="/user/signup">signUp</LinkRouter>
             </div>
         </form>
     )

@@ -7,6 +7,7 @@ const ModeloUsuario = new mongoose.Schema({
     password: [{ type: String, required: true }],
     uniqueString: { type: String, required: true },
     emailVerify: { type: Boolean, required: true },
+    picture: { type: String },
     from: { type: Array },
 })
 

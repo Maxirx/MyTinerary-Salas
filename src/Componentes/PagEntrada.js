@@ -5,6 +5,11 @@ import { connect } from 'react-redux';
 import Registro from './Registro';
 import EntradaSesion from './entrada';
 import "./barra.css"
+import FaceRegistro from "./faceRegistro";
+import { FacebookLogin } from "react-facebook-login";
+import FaceIngreso from "./FaceIngreso";
+import Redirect from 'react-redux'
+import Snack from './BarraAlerta'
 
 function PagEntrada(props) {
     console.log(props);
@@ -16,23 +21,22 @@ function PagEntrada(props) {
     return (
         <main className='pagDetalles'>
 
-            {props.usuario !== null ? <div>  <h1> Conected {props.usuario.Name} </h1>
+            {props.usuario !== null ? <div>  <h1> Conected {props.usuario.Name} from {props.usuario.form}</h1>
                 <div><button onClick={CerrarSesion}> signOut</button>
                 </div></div>
-                : <h1>no conection</h1>}
-            <div>
-                <article>
-                    <h5>User Account</h5>
-                    <p>Get Started with you account</p>
-                    <p>OR</p>
+                : <><h1>No Conected</h1><div>
+                    <article>
+                        <h5>User Account</h5>
+                        <p>Get Started with you account</p>
 
-                    {!props.user && <EntradaSesion />}
-                    {!props.user && <Registro />}
-
-
-                </article>
-            </div>
-
+                        <FaceRegistro />
+                        <p>OR</p>
+                        <Registro />
+                        <p>OR</p>
+                        <EntradaSesion />
+                    </article>
+                </div></>}
+            <Snack />
         </main>
     )
 

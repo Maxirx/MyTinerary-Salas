@@ -14,8 +14,8 @@ const Validador = (req, res, next) => {
             'string.pattern': "password must be alphanumeric and must contain a number"
         }),
 
-        from: joi.string()
-
+        from: joi.string(),
+        country: joi.string()
 
     })
 

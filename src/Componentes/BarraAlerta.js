@@ -1,10 +1,7 @@
-/* import React from 'react';
+import React from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
-
-
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-
 import { makeStyles } from '@material-ui/core/styles';
 import { styled } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
@@ -84,4 +81,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null)(Snack); */
+export default connect(mapStateToProps, null)(Snack); 
