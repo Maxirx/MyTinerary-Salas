@@ -76,7 +76,7 @@ function Snack(props) {
 
 const mapStateToProps = (state) => {
     return {
-        snackbar: state.userReduc.snackbar,
+        snackbar: state.UseReduc.snackbar,
 
     }
 }

@@ -1,4 +1,5 @@
 
+const { string } = require('joi')
 const mongoose = require('mongoose')
 
 const ModeloUsuario = new mongoose.Schema({
@@ -7,7 +8,8 @@ const ModeloUsuario = new mongoose.Schema({
     password: [{ type: String, required: true }],
     uniqueString: { type: String, required: true },
     emailVerify: { type: Boolean, required: true },
-    picture: { type: String },
+    image: { type: String },
+    country: { type: String },
     from: { type: Array },
 })
 

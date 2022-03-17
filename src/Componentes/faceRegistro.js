@@ -9,12 +9,17 @@ function FaceRegistro(props) {
 
     const respuestaFace = async (res) => {
         console.log(res);
-        const usuarioLogeadoFace = {
+        const usuarioLogeado = {
+            Name: res.name,
             email: res.email,
             password: res.id,
+            country: props.pais,
+            image: res.picture.data.url,
             from: "facebook",
         }
-        await props.signInUser(usuarioLogeadoFace)
+
+        await props.registroUser(usuarioLogeado)
+        console.table(usuarioLogeado);
     }
 
 
@@ -25,7 +30,7 @@ function FaceRegistro(props) {
         <FacebookLogin
 
             textButton="Join with Facebook"
-            appId="5114428911951780"
+            appId="381373610174166"
             autoLoad={false}
             fields="name,email,picture"
             callback={respuestaFace}
@@ -34,7 +39,7 @@ function FaceRegistro(props) {
     );
 }
 const mapDispatchToProps = {
-    signInUser: userActions.signInUser,
+    registroUser: userActions.registroUser,
 
 }
 

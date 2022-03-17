@@ -66,7 +66,7 @@ const usuariosControlladores = {
     },
 
     registroUsuarios: async (req, res) => {
-        let { Name, email, password, from } = req.body.datosUsuario
+        let { Name, email, password, image, country, from } = req.body.datosUsuario
 
 
         try {
@@ -112,6 +112,8 @@ const usuariosControlladores = {
                     password: [constraseñaHasheada],
                     uniqueString: crypto.randomBytes(15).toString('hex'),
                     emailVerify: false,
+                    image,
+                    country,
                     from: [from],
                 })
 
@@ -175,6 +177,8 @@ const usuariosControlladores = {
                             id: UsuarioYaExiste._id,
                             Name: UsuarioYaExiste.Name,
                             email: UsuarioYaExiste.email,
+                            country: UsuarioYaExiste.country,
+                            image: UsuarioYaExiste.country,
                             from: UsuarioYaExiste.from
                         }
                         await UsuarioYaExiste.save()
@@ -264,6 +268,8 @@ const usuariosControlladores = {
                     id: req.user.id,
                     Name: req.user.name,
                     email: req.user.email,
+                    image: req.user.image,
+                    country: req.user.country,
                     from: "token",
 
                 },

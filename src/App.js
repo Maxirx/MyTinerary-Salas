@@ -19,15 +19,28 @@ import PagEntrada from './Componentes/PagEntrada';
 import EntradaSesion from './Componentes/entrada'
 import Registro from './Componentes/Registro'
 import Snack from './Componentes/BarraAlerta'
+import { useEffect } from 'react';
+import userActions from './Redux/action/registroAction'
+import { connect } from 'react-redux';
 
 
 
 
-function App() {
+function App(props) {
+
+  useEffect(() => {
+    if (localStorage.getItem('token') !== null) {
+      const token = localStorage.getItem("token")
+      props.VerificarToken(token)
+    }
+
+  }, [])
 
   return (
     <div className="App">
-      {/*       <Provider store={reduxStore} > */}
+
+
+
       <BrowserRouter>
         <Barra2 />
         <Routes>
@@ -40,14 +53,22 @@ function App() {
           <Route path="/cities/detalle/:id" element={<PaginaDetalles />} />
           <Route path='/user/signin' element={<EntradaSesion />} />
           <Route path='/user/signup' element={<Registro />} />
-          {/*    <Snack /> */}
+
         </Routes>
+        <Snack />
         <Footer />
       </BrowserRouter>
-      {/*       </Provider> */}
+
 
     </div>
   )
 }
 
-export default App;
+const mapDispatchToProps = {
+  VerificarToken: userActions.VerificarToken,
+
+}
+
+
+
+export default connect(null, mapDispatchToProps)(App);

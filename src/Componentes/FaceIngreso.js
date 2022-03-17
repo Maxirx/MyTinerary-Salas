@@ -12,16 +12,19 @@ function FaceIngreso(props) {
         const usuarioLogeado = {
             email: res.email,
             password: res.id,
+            country: props.pais,
+            image: res.picture.data.url,
             from: "facebook",
+
         }
-        await props.signIn(usuarioLogeado)
+        await props.singIn(usuarioLogeado)
     }
 
     return (
         <FacebookLogin
 
             textButton="Join with Facebook"
-            appId="5114428911951780"
+            appId="381373610174166"
             autoLoad={false}
             fields="name,email,picture"
             callback={respuestaFacebook}
@@ -32,7 +35,7 @@ function FaceIngreso(props) {
 }
 
 const mapDispatchToProps = {
-    signIn: userActions.signIn,
+    singIn: userActions.singIn,
 
 }
 

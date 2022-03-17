@@ -68,7 +68,7 @@ function Barra2(props) {
                     label={auth ? 'Logout' : 'Login'}
                 />{auth ?
                     <div class="modal-dialog modal-dialog-centered">
-                        Hola!
+                        Conectado
                     </div>
                     : ''}
             </FormGroup>
@@ -108,7 +108,7 @@ function Barra2(props) {
 
                     </Menu>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        MyTinerary
+                        MyTinerary<sup style={{ fontSize: "0.7rem" }}>®</sup>
                     </Typography>
                     {auth && (
                         <div>

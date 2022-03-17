@@ -25,6 +25,7 @@ const UserActions = {
 
 
     singIn: (usuarioLogeado) => {
+        console.log(usuarioLogeado);
         return async (dispatch, getState) => {
             const user = await axios.post('http://localhost:4000/api/auth/signIn', { usuarioLogeado })
             if (user.data.success) {

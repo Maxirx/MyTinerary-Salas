@@ -2,6 +2,8 @@ import React from 'react'
 import UserActions from '../Redux/action/registroAction'
 import { Link as LinkRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import FaceRegistro from './faceRegistro';
+import FaceIngreso from './FaceIngreso';
 
 function EntradaSesion(props) {
     console.log(props);
@@ -19,7 +21,9 @@ function EntradaSesion(props) {
         props.SignIn(usuarioLogeado)
     }
 
-    return (
+    return (<div>
+        <FaceIngreso />
+
         <form onSubmit={submit}>
             <div>
                 <label for=""></label>
@@ -35,7 +39,7 @@ function EntradaSesion(props) {
             <div>
                 <p>Don't you have an account?</p><LinkRouter to="/user/signup">signUp</LinkRouter>
             </div>
-        </form>
+        </form></div>
     )
 
 }

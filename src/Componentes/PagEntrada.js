@@ -9,7 +9,7 @@ import FaceRegistro from "./faceRegistro";
 import { FacebookLogin } from "react-facebook-login";
 import FaceIngreso from "./FaceIngreso";
 import Redirect from 'react-redux'
-import Snack from './BarraAlerta'
+
 
 function PagEntrada(props) {
     console.log(props);
@@ -29,14 +29,13 @@ function PagEntrada(props) {
                         <h5>User Account</h5>
                         <p>Get Started with you account</p>
 
-                        <FaceRegistro />
-                        <p>OR</p>
+
                         <Registro />
                         <p>OR</p>
                         <EntradaSesion />
                     </article>
                 </div></>}
-            <Snack />
+
         </main>
     )
 
