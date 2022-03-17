@@ -21,7 +21,7 @@ import UserActions from '../Redux/action/registroAction';
 
 
 const pages = ['Home', 'Cities'];
-const account = ['signin', 'signup']
+const account = ['signin', 'signup', '']
 
 function Barra2(props) {
     const [auth, setAuth] = React.useState(true);

@@ -16,7 +16,7 @@ function PagEntrada(props) {
     return (
         <main className='pagDetalles'>
 
-            {props.usuario ? <div>  <h1> Conected {props.usuario.Name} </h1>
+            {props.usuario !== null ? <div>  <h1> Conected {props.usuario.Name} </h1>
                 <div><button onClick={CerrarSesion}> signOut</button>
                 </div></div>
                 : <h1>no conection</h1>}
@@ -26,8 +26,8 @@ function PagEntrada(props) {
                     <p>Get Started with you account</p>
                     <p>OR</p>
 
-                    {!props.user && <LinkRouter to={"./signup"} >Signup</LinkRouter >}
-                    {!props.user && <LinkRouter to={"./signin"} >SignIn</LinkRouter >}
+                    {!props.user && <EntradaSesion />}
+                    {!props.user && <Registro />}
 
 
                 </article>

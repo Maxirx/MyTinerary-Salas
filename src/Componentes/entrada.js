@@ -9,11 +9,13 @@ function EntradaSesion(props) {
 
     const submit = (event) => {
         event.preventDefault()
+
         const usuarioLogeado = {
             email: event.target[0].value,
             password: event.target[1].value,
             from: "form-signup"
         }
+
         props.SignIn(usuarioLogeado)
     }
 

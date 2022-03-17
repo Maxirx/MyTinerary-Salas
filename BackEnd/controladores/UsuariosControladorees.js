@@ -13,14 +13,14 @@ const enviarEmail = async (email, uniqueString) => {
     const transportador = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
-        secute: true,
+        secure: true,
         auth: {
             user: "proyectMyTinerary@gmail.com",
             pass: "MyTinerary1235"
         }
     })
 
-    var sender = "useremailverifyMindHub@gmail.com"
+    var sender = "proyectMyTinerary@gmail.com"
     var mailOptions = {
         from: sender,
         to: email,
@@ -56,7 +56,9 @@ const usuariosControlladores = {
         if (usuarioEmail) {
             usuarioEmail.emailVerify = true
             await usuarioEmail.save()
-            res.direct("http://localhost:3000/")
+            res.redirect("http://localhost:3000")
+
+
         } else {
             res.json({ succes: false, response: "your email has not able to verify" })
         }
@@ -180,6 +182,7 @@ const usuariosControlladores = {
                             message: "welcome again" + datosUsuario.Name,
 
                         })
+                        res.redirect("http://localhost:3000")
 
                     } else {
                         res.json({
