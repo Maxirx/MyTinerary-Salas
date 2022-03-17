@@ -1,19 +1,22 @@
-const Router = require("express").Router()
-const usuariosControlladores = require('../controladores/UsuariosControladorees')
+const UserRouter = require("express").Router()
+const usuariosControlladores = require('../controladores/UsuariosControladorees');
 
-const { registroUsuarios, entradaUsuario, signOut, verifyEmail } = usuariosControlladores
+const { registroUsuarios, entradaUsuario, signOut, verificarEmail } = usuariosControlladores
 
-Router.route('/auth/signUp')
+UserRouter.route('/auth/signUp')
     .post(registroUsuarios)
 
-Router.route('/auth/signIn')
+UserRouter.route('/auth/signIn')
     .post(entradaUsuario)
 
-Router.route('/auth/signOut')
+UserRouter.route('/auth/signOut')
     .post(signOut)
 
-Router.route('/verify/:uniqueString')
-    .get(verifyEmail)
+UserRouter.route('/verify/:uniqueString')
+    .get(verificarEmail)
+
+module.exports = UserRouter
 
 
-module.exports = Router
+
+

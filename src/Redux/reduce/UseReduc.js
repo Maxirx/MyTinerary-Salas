@@ -1,8 +1,12 @@
-import { Satellite } from "@mui/icons-material"
+
 
 const initialState = {
     usuario: null,
-    message: null
+    snackbar: {
+        view: false,
+        message: '',
+        success: false
+    },
 }
 
 const UseReduc = (state = initialState, action) => {
@@ -11,12 +15,12 @@ const UseReduc = (state = initialState, action) => {
         case 'user':
             return {
                 ...state,
-                user: action.payload
+                usuario: action.payload
             }
         case 'message':
             return {
-                ...Satellite,
-                message: action.payload,
+                ...state,
+                snackbar: action.payload,
             }
 
         default:

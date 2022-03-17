@@ -16,14 +16,11 @@ import axios from 'axios'
 import CiudadDetalle from './Componentes/detalle';
 import PaginaDetalles from './Componentes/paginaDetalle';
 import PagEntrada from './Componentes/PagEntrada';
+import EntradaSesion from './Componentes/entrada'
+import Registro from './Componentes/Registro'
+import Snack from './Componentes/BarraAlerta'
 
 
-/* import { Provider } from 'ract-redux';
-import { createStore, apllyMiddleware } from 'redux';
-import thunk from 'redux-thunk'
-import mainReducer from '.redux/reducers/mainReducer'
-
-const reduxStore = createStore(mainReducer, apllyMiddleware(thunk)) */
 
 
 function App() {
@@ -41,6 +38,9 @@ function App() {
           <Route path='*' element={<Main />} />
           <Route path='/User' element={<PagEntrada />} />
           <Route path="/cities/detalle/:id" element={<PaginaDetalles />} />
+          <Route path='/user/signin' element={<EntradaSesion />} />
+          <Route path='/user/signup' element={<Registro />} />
+          {/*    <Snack /> */}
         </Routes>
         <Footer />
       </BrowserRouter>

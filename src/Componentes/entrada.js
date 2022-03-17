@@ -4,6 +4,7 @@ import { Link as LinkRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function EntradaSesion(props) {
+    console.log(props);
 
 
     const submit = (event) => {
@@ -11,7 +12,7 @@ function EntradaSesion(props) {
         const usuarioLogeado = {
             email: event.target[0].value,
             password: event.target[1].value,
-            from: "form-Signin"
+            from: "form-signup"
         }
         props.SignIn(usuarioLogeado)
     }
@@ -30,7 +31,7 @@ function EntradaSesion(props) {
                 <button>SignIn</button>
             </div>
             <div>
-                <p>Don't you have am account?</p><LinkRouter to="/signup">signUp</LinkRouter>
+                <p>Don't you have am account?</p><LinkRouter to="/user/signup">signUp</LinkRouter>
             </div>
         </form>
     )

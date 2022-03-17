@@ -4,7 +4,8 @@ import { combineReducers } from 'redux'
 import CiudadesRedu from './CiudadesRedu'
 import ItinerariosRedu from './ItinerariosRedu'
 /* import authReducer from '' */
-import actionUser from './UseReduc'
+
+import UseReduc from './UseReduc'
 
 
 
@@ -12,7 +13,7 @@ const PrincipalReducer = combineReducers({
 
     CiudadesRedu,
     ItinerariosRedu,
-    actionUser
+    UseReduc
 
 
 })

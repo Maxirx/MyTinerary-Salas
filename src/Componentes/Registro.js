@@ -4,25 +4,30 @@ import { Link as LinkRouter } from 'react-router-dom';
 import UserActions from '../Redux/action/registroAction';
 
 function Registro(props) {
+
     const submit = (event) => {
-        event.prevenDefault()
+        event.preventDefault()
+
 
         const datosUsuario = {
             Name: event.target[0].value,
             email: event.target[1].value,
             password: event.target[2].value,
-            from: "form-Signup"
+            from: "form-signup"
         }
         props.registroUser(datosUsuario)
+
     }
 
-
-    console.log(props.message)
-    alert(props.message.message)
 
     return (
 
         <form onSubmit={submit}>
+            <div>
+                <label for=""></label>
+                <input type="text" name="Name" placeholder="Full Name" />
+            </div>
+
             <div>
                 <label for="email"></label>
                 <input type="text" name="email" placeholder="Email Addres" />
@@ -31,22 +36,16 @@ function Registro(props) {
                 <label for="password"></label>
                 <input type="password" name="password" placeholder="Create a Password" />
             </div>
-            <div>
-                <label for=""></label>
-                <input type="text" name="Name" placeholder="Full Name" />
-            </div>
 
             <div>
                 <button type="submit"> Create a Account</button>
             </div>
-            <div>"Do Uou have an Account? <LinkRouter to="/signup">SignIn</LinkRouter></div>
+            <div>"Do you have an Account? <LinkRouter to="/user/signin">SignIn</LinkRouter></div>
         </form>
     )
 }
 
-const mapDispatchToProps = {
-    registroUser: UserActions.registroUser,
-}
+
 
 const mapStateToProps = (state) => {
     return {
@@ -54,4 +53,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapDispatchToProps, mapStateToProps)(Registro)
+const mapDispatchToProps = {
+    registroUser: UserActions.registroUser,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Registro)

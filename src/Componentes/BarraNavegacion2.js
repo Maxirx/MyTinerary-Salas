@@ -16,18 +16,23 @@ import './barra.css'
 import red from '@mui/material/colors';
 /* import { connect } from '../../BackEnd/rutas/UserRutas'; */
 import { AppRegistrationOutlined } from '@mui/icons-material';
+import { connect } from 'react-redux';
+import UserActions from '../Redux/action/registroAction';
 
 
 const pages = ['Home', 'Cities'];
+const account = ['signin', 'signup']
 
-function Barra2() {
+function Barra2(props) {
     const [auth, setAuth] = React.useState(true);
     const [AnchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorEl, setAnchorEl] = React.useState(null);
 
 
+
     const handleChange = (event) => {
         setAuth(event.target.checked);
+        props.signOut(props.usuario.email)
     };
 
     const handleMenu = (event) => {
@@ -127,8 +132,11 @@ function Barra2() {
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
                             >
-                                <MenuItem onClick={handleClose}>Sign In</MenuItem>
-                                <MenuItem onClick={handleClose}>Sign Out</MenuItem>
+                                {account.map((account) => (
+                                    <LinkRouter to={`/user/${account}`}>
+                                        <MenuItem key={account} onClick={handleCloseNavMenu}>
+                                            <Typography textAlign="center">{account}</Typography>
+                                        </MenuItem></LinkRouter>))}
                             </Menu>
                         </div>
                     )}
@@ -138,10 +146,14 @@ function Barra2() {
     );
 }
 
-/* const mapDispatchToProps = {
+const mapStateToProps = (state) => {
+    return {
+        usuario: state.UseReduc.usuario,
+    }
+}
 
-    signOut: RegistroAction.signOut
+const mapDispatchToProps = {
+    signOut: UserActions.signOut
+}
 
-} */
-
-export default /* connect(mapDispatchToProps, null) */(Barra2)
+export default connect(mapStateToProps, mapDispatchToProps)(Barra2)
