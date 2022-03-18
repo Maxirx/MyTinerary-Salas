@@ -119,7 +119,7 @@ function Barra2(props) {
                                 onClick={handleMenu}
                                 color="inherit"
                             >
-                                {props.user ? <Avatar alt="Remy Sharp" src={props.user.image} /> :
+                                {props.usuario ? <Avatar alt="Remy Sharp" src={props.usuario.image} /> :
                                     <AccountCircle id="accountcircle" />}
                             </IconButton>
                             <Menu

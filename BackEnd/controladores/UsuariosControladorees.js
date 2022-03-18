@@ -184,7 +184,6 @@ const usuariosControlladores = {
                             id: UsuarioYaExiste._id,
                             Name: UsuarioYaExiste.Name,
                             email: UsuarioYaExiste.email,
-                            country: UsuarioYaExiste.country,
                             image: UsuarioYaExiste.image,
                             from: UsuarioYaExiste.from
                         }
