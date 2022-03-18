@@ -7,7 +7,7 @@ const PaisesAct = {
             const res = await axios.get('https://restcountries.com/v2/all?fields=name')
 
 
-            let mapa = res.data.map((rati) => rati.name)
+            let mapa = res.data.map((paises) => paises.name)
             console.log(mapa)
             dispatch({
                 type: 'fetchPa',

@@ -10,7 +10,7 @@ import ItinerariesRedu from '../Redux/action/itinerariosAct'
 function Registro(props) {
     console.log(props);
     const paises = [...props.pais]
-
+    paises.unshift("unselected")
     const [selectPaises, setSelectPaises] = useState("unselected")
 
     useEffect(() => {
@@ -29,8 +29,10 @@ function Registro(props) {
             Name: event.target[0].value,
             email: event.target[1].value,
             password: event.target[2].value,
-            from: "form-signup",
+            image: event.target[3].value,
             country: selectPaises,
+            from: "form-signup",
+
 
         }
         props.registroUser(datosUsuario)
@@ -38,7 +40,6 @@ function Registro(props) {
     }
 
 
-    console.log(props.pais);
     return (<div>
         <div>
             <select onChange={selected}>
@@ -53,7 +54,7 @@ function Registro(props) {
 
         </div>
 
-        {selectPaises !== "unselected" ?
+        {selectPaises != "unselected" ?
             <div>
                 <h4 className="card-title mt-3 text-center">User Account</h4>
                 <p className="text-center">Get started with your free account</p>
@@ -82,14 +83,14 @@ function Registro(props) {
 
                     <div>
                         <label for="image"></label>
-                        <input type="url" name="image" placeholder="image" />
+                        <input type="text" name="image" placeholder="image" />
                     </div>
 
-                    <div>
+                    {/*                     <div>
                         <label for="country"></label>
                         <input type="text" name="country" placeholder="country" />
                     </div>
-
+ */}
                     <div>
                         <button type="submit"> Create a Account</button>
                     </div>
