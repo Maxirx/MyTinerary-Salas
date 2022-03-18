@@ -21,7 +21,7 @@ function PagEntrada(props) {
     return (
         <main className='pagDetalles'>
 
-            {props.usuario !== null ? <div>  <h1> Conected {props.usuario.Name} from {props.usuario.form}</h1>
+            {props.usuario !== null ? <div>  <h1> Conected {props.usuario.Name} from {props.usuario.from[0]}</h1>
                 <div><button onClick={CerrarSesion}> signOut</button>
                 </div></div>
                 : <><h1>No Conected</h1><div>

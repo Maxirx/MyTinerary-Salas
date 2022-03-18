@@ -158,7 +158,7 @@ const usuariosControlladores = {
     },
 
     entradaUsuario: async (req, res) => {
-        const { email, password, from } = req.body.usuarioLogeado
+        const { email, password, from, image } = req.body.usuarioLogeado
         console.log(req.body);
         try {
             const UsuarioYaExiste = await User.findOne({ email })
@@ -198,7 +198,7 @@ const usuariosControlladores = {
                             response: { token, datosUsuario },
                             message: "Welcome again " + datosUsuario.Name,
                         })
-                        /* res.redirect("http://localhost:3000") */
+                        res.redirect("http://localhost:3000")
 
                     } else {
                         res.json({
@@ -216,7 +216,8 @@ const usuariosControlladores = {
                             const datosUsuario = {
                                 Name: UsuarioYaExiste.Name,
                                 email: UsuarioYaExiste.email,
-                                from: UsuarioYaExiste.from
+                                from: UsuarioYaExiste.from,
+                                image: UsuarioYaExiste.image
                             }
 
                             const token = jwt.sign({ ...datosUsuario }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
@@ -224,7 +225,7 @@ const usuariosControlladores = {
                                 success: true,
                                 from: from,
                                 response: { token, datosUsuario },
-                                message: "Bienvenido nuevamente " + datosUsuario.Name,
+                                message: "Welcome  " + datosUsuario.Name + " again!",
                             })
 
                         } else {

@@ -18,6 +18,8 @@ import red from '@mui/material/colors';
 import { AppRegistrationOutlined } from '@mui/icons-material';
 import { connect } from 'react-redux';
 import UserActions from '../Redux/action/registroAction';
+import Avatar from '@mui/material/Avatar';
+
 
 
 const pages = ['Home', 'Cities'];
@@ -117,7 +119,8 @@ function Barra2(props) {
                                 onClick={handleMenu}
                                 color="inherit"
                             >
-                                <AccountCircle />
+                                {props.user ? <Avatar alt="Remy Sharp" src={props.user.image} /> :
+                                    <AccountCircle id="accountcircle" />}
                             </IconButton>
                             <Menu
                                 id="menu-appbar"

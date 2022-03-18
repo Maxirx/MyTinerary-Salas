@@ -12,12 +12,12 @@ function FaceIngreso(props) {
         const usuarioLogeado = {
             email: res.email,
             password: res.id,
-            country: props.pais,
             image: res.picture.data.url,
             from: "facebook",
 
         }
         await props.singIn(usuarioLogeado)
+        console.log(usuarioLogeado);
     }
 
     return (
