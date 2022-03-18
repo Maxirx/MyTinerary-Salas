@@ -57,7 +57,7 @@ function Snack(props) {
                             (<p>{props.snackbar.message}</p>) :
                             <ul>
                                 {props.snackbar.message.map(message =>
-                                    <li>{message.message}</li>
+                                    <li key={message}>{message.message}</li>
                                 )}
                             </ul>
                         }

@@ -34,7 +34,7 @@ class DerivedState extends React.Component {
     */
     render() {
         return (props.name.map(props => (
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }} key={props}>
                 <CardActionArea>
                     <CardMedia
                         component="img"

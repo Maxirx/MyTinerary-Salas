@@ -139,7 +139,7 @@ function Barra2(props) {
                             >{props.usuario == null ?
                                 (
                                     account.map((account) => (
-                                        <LinkRouter to={`/user/${account}`}>
+                                        <LinkRouter key={account} to={`/user/${account}`}>
                                             <MenuItem key={account} onClick={handleCloseNavMenu}>
                                                 <Typography textAlign="center">{account}</Typography>
                                             </MenuItem></LinkRouter>))

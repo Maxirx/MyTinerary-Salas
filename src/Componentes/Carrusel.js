@@ -10,8 +10,9 @@ const MyDot = ({ isActive }) => (ciudades.map(ciudades =>
             height: isActive ? '8px' : '5px #ccc',
             width: isActive ? '16px {ciudades.image}' : '5px #ccc',
             background: ciudades.image
-        }}
 
+        }}
+        key={ciudades}
     ></span>))
 
 const MyLeftArrow = ({ isActive }) => (
