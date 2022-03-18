@@ -8,7 +8,7 @@ import "./barra.css"
 import FaceRegistro from "./faceRegistro";
 import { FacebookLogin } from "react-facebook-login";
 import FaceIngreso from "./FaceIngreso";
-import Redirect from 'react-redux'
+
 
 
 function PagEntrada(props) {

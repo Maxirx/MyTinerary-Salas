@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 import { Link as LinkRouter } from 'react-router-dom';
 import UserActions from '../Redux/action/registroAction';
-import redirect from 'react-redux'
+
 import FaceRegistro from './faceRegistro';
 import PaisesAct from '../Redux/action/PaisAct';
 import ItinerariesRedu from '../Redux/action/itinerariosAct'
@@ -94,9 +94,10 @@ function Registro(props) {
                     <div>
                         <button type="submit"> Create a Account</button>
                     </div>
-                    <div>"Do you have an Account? <LinkRouter to="/user/signin">SignIn</LinkRouter></div>
+
                 </form>
             </div> : <h1>choose a country</h1>}
+        <div><p>Do you have an Account? </p><LinkRouter to="/user/signin"><button>SignIn</button></LinkRouter></div>
     </div>
     )
 }

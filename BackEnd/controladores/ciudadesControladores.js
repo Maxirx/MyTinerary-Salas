@@ -15,7 +15,7 @@ const ciudadesControladores = {
         response.json({
 
             respuesta: error ? 'ERROR' : { ciudades },
-            succes: error ? false : true,
+            success: error ? false : true,
             error: error
         })
 

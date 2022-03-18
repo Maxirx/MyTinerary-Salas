@@ -17,6 +17,7 @@ const UserActions = {
                     success: res.data.success
                 }
             });
+
         }
 
     },
@@ -31,7 +32,10 @@ const UserActions = {
             if (user.data.success) {
                 console.log(user);
                 localStorage.setItem('token', user.data.response.token)
-                dispatch({ type: 'user', payload: user.data.response.userData })
+                dispatch({
+                    type: 'user',
+                    payload: user.data.response.datosUsuario
+                })
             }
             dispatch({
                 type: 'message',

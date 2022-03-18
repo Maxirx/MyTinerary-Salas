@@ -21,7 +21,7 @@ import UserActions from '../Redux/action/registroAction';
 
 
 const pages = ['Home', 'Cities'];
-const account = ['signin', 'signup', '']
+const account = ['User']
 
 function Barra2(props) {
     console.log(props);
@@ -133,12 +133,19 @@ function Barra2(props) {
                                 }}
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
-                            >
-                                {account.map((account) => (
-                                    <LinkRouter to={`/user/${account}`}>
+                            >{props.usuario == null ?
+                                (
+                                    account.map((account) => (
+                                        <LinkRouter to={`/user/${account}`}>
+                                            <MenuItem key={account} onClick={handleCloseNavMenu}>
+                                                <Typography textAlign="center">{account}</Typography>
+                                            </MenuItem></LinkRouter>))
+                                ) : (
+                                    <LinkRouter to={`/`}>
                                         <MenuItem key={account} onClick={handleCloseNavMenu}>
-                                            <Typography textAlign="center">{account}</Typography>
-                                        </MenuItem></LinkRouter>))}
+                                            <Typography textAlign="center">Close session</Typography>
+                                        </MenuItem></LinkRouter>)
+                                }
                             </Menu>
                         </div>
                     )}

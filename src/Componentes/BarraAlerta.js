@@ -39,7 +39,7 @@ function Snack(props) {
             }
         });
     };
-
+    console.log(props.snackbar);
     return (
         <div>
             {props.snackbar.view === true && (

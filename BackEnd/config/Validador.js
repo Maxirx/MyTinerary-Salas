@@ -13,9 +13,10 @@ const Validador = (req, res, next) => {
             'string.min': 'password must have a minium 8 characters and contain mayus, minus and number',
             'string.pattern': "password must be alphanumeric and must contain a number"
         }),
-
+        country: joi.string(),
+        image: joi.string(),
         from: joi.string(),
-        country: joi.string()
+
 
     })
 
@@ -23,7 +24,7 @@ const Validador = (req, res, next) => {
 
     if (Validacion.error) {
 
-        return res.json({ succes: false, from: "validator", message: Validacion.error.details })
+        return res.json({ success: false, from: "validator", message: Validacion.error.details })
 
     }
 

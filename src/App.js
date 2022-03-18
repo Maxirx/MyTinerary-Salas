@@ -50,6 +50,7 @@ function App(props) {
           <Route path='/cities' element={<CiudadesPag />} />
           <Route path='*' element={<Main />} />
           <Route path='/User' element={<PagEntrada />} />
+          <Route path='/User/User' element={<PagEntrada />} />
           <Route path="/cities/detalle/:id" element={<PaginaDetalles />} />
           <Route path='/user/signin' element={<EntradaSesion />} />
           <Route path='/user/signup' element={<Registro />} />

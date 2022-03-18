@@ -5,7 +5,7 @@ const ItinerariosControladores = {
     consultarItinerarios: async (req, res) => {
         try {
             let itineraries = await Itinerarios.find()
-            res.json({ succes: true, response: itineraries })
+            res.json({ success: true, response: itineraries })
         } catch (error) {
             res.json({ success: false, response: error.message })
         }
