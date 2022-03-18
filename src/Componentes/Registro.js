@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 import { Link as LinkRouter } from 'react-router-dom';
 import UserActions from '../Redux/action/registroAction';
 import redirect from 'react-redux'
 import FaceRegistro from './faceRegistro';
-
+import PaisesAct from '../Redux/action/PaisAct';
+import ItinerariesRedu from '../Redux/action/itinerariosAct'
 
 function Registro(props) {
-    const paises = ["unselected", "Argentina", "Brazil", "Colombia", "Chile", "Uruguay"]
+    console.log(props);
+    const paises = [...props.pais]
 
     const [selectPaises, setSelectPaises] = useState("unselected")
+
+    useEffect(() => {
+        props.fetchearPaises()
+    }, [])
 
     function selected(event) {
         console.log(event.target.value)
@@ -32,6 +38,7 @@ function Registro(props) {
     }
 
 
+    console.log(props.pais);
     return (<div>
         <div>
             <select onChange={selected}>
@@ -98,11 +105,16 @@ function Registro(props) {
 const mapStateToProps = (state) => {
     return {
         message: state.UseReduc.message,
+        pais: state.dataReducer.pais,
+
     }
 }
 
 const mapDispatchToProps = {
     registroUser: UserActions.registroUser,
+    fetchearPaises: PaisesAct.fetchearPaises,
 }
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Registro)

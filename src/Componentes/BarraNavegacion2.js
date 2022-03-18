@@ -24,6 +24,7 @@ const pages = ['Home', 'Cities'];
 const account = ['signin', 'signup', '']
 
 function Barra2(props) {
+    console.log(props);
     const [auth, setAuth] = React.useState(true);
     const [AnchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -66,11 +67,7 @@ function Barra2(props) {
                         />
                     }
                     label={auth ? 'Logout' : 'Login'}
-                />{auth ?
-                    <div class="modal-dialog modal-dialog-centered">
-                        Conectado
-                    </div>
-                    : ''}
+                />
             </FormGroup>
             <AppBar position="static" id='barraAbajo'>
                 <Toolbar>

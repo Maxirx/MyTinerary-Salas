@@ -18,7 +18,7 @@ function EntradaSesion(props) {
             from: "form-signup"
         }
 
-        props.SignIn(usuarioLogeado)
+        props.singIn(usuarioLogeado)
     }
 
     return (<div>
@@ -45,7 +45,7 @@ function EntradaSesion(props) {
 }
 
 const mapDispatchToProps = {
-    SignIn: UserActions.singIn,
+    singIn: UserActions.singIn,
 }
 export default connect(null, mapDispatchToProps)(EntradaSesion)
 

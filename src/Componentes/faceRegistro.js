@@ -9,7 +9,7 @@ function FaceRegistro(props) {
 
     const respuestaFace = async (res) => {
         console.log(res);
-        const usuarioLogeado = {
+        const datosUsuario = {
             Name: res.name,
             email: res.email,
             password: res.id,
@@ -18,8 +18,8 @@ function FaceRegistro(props) {
             from: "facebook",
         }
 
-        await props.registroUser(usuarioLogeado)
-        console.table(usuarioLogeado);
+        await props.registroUser(datosUsuario)
+        console.table(datosUsuario);
     }
 
 

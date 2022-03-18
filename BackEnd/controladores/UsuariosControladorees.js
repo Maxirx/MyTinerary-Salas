@@ -156,14 +156,14 @@ const usuariosControlladores = {
         try {
             const UsuarioYaExiste = await User.findOne({ email })
             //Alternativa para recuperar Password
-            console.log(UsuarioYaExiste.from)
-            console.log(from);
-            const passwordIndex = UsuarioYaExiste.from.indexOf(from)
-            console.log(UsuarioYaExiste.password[passwordIndex]);
+            /*             console.log(UsuarioYaExiste.from)
+                        console.log(from);
+                        const passwordIndex = UsuarioYaExiste.from.indexOf(from)
+                        console.log(UsuarioYaExiste.password[passwordIndex]); */
 
 
             if (!UsuarioYaExiste) {
-                res.json({ succes: false, message: "your are not registered, please do a sign In" })
+                res.json({ success: false, message: "your are not registered, please do a sign In" })
 
             } else {
                 if (from !== "form-signup") {
