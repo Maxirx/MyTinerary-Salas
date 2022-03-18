@@ -197,7 +197,7 @@ const usuariosControlladores = {
                             response: { token, datosUsuario },
                             message: "Welcome again " + datosUsuario.Name,
                         })
-                        res.redirect("http://localhost:3000")
+                        /*   res.redirect("http://localhost:3000") */
 
                     } else {
                         res.json({

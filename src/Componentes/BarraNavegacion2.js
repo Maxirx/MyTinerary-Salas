@@ -35,7 +35,7 @@ function Barra2(props) {
 
     const handleChange = (event) => {
         setAuth(event.target.checked);
-        props.signOut(props.usuario.email)
+        props.signOut(event.target.checked)
 
     };
 
@@ -44,10 +44,12 @@ function Barra2(props) {
     };
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
+        /*         props.signOut(props.usuario.email) */
     };
 
     const handleClose = () => {
         setAnchorEl(null);
+        props.signOut(props.usuario.email)
     };
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
@@ -140,12 +142,12 @@ function Barra2(props) {
                                 (
                                     account.map((account) => (
                                         <LinkRouter key={account} to={`/user/${account}`}>
-                                            <MenuItem key={account} onClick={handleCloseNavMenu}>
+                                            <MenuItem key={account} onClick={handleClose}>
                                                 <Typography textAlign="center">{account}</Typography>
                                             </MenuItem></LinkRouter>))
                                 ) : (
                                     <LinkRouter to={`/`}>
-                                        <MenuItem key={account} onClick={handleCloseNavMenu}>
+                                        <MenuItem key={account} onClick={handleClose}>
                                             <Typography textAlign="center">Close session</Typography>
                                         </MenuItem></LinkRouter>)
                                 }

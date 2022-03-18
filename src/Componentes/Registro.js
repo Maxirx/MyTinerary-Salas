@@ -22,6 +22,9 @@ function Registro(props) {
         setSelectPaises(event.target.value)
     }
 
+
+
+
     const submit = (event) => {
         event.preventDefault()
 
@@ -40,8 +43,11 @@ function Registro(props) {
     }
 
 
+
     return (<div>
+        <p className="text-center">Plase Choose a country for Register</p>
         <div>
+
             <select onChange={selected}>
 
                 {paises.map(pais =>
@@ -58,6 +64,7 @@ function Registro(props) {
             <div>
                 <h4 className="card-title mt-3 text-center">User Account</h4>
                 <p className="text-center">Get started with your free account</p>
+
 
                 <p className="divider-text">
                     <span className="bg-light">OR</span>
