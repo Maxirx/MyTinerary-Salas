@@ -74,7 +74,10 @@ const UserActions = {
 
             console.log(user);
             if (user.data.success) {
-                dispatch({ type: 'user' })
+                dispatch({
+                    type: 'user',
+                    payload: user.data.response
+                })
             } else {
                 localStorage.removeItem('token')
             }

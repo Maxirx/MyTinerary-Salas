@@ -4,6 +4,7 @@ import { Link as LinkRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import FaceRegistro from './faceRegistro';
 import FaceIngreso from './FaceIngreso';
+/* import "./barra.css" */
 
 function EntradaSesion(props) {
     console.log(props);
@@ -21,7 +22,7 @@ function EntradaSesion(props) {
         props.singIn(usuarioLogeado)
     }
 
-    return (<div>
+    return (<div/*  className='pagDetalles' */>
         <FaceIngreso />
 
         <form onSubmit={submit}>

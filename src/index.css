@@ -37,6 +37,21 @@ code {
   background-color: pink !important;
 }
 
+main{
+  height: 100%;
+}
+
+#imagenFondo{
+  background-image: url("./recursos/peakpx\(5\).jpg");
+  width: 100%;
+  height: 50vw;
+margin-left: 0%;
+}
+
+#pantalla{
+  visibility: collapse;
+}
+
 #fondo {
   height: 110%;
   width: 100%;
@@ -50,7 +65,7 @@ code {
 
 #principal {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: block;
   position: relative;
   /*   background-image: url("./recursos/peakpx\(1\).jpg"); */
@@ -95,6 +110,7 @@ h3 {
   color: white !important;
   font-size: 1.5rem;
   position: relative;
+
 }
 
 #llamada:hover {
@@ -106,6 +122,31 @@ h3 {
   color: white !important;
   font-size: 1.5rem;
   position: relative;
+
+}
+
+#llamada1 {
+  width: 15rem;
+  background-color: fuchsia;
+  /*   border-radius: 30rem; */
+  border-radius: 100em;
+  margin-top: 5%;
+  color: white !important;
+  font-size: 1.5rem;
+  position: relative;
+  visibility: collapse;
+}
+
+#llamada1:hover {
+  width: 15rem;
+  background-color: red;
+  /*   border-radius: 30rem; */
+  border-radius: 100em;
+  margin-top: 5%;
+  color: white !important;
+  font-size: 1.5rem;
+  position: relative;
+  visibility: collapse;
 }
 
 #LetrasEnBlanco {
@@ -137,13 +178,19 @@ a {
 }
 
 @media only screen and (max-width: 375px) {
+
+  .App{
+height: 250vw!important;
+  }
+
   #principal {
     width: 100%;
-    height: 170vw;
+    min-height: 300vw!important;
     display: block;
     position: relative;
     background-image: url("./recursos/peakpx\(3\).jpg");
-    background-color: white;
+    background-color: black;
+    margin-top: 0%;
   }
 
   #llamada {
@@ -183,6 +230,22 @@ a {
     background-image: url("./recursos/peakpx\(3\).jpg");
     background-repeat: no-repeat;
 
-    background-color: white;
+    background-color: black;
   }
+
+  #imagenFondo{
+width: 0%;
+height: 0%;
+  visibility: hidden;
+  }
+
+  #pantalla{
+    background: transparent;
+    visibility: visible;
+    margin-bottom: 3rem;
+  }
+
+.gallery{
+margin-top: 3rem;
+}
 }

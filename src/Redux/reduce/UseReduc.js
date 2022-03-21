@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const UseReduc = (state = initialState, action) => {
-
+    console.log(action);
     switch (action.type) {
         case 'user':
             console.log(action.payload);

@@ -26,6 +26,8 @@ import { connect } from 'react-redux';
 
 
 
+
+
 function App(props) {
 
   useEffect(() => {
@@ -50,10 +52,10 @@ function App(props) {
           <Route path='/cities' element={<CiudadesPag />} />
           <Route path='*' element={<Main />} />
           <Route path='/User' element={<PagEntrada />} />
-          <Route path='/User/User' element={<PagEntrada />} />
+          {!props.usuario && <Route path='/User/User' element={<PagEntrada />} />}
           <Route path="/cities/detalle/:id" element={<PaginaDetalles />} />
-          <Route path='/user/signin' element={<EntradaSesion />} />
-          <Route path='/user/signup' element={<Registro />} />
+          {!props.usuario && <Route path='/user/signin' element={<EntradaSesion />} />}
+          {!props.usuario && <Route path='/user/signup' element={<Registro />} />}
 
         </Routes>
         <Snack />
@@ -70,6 +72,12 @@ const mapDispatchToProps = {
 
 }
 
+const mapStateToProps = (state) => {
+  return {
+    usuario: state.UseReduc.usuario
+  }
+}
 
 
-export default connect(null, mapDispatchToProps)(App);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

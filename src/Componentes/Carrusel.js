@@ -27,17 +27,17 @@ const Galeria = () => {
 
     return (
         <div className='gallery'>
-            <Carousel cols={4} rows={1} gap={10} loop
+            <Carousel cols={2} rows={2} gap={10} loop
                 showDots={true}
                 hideArrow={false}
                 responsiveLayout={[
                     {
-                        breakpoint: 1440,
-                        cols: 4,
+                        breakpoint: 1025,
+                        cols: 1,
                     },
                     {
                         breakpoint: 900,
-                        cols: 2,
+                        cols: 1,
                         rows: 1
                     },
                     {
@@ -57,7 +57,7 @@ const Galeria = () => {
             >
                 {ciudades.map(ciudades =>
                     <Carousel.Item>
-                        <img width={200} height={130} src={ciudades.image} />
+                        <img width={700} height={370} src={ciudades.image} />
                         <h3 key={ciudades}>{ciudades.name} - {ciudades.country}</h3>
                     </Carousel.Item>)}
                 <Carousel dot={MyLeftArrow} />

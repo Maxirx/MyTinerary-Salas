@@ -3,6 +3,8 @@ const bcryptjs = require('bcryptjs')
 const crypto = require('crypto')
 const nodemailer = require('nodemailer')
 const jwt = require('jsonwebtoken')
+const { LinkedCameraSharp } = require('@mui/icons-material')
+const Itinerarios = require('../models/Itinerarios')
 
 
 
@@ -170,7 +172,7 @@ const usuariosControlladores = {
 
 
             if (!UsuarioYaExiste) {
-                res.json({ success: false, message: "your are not registered, please do a sign In" })
+                res.json({ success: false, message: "you are not registered, please do a sign In" })
 
             } else {
                 if (from !== "form-signup") {
@@ -189,7 +191,7 @@ const usuariosControlladores = {
                         }
                         await UsuarioYaExiste.save()
 
-                        const token = jwt.sign({ ...datosUsuario }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
+                        const token = jwt.sign({ ...datosUsuario }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 72 })
 
                         res.json({
                             success: true,
@@ -203,14 +205,14 @@ const usuariosControlladores = {
                         res.json({
                             success: false,
                             from: from,
-                            message: "No has realizado el registro con " + from + "si quieres ingresar con este metodo debes hacer el signUp con " + from
+                            message: "if  you want enter with this way, you have sing Up with" + from
                         })
                     }
                 } else {
                     if (UsuarioYaExiste.emailVerify) {
                         let contraseñaCoincide = UsuarioYaExiste.password.filter(pass => bcryptjs.compareSync(password, pass))
-                        console.log(contraseñaCoincide)
-                        console.log("resultado de busqueda de contrasela: " + (contraseñaCoincide.length > 0))
+                        /*                         console.log(contraseñaCoincide)
+                                                console.log("resultado de busqueda de contrasela: " + (contraseñaCoincide.length > 0)) */
                         if (contraseñaCoincide.length > 0) {
                             const datosUsuario = {
                                 Name: UsuarioYaExiste.Name,
@@ -220,6 +222,7 @@ const usuariosControlladores = {
                             }
 
                             const token = jwt.sign({ ...datosUsuario }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
+
                             res.json({
                                 success: true,
                                 from: from,
@@ -261,13 +264,13 @@ const usuariosControlladores = {
         const email = req.body.closeuser
         const user = await User.findOne({ email })
         await user.save()
-        res.json(console.log('close session ' + email))
+        res.json(console.log('Closing session ' + email))
 
     },
 
     verificarToken: (req, res) => {
         console.log(req.user);
-        if (req.err) {
+        if (req.user) {
             res.json({
                 success: true,
                 response: {
@@ -279,7 +282,7 @@ const usuariosControlladores = {
                     from: "token",
 
                 },
-                message: "welcome again " + req.user.Name
+                message: "Welcome again " + req.user.Name
             })
 
         } else {
@@ -288,7 +291,43 @@ const usuariosControlladores = {
                 message: "Please login again"
             })
         }
+    },
+
+    LikeDislike: async (req, res) => {
+        const id = req.params.id;
+        const user = req.body.user
+        let itinerarioLocal
+
+        try {
+            itinerarioLocal = await Itinerarios.findOne({ _id: id })
+
+            if (Itinerarios.likes.includes(user)) {
+
+                Itinerarios.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })
+                    .then((response) => res.json({ success: true, response1: response.likes }))
+
+                    .catch(error => console.log(error))
+            } else {
+                Itinerarios.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
+                    .then((response) => res.json({ success: true, response1: response.likes }))
+
+                    .catch(error => console.log(error))
+
+            }
+
+
+        } catch (err) {
+            error = err
+            res.json({
+                success: false,
+                response: error
+            })
+
+
+        }
     }
+
+
 
 }
 

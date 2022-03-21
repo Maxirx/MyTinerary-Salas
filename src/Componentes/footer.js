@@ -15,7 +15,7 @@ const Footer = () => {
                 <ul>
                     <li className="item"> <LinkRouter to='/Home' >Home </LinkRouter></li>
 
-                    <li className="item"><LinkRouter to='/cities' >Discover the World </LinkRouter> </li>
+                    <li className="item"><LinkRouter to='/cities' >Discover the World™ </LinkRouter> </li>
                 </ul>
             </div>
 

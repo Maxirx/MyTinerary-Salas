@@ -6,6 +6,7 @@ import UserActions from '../Redux/action/registroAction';
 import FaceRegistro from './faceRegistro';
 import PaisesAct from '../Redux/action/PaisAct';
 import ItinerariesRedu from '../Redux/action/itinerariosAct'
+/* import "./barra.css" */
 
 function Registro(props) {
     console.log(props);
@@ -44,7 +45,7 @@ function Registro(props) {
 
 
 
-    return (<div>
+    return (<div /* className='pagDetalles' */>
         <p className="text-center">Plase Choose a country for Register</p>
         <div>
 

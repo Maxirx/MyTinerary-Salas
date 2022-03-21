@@ -1,4 +1,6 @@
+const passport = require('../config/passport')
 const ItinerariosControladores = require('../controladores/ItinerariosControladores')
+const { LikeDislike } = require('../controladores/UsuariosControladorees')
 
 const ItiRouter = require('express').Router()
 
@@ -15,6 +17,9 @@ ItiRouter.route('/itinerario/:id')
 
 ItiRouter.route('/itinerario/:city')
     .get(consultarItinerariosPorCiudad)
+
+ItiRouter.route("/likes/:id")
+    .put(passport.authenticate("jwt", { session: false }), LikeDislike)
 
 
 module.exports = ItiRouter
