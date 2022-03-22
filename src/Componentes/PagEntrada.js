@@ -8,6 +8,7 @@ import "./barra.css"
 import FaceRegistro from "./faceRegistro";
 import { FacebookLogin } from "react-facebook-login";
 import FaceIngreso from "./FaceIngreso";
+import LikeButton from "./Likes";
 
 
 
@@ -36,7 +37,7 @@ function PagEntrada(props) {
                     </article>
                 </div></>}
 
-        </main>
+        </main >
     )
 
 

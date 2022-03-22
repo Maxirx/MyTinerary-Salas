@@ -1,10 +1,10 @@
 const passport = require('../config/passport')
 const ItinerariosControladores = require('../controladores/ItinerariosControladores')
-const { LikeDislike } = require('../controladores/UsuariosControladorees')
+
 
 const ItiRouter = require('express').Router()
 
-const { consultarItinerarios, agregarItinerario, borrarItinerario, modificarItinerario, consultarItinerariosPorID, consultarItinerariosPorCiudad } = ItinerariosControladores
+const { consultarItinerarios, agregarItinerario, borrarItinerario, modificarItinerario, LikeDislike, consultarItinerariosPorID, consultarItinerariosPorCiudad } = ItinerariosControladores
 
 ItiRouter.route('/itinerario')
     .get(consultarItinerarios)

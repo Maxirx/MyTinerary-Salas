@@ -12,9 +12,9 @@ const itinerariosSchema = new mongoose.Schema({
     hashtags: { type: Array, required: true },
     user: { type: String, required: true },
     photo: { type: String, required: true },
-    likes: { type: Number, required: true },
+    likes: { type: Array, required: true },
     comment: { type: Array, required: true },
-    /* likes: {type: Array} */
+
 
 })
 

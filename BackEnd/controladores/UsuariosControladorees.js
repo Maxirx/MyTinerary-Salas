@@ -291,40 +291,6 @@ const usuariosControlladores = {
                 message: "Please login again"
             })
         }
-    },
-
-    LikeDislike: async (req, res) => {
-        const id = req.params.id;
-        const user = req.body.user
-        let itinerarioLocal
-
-        try {
-            itinerarioLocal = await Itinerarios.findOne({ _id: id })
-
-            if (Itinerarios.likes.includes(user)) {
-
-                Itinerarios.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })
-                    .then((response) => res.json({ success: true, response1: response.likes }))
-
-                    .catch(error => console.log(error))
-            } else {
-                Itinerarios.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
-                    .then((response) => res.json({ success: true, response1: response.likes }))
-
-                    .catch(error => console.log(error))
-
-            }
-
-
-        } catch (err) {
-            error = err
-            res.json({
-                success: false,
-                response: error
-            })
-
-
-        }
     }
 
 

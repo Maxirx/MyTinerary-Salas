@@ -4,7 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { Link as LinkRouter } from "react-router-dom"
+import { Link as LinkRouter } from "react-router-dom";
+/* import LikeButton from './Likes' */
 
 
 
@@ -33,7 +34,7 @@ export default function ActionAreaCard(props) {
                                         {resultado.name}
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
-                                        {resultado.country}
+                                        {resultado.country}{/*  < LikeButton /> */}
                                     </Typography>
 
                                 </CardContent></LinkRouter>

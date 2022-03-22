@@ -40,6 +40,44 @@ const ItinerariosControladores = {
             .catch(error => res.json({ error }))
     },
 
+
+    LikeDislike: async (req, res) => {
+        const id = req.params;
+        const user = req.user.id
+        let itinerarioLocal
+        console.log(id);
+        console.log(user);
+
+        try {
+            itinerarioLocal = await Itinerarios.findOne({ _id: id })
+
+            if (itinerarioLocal.likes.includes(user)) {
+
+                Itinerarios.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })
+                    .then((response) => res.json({ success: true, response: response.likes }))
+
+                    .catch(error => console.log(error))
+            } else {
+                Itinerarios.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
+                    .then((response) => res.json({ success: true, response1: response.likes }))
+
+                    .catch(error => console.log(error))
+
+            }
+
+
+        } catch (err) {
+            error = err
+            res.json({
+                success: false,
+                response: error
+            })
+
+
+        }
+    },
+
+
     consultarItinerariosPorID: async (require, response) => {
         const id = require.params.id
         var itinerarios

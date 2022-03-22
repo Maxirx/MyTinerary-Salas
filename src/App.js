@@ -28,6 +28,7 @@ import { connect } from 'react-redux';
 
 
 
+
 function App(props) {
 
   useEffect(() => {
@@ -56,6 +57,7 @@ function App(props) {
           <Route path="/cities/detalle/:id" element={<PaginaDetalles />} />
           {!props.usuario && <Route path='/user/signin' element={<EntradaSesion />} />}
           {!props.usuario && <Route path='/user/signup' element={<Registro />} />}
+
 
         </Routes>
         <Snack />
