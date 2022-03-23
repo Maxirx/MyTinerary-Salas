@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import cn from "classnames";
 import { ReactComponent as Hand } from "../recursos/hand.svg";
-import { axios } from "axios";
+import axios from "axios";
 import { connect } from 'react-redux';
 
 import "./likes.scss";
@@ -18,18 +18,22 @@ const LikeButton = (props) => {
     const user = props.usuario
     const token = localStorage.getItem("token")
     const id = props.Iti._id
-    console.log(id);
+
     /*    const likes = props.Iti.likes */
 
 
     const LikeDislike = async () => {
-        await axios.put(`http://localhost:4000/api/likes/${props.Iti._id}`, {}, {
+        const data = await axios.put(`http://localhost:4000/api/likes/${props.Iti._id}`, {}, {
             Headers: {
-                'Authorization': 'Bearer ' + token
+                Authorization: "Bearer " + token
             }
-        }
+        }.then(response => console.log(response))
+
         )
-            .then(response => console.log(response))
+        console.log(data)
+        console.log(response)
+        return response
+
     }
 
     return (<>

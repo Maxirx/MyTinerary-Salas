@@ -59,7 +59,7 @@ const ciudadesControladores = {
         ciudades = await Ciudades.findOne({ _id: id })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
-    }
+    },
 }
 
 

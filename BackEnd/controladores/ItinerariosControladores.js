@@ -41,9 +41,31 @@ const ItinerariosControladores = {
     },
 
 
+    consultarItinerariosPorID: async (req, res) => {
+        const id = req.params.id
+        var itinerarios
+        console.log(id);
+
+
+        itinerarios = await Itinerarios.find({ _id: id })
+            .then((res) => response.json({ paso: "listo", respuesta: res }))
+            .catch(error => response.json({ error }))
+    },
+
+    consultarItinerariosPorCiudad: async (require, response) => {
+        const id = require.params.id
+        var itinerarios
+
+
+
+        itinerarios = await Itinerarios.find({ _id: id })
+            .then((res) => response.json({ paso: "listo", respuesta: res }))
+            .catch(error => response.json({ error }))
+    },
+
     LikeDislike: async (req, res) => {
-        const id = req.params;
-        const user = req.user.id
+        const id = req.params.id;
+        const user = req.user.id;
         let itinerarioLocal
         console.log(id);
         console.log(user);
@@ -53,7 +75,7 @@ const ItinerariosControladores = {
 
             if (itinerarioLocal.likes.includes(user)) {
 
-                Itinerarios.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })
+                Itinerarios.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })//quita, saca
                     .then((response) => res.json({ success: true, response: response.likes }))
 
                     .catch(error => console.log(error))
@@ -81,7 +103,6 @@ const ItinerariosControladores = {
     consultarItinerariosPorID: async (require, response) => {
         const id = require.params.id
         var itinerarios
-
 
 
         itinerarios = await Itinerarios.find({ city: id })
