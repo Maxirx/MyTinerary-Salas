@@ -103,20 +103,22 @@ const ItinerariosControladores = {
     consultarItinerariosPorID: async (require, response) => {
         const id = require.params.id
         var itinerarios
+        console.log(id);
 
 
-        itinerarios = await Itinerarios.find({ city: id })
+        itinerarios = await Itinerarios.find({ _id: id })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
 
     consultarItinerariosPorCiudad: async (require, response) => {
-        const id = require.params.id
+        const city = require.params.city
         var itinerarios
+        console.log(city);
 
 
 
-        itinerarios = await Itinerarios.find({ _id: id })
+        itinerarios = await Itinerarios.find({ city: city })
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     }

@@ -15,7 +15,7 @@ ItiRouter.route('/itinerario/:id')
     .put(modificarItinerario)
     .get(consultarItinerariosPorID)
 
-ItiRouter.route('/itinerario/:city')
+ItiRouter.route('/itinerarios/:city')
     .get(consultarItinerariosPorCiudad)
 
 ItiRouter.route("/likes/:id")
