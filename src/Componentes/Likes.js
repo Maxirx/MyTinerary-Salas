@@ -16,23 +16,29 @@ const LikeButton = (props) => {
     const [clicked, setClicked] = useState(false);
     const [like, setLike] = useState(0);
     const user = props.usuario
-    const token = localStorage.getItem("token")
-    const id = props.Iti._id
+
+
+
+
 
     /*    const likes = props.Iti.likes */
 
 
     const LikeDislike = async () => {
-        const data = await axios.put(`http://localhost:4000/api/likes/${props.Iti._id}`, {}, {
+        const token = localStorage.getItem("token")
+        const id = props.Iti._id
+        console.log(id);
+        console.log(token);
+        await axios.put(`http://localhost:4000/api/likes/${id}`, {}, {
             Headers: {
-                Authorization: "Bearer " + token
+                'Authorization': 'Bearer ' + token
             }
-        }.then(response => console.log(response))
+        }/* .then(response => console.log(response)) */
 
         )
-        console.log(data)
-        console.log(response)
-        return response
+
+        /*         console.log(response)
+                return response */
 
     }
 
@@ -53,7 +59,7 @@ const LikeButton = (props) => {
                 <div className="particles">
                     {particleList.map((_, index) => (
                         <div
-                            className="particle-rotate"
+                            className="particle-rotate" key={index}
                             style={{
                                 transform: `rotate(${(360 / particleList.length) * index + 1
                                     }deg)`,

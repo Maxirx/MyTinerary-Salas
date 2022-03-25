@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const itinerariosSchema = new mongoose.Schema({
 
 
-    activity: { type: String, required: true },
+    activityTitle: { type: String, required: true },
+    Activity: { type: String, required: true },
     nameCity: { type: String, required: true },
     nameItinerary: { type: String, required: true },
     imageCity: { type: String, required: true },

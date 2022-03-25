@@ -22,9 +22,10 @@ const ActividadesControladores = {
     },
     agregarActividad: async (required, response) => {
 
-        const { activity,
+        const { activityTitle, activity,
             nameCity, nameItinerary, imageCity, ItineraryId } = required.body
         new Ciudades({
+            activityTitle,
             activity, nameCity, nameItinerary, imageCity, ItineraryId
         }).save()
             .then((respuesta) => response.json({ respuesta }))

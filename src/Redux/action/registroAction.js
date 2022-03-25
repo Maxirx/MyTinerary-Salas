@@ -70,17 +70,35 @@ const UserActions = {
                     }
 
                 }
-            )
-
-            console.log(user);
-            if (user.data.success) {
-                dispatch({
-                    type: 'user',
-                    payload: user.data.response
-                })
-            } else {
-                localStorage.removeItem('token')
+            ).then(user => {
+                console.log(user)
+                if (user.data.success) {
+                    dispatch({ type: 'user', payload: user.data.response });
+                    dispatch({
+                        type: 'message',
+                        payload: {
+                            view: true,
+                            message: user.data.message,
+                            success: user.data.success
+                        }
+                    });
+                } else {
+                    localStorage.removeItem('token')
+                }
             }
+            ).catch(error => {
+                console.log(error.response.status)
+                if (error.response.status === 401)
+                    dispatch({
+                        type: 'message',
+                        payload: {
+                            view: true,
+                            message: "Please, Sign In again",
+                            success: false
+                        }
+                    })
+                localStorage.removeItem('token')
+            })
         }
     }
 
