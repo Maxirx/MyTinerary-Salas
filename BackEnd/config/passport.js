@@ -12,12 +12,12 @@ module.exports = passport.use(new jwtStrategy({
     jwtFromRequest: extractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.SECRET_KEY
 }, (jwt_payload, done) => {
-    console.log(jwt_payload);
+    /*    console.log(jwt_payload); */
     User.findOne({ _id: jwt_payload.id })
 
         .then(usuario => {
 
-            console.log(usuario);
+            /*     console.log(usuario); */
             if (usuario) {
                 return done(null, usuario)
             } else if (err) {

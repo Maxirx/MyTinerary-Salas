@@ -44,7 +44,7 @@ const ItinerariosControladores = {
     consultarItinerariosPorID: async (req, res) => {
         const id = req.params.id
         var itinerarios
-        console.log(id);
+        /*         console.log(id); */
 
 
         itinerarios = await Itinerarios.find({ _id: id })
@@ -67,9 +67,9 @@ const ItinerariosControladores = {
         const id = req.params.id;
         const user = req.user.id;
         let itinerarioLocal
-        console.log(id);
-        console.log(user);
-
+        /*         console.log(id);
+                console.log(user);
+         */
         try {
             itinerarioLocal = await Itinerarios.findOne({ _id: id })
 
@@ -103,7 +103,7 @@ const ItinerariosControladores = {
     consultarItinerariosPorID: async (require, response) => {
         const id = require.params.id
         var itinerarios
-        console.log(id);
+        /*        console.log(id); */
 
 
         itinerarios = await Itinerarios.find({ _id: id })
@@ -114,7 +114,7 @@ const ItinerariosControladores = {
     consultarItinerariosPorCiudad: async (require, response) => {
         const city = require.params.city
         var itinerarios
-        console.log(city);
+        /*         console.log(city); */
 
 
 

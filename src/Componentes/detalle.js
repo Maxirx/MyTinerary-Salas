@@ -53,7 +53,7 @@ export default function CiudadDetalle(props) {
                                     <Typography variant="body2" color="text.secondary" key={carta}>
                                         <p>Time:{"⌛".repeat(parseInt(carta.duration))}</p> <p>cost:{"💸".repeat(parseInt(carta.price))}
                                         </p><p>  {carta.hashtags.map((arrayHashtag) => (<a href='#'> {arrayHashtag}   </a>))}  </p>
-                                        <p>{/* {"❤".repeat(parseInt(carta.likes))} */}{<LikeButton Iti={carta} />}Likes: {carta.likes}</p>
+                                        <p>{/* {"❤".repeat(parseInt(carta.likes))} */}{<LikeButton Iti={carta} />}</p>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" key={carta}>
                                         <p>subido por</p>

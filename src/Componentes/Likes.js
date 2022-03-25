@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import cn from "classnames";
 import { ReactComponent as Hand } from "../recursos/hand.svg";
 import axios from "axios";
@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 
 import "./likes.scss";
 import UserActions from "../Redux/action/registroAction";
+import ItinerariosAct from "../Redux/action/itinerariosAct"
+import { SettingsInputAntenna } from "@material-ui/icons";
 
 const particleList = Array.from(Array(10));
 
@@ -16,40 +18,45 @@ const LikeButton = (props) => {
     const [clicked, setClicked] = useState(false);
     const [like, setLike] = useState(0);
     const user = props.usuario
+    const [reload, setReload] = useState(false)
+
+    /*   const token = localStorage.getItem("token") */
+    const id = props.Iti._id
+    useEffect(() => {
+        props.obtenerIti(id)
+            .then(response => console.log(response.data));
+    }, setReload[reload])
 
 
-
-
-
-    /*    const likes = props.Iti.likes */
+    const likes = props.Iti.likes.length
 
 
     const LikeDislike = async () => {
-        const token = localStorage.getItem("token")
-        const id = props.Iti._id
+        const token = localStorage.getItem('token')
         console.log(id);
         console.log(token);
+
         await axios.put(`http://localhost:4000/api/likes/${id}`, {}, {
-            Headers: {
+            headers: {
                 'Authorization': 'Bearer ' + token
             }
-        }/* .then(response => console.log(response)) */
+        }
 
         )
 
-        /*         console.log(response)
-                return response */
-
     }
+
+
 
     return (<>
         <button
             onClick={() => {
                 setLiked(!liked);
                 setClicked(true);
+                setLike(+1)
                 LikeDislike();
             }}
-            onAnimationEnd={() => setClicked(false)}
+            onAnimationEnd={() => setClicked(true)}
             className={cn("like-button-wrapper", {
                 liked,
                 clicked,
@@ -75,7 +82,7 @@ const LikeButton = (props) => {
                 <span>Like</span>
                 <span className={cn("suffix", { liked })}>d</span>
             </div>
-        </button>{like}</>
+        </button>{like}Likes: {props.Iti.likes}</>
     );
 };
 
@@ -85,8 +92,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-/* const mapDispatchToProps = {
-    VerificarToken: UserActions.VerificarToken
+const mapDispatchToProps = {
+    obtenerIti: ItinerariosAct.obtenerIti
 }
- */
-export default connect(mapStateToProps,/*  mapDispatchToProps */ null)(LikeButton);
+
+export default connect(mapStateToProps, mapDispatchToProps)(LikeButton);

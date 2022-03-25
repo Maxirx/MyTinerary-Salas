@@ -71,7 +71,7 @@ const UserActions = {
 
                 }
             ).then(user => {
-                console.log(user)
+                /*                 console.log(user) */
                 if (user.data.success) {
                     dispatch({ type: 'user', payload: user.data.response });
                     dispatch({

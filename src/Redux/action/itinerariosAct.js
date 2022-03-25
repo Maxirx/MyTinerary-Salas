@@ -10,6 +10,16 @@ const ItinerariosAct = {
             }
         },
      */
+
+    obtenerIti: () => {
+        return async (dispatch, getState) => {
+            const res = await axios.get('http://localhost:4000/api/itinerario')
+            /* .then(res = dispatch({ tipe: 'push', payload: res.data.respuesta })) */
+            /*     console.log(res); */
+            return res
+        }
+
+    },
     filtoPorItiCiudad: (city) => {
         console.log(city);
         return async (dispatch, getState) => {
@@ -26,6 +36,24 @@ const ItinerariosAct = {
             }
         }
     },
+    /*     likeDislike: (id) => {
+            const token = localStorage.getItem('token')
+            return async () => {
+                try {
+                    let response = await axios.put(`http://localhost:4000/api/likes/${id}`, {},
+                        {
+                            headers: {
+                                Authorization: "Bearer " + token
+                            }
+                        })
+                    console.log(response)
+                    return response
+    
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        } */
 }
 
 export default ItinerariosAct 

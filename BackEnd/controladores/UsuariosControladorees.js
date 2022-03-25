@@ -58,7 +58,7 @@ const usuariosControlladores = {
         const { uniqueString } = req.params;
 
         const usuarioEmail = await User.findOne({ uniqueString: uniqueString })
-        console.log(usuarioEmail);
+        /*         console.log(usuarioEmail); */
         if (usuarioEmail) {
             usuarioEmail.emailVerify = true
             await usuarioEmail.save()
@@ -161,7 +161,7 @@ const usuariosControlladores = {
 
     entradaUsuario: async (req, res) => {
         const { email, password, from, image } = req.body.usuarioLogeado
-        console.log(req.body);
+        /*         console.log(req.body); */
         try {
             const UsuarioYaExiste = await User.findOne({ email })
             //Alternativa para recuperar Password
@@ -269,7 +269,7 @@ const usuariosControlladores = {
     },
 
     verificarToken: (req, res) => {
-        console.log(req.user);
+        /*         console.log(req.user); */
         if (req.user) {
             res.json({
                 success: true,

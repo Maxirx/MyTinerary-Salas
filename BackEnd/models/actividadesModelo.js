@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const itinerariosSchema = new mongoose.Schema({
+const activitiesSchema = new mongoose.Schema({
 
 
     activityTitle: { type: String, required: true },
@@ -13,6 +13,6 @@ const itinerariosSchema = new mongoose.Schema({
 
 })
 
-const Activities = mongoose.model('itinerarios', activitiesSchema)
+const Activities = mongoose.model('activities', activitiesSchema)
 
 module.exports = Activities
