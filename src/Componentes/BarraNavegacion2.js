@@ -101,9 +101,9 @@ function Barra2(props) {
                         open={Boolean(AnchorElNav)}
                         onClose={handleCloseNavMenu}
                     >
-                        {pages.map((page) => (
-                            <LinkRouter to={page}>
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                        {pages.map((page, index) => (
+                            <LinkRouter to={page} key={index}>
+                                <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center" key={page}>{page}</Typography>
                                 </MenuItem></LinkRouter>))}
 

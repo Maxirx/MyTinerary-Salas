@@ -19,13 +19,15 @@ const LikeButton = (props) => {
     const [like, setLike] = useState(0);
     const user = props.usuario
     const [reload, setReload] = useState(false)
+    const [itinerario, setItinerario] = useState()
 
     /*   const token = localStorage.getItem("token") */
     const id = props.Iti._id
     useEffect(() => {
         props.obtenerIti(id)
-            .then(response => console.log(response.data));
-    }, setReload[reload])
+            .then(response => setItinerario(response.data.respuesta[0]))
+    }, [!reload])
+    console.log(itinerario);
 
 
     const likes = props.Iti.likes.length
@@ -33,16 +35,16 @@ const LikeButton = (props) => {
 
     const LikeDislike = async () => {
         const token = localStorage.getItem('token')
-        console.log(id);
+        //        console.log(id);
         console.log(token);
 
-        await axios.put(`http://localhost:4000/api/likes/${id}`, {}, {
+        await axios.put(`http://localhost:4000/api/likes/${itinerario._id}`, {}, {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         }
 
-        )
+        ).then(setReload(!reload))
 
     }
 
@@ -82,7 +84,7 @@ const LikeButton = (props) => {
                 <span>Like</span>
                 <span className={cn("suffix", { liked })}>d</span>
             </div>
-        </button>{like}Likes: {props.Iti.likes}</>
+        </button>{/* {like} */}Likes: {itinerario?.likes.length}</>
     );
 };
 

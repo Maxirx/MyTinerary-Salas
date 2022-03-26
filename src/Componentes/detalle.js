@@ -36,7 +36,7 @@ export default function CiudadDetalle(props) {
             ? (cartaID.map((carta) => {
 
                 return (
-                    <div kay={carta._id}>
+                    <div key={carta._id}>
                         <Card sx={{ maxWidth: 345 }} key={carta._id}>
                             <CardActionArea>
                                 <CardMedia
@@ -52,8 +52,8 @@ export default function CiudadDetalle(props) {
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" key={carta}>
                                         <p>Time:{"⌛".repeat(parseInt(carta.duration))}</p> <p>cost:{"💸".repeat(parseInt(carta.price))}
-                                        </p><p>  {carta.hashtags.map((arrayHashtag) => (<a href='#'> {arrayHashtag}   </a>))}  </p>
-                                        <p>{/* {"❤".repeat(parseInt(carta.likes))} */}{<LikeButton Iti={carta} />}</p>
+                                        </p><p>  {carta.hashtags.map((arrayHashtag, index) => (<a href='#' key={index}> {arrayHashtag}   </a>))}  </p>
+                                        <p>{/* {"❤".repeat(parseInt(carta.likes))} */}{<LikeButton Iti={carta} />}{/* Likes: {carta.likes.length} */}</p>
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" key={carta}>
                                         <p>subido por</p>

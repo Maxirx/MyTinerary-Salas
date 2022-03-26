@@ -77,11 +77,10 @@ const ItinerariosControladores = {
 
                 Itinerarios.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })//quita, saca
                     .then((response) => res.json({ success: true, response: response.likes }))
-
-                    .catch(error => console.log(error))
+                    .catch((error) => console.log(error))
             } else {
                 Itinerarios.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
-                    .then((response) => res.json({ success: true, response1: response.likes }))
+                    .then((response) => res.json({ success: true, response: response.likes }))
 
                     .catch(error => console.log(error))
 
