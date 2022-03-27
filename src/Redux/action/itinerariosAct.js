@@ -36,24 +36,25 @@ const ItinerariosAct = {
             }
         }
     },
-    /*     likeDislike: (id) => {
-            const token = localStorage.getItem('token')
-            return async () => {
-                try {
-                    let response = await axios.put(`http://localhost:4000/api/likes/${id}`, {},
-                        {
-                            headers: {
-                                Authorization: "Bearer " + token
-                            }
-                        })
-                    console.log(response)
-                    return response
-    
-                } catch (error) {
-                    console.log(error)
-                }
+    likeDislike: (id) => {
+        const token = localStorage.getItem('token')
+        console.log(id);
+        return async () => {
+            try {
+                let response = await axios.put(`http://localhost:4000/api/likes/${id}`, {},
+                    {
+                        headers: {
+                            Authorization: "Bearer " + token
+                        }
+                    })
+                console.log(response);
+                return response
+
+            } catch (error) {
+                console.log(error)
             }
-        } */
+        }
+    }
 }
 
 export default ItinerariosAct 

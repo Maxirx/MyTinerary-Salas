@@ -27,7 +27,7 @@ const LikeButton = (props) => {
         props.obtenerIti(id)
             .then(response => setItinerario(response.data.respuesta[0]))
     }, [!reload])
-    console.log(itinerario);
+
 
 
     const likes = props.Iti.likes.length
@@ -48,7 +48,7 @@ const LikeButton = (props) => {
 
     }
 
-
+    console.log(itinerario);
 
     return (<>
         <button
