@@ -16,7 +16,7 @@ const LikeButton = (props) => {
     console.log(props);
     const [liked, setLiked] = useState(null);
     const [clicked, setClicked] = useState(false);
-    const [like, setLike] = useState(0);
+    const [likes, setLikes] = useState(props.Iti.likes);
     const user = props.usuario
     const [reload, setReload] = useState(false)
     const [itinerario, setItinerario] = useState()
@@ -30,7 +30,7 @@ const LikeButton = (props) => {
 
 
 
-    const likes = props.Iti.likes.length
+
 
 
     const LikeDislike = async () => {
@@ -44,7 +44,7 @@ const LikeButton = (props) => {
             }
         }
 
-        ).then(setReload(!reload))
+        ).then(response => setLikes(response.data.response))
 
     }
 
@@ -55,7 +55,7 @@ const LikeButton = (props) => {
             onClick={() => {
                 setLiked(!liked);
                 setClicked(true);
-                setLike(+1)
+                /* setLike(+1) */
                 LikeDislike();
             }}
             onAnimationEnd={() => setClicked(true)}
@@ -84,7 +84,7 @@ const LikeButton = (props) => {
                 <span>Like</span>
                 <span className={cn("suffix", { liked })}>d</span>
             </div>
-        </button>{/* {like} */}Likes: {itinerario?.likes.length}</>
+        </button>{/* {like} */}Likes: {likes.length}</>
     );
 };
 
