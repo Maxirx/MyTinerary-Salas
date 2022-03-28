@@ -62,6 +62,21 @@ const ActividadesControladores = {
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
+    consultarActividadPorItinerario: async (req, res) => {
+
+        try {
+            const activityPerItinerary = await Activities.find({
+                ItineraryId: req.params.id,
+            });
+
+            res.json({
+                success: true,
+                response: activityPerItinerary
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 
 

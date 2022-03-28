@@ -13,7 +13,7 @@ const particleList = Array.from(Array(10));
 
 const LikeButton = (props) => {
 
-    console.log(props);
+    /*   console.log(props); */
     const [liked, setLiked] = useState(null);
     const [clicked, setClicked] = useState(false);
     const [likes, setLikes] = useState(props.Iti.likes);
@@ -36,7 +36,7 @@ const LikeButton = (props) => {
     const LikeDislike = async () => {
         const token = localStorage.getItem('token')
         //        console.log(id);
-        console.log(token);
+        /*     console.log(token); */
 
         await axios.put(`http://localhost:4000/api/likes/${itinerario._id}`, {}, {
             headers: {
@@ -48,7 +48,7 @@ const LikeButton = (props) => {
 
     }
 
-    console.log(itinerario);
+    /*     console.log(itinerario); */
 
     return (<>{props.usuario ?
         (<button
@@ -88,9 +88,9 @@ const LikeButton = (props) => {
         : (<button
             onClick={() => {
                 setLiked(liked);
-                setClicked(true);
+                /*          setClicked(true); */
                 /* setLike(+1) */
-                LikeDislike();
+                /*     LikeDislike(); */
             }}
             onAnimationEnd={() => setClicked(true)}
             className={cn("like-button-wrapper", {

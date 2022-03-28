@@ -43,7 +43,7 @@ function PaginaDetalles(props) {
         }} className="detalles">
             <div><h1>{props.ciudad.name}</h1></div>
             <div id='cartasPaises3'>
-                <CiudadDetalle dataR={props.itineraries} />
+                {props.itineraries.map((itineraries) => (<CiudadDetalle dataR={itineraries} ID={itineraries._id} />))}
             </div> </div>
         </main >
     )

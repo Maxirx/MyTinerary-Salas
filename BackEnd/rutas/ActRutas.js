@@ -4,7 +4,7 @@ const ActRouter = require('express').Router()
 
 
 
-const { consultarActividades, agregarActividad, borrarActividad, modificarActividad, consultarActividadPorID } = ActividadesControladores
+const { consultarActividades, agregarActividad, borrarActividad, modificarActividad, consultarActividadPorID, consultarActividadPorItinerario } = ActividadesControladores
 
 
 ActRouter.route('/todaslasactividades')
@@ -16,6 +16,9 @@ ActRouter.route('/todaslasactividades/:id')
     .put(modificarActividad)
     .get(consultarActividadPorID)
 
+
+ActRouter.route('/actividadesporitinerario/:id')
+    .get(consultarActividadPorItinerario)
 
 module.exports = ActRouter
 
