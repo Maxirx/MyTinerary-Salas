@@ -4,8 +4,8 @@ const comentariosControladores = {
 
     addComment: async (req, res) => {
         console.log(req.params.id);
-        console.log(typeof (req.body.comment));
-        console.log(req.user.id);
+        console.log(req.body.comment);
+        console.log(req.user._id);
         try {
             const nuevoComment = await Itinerarios.findOneAndUpdate(
                 { _id: req.params.id },
@@ -15,7 +15,7 @@ const comentariosControladores = {
                         comments:
                         {
                             comment: req.body.comment,
-                            userID: req.user.id
+                            userID: req.user._id
                         }
                     }
                 },
@@ -29,50 +29,6 @@ const comentariosControladores = {
         }
 
     },
-    /*     modifyComment: async (req, res) => {
-            const {commentID,comments} = req.body
-            console.log(req.body)
-            console.log("commentID")
-            console.log(commentID)
-            console.log("comments")
-            console.log(comments)
-            const user = req.user._id
-            try {
-                const modifyComment = await Itineraries.findOneAndUpdate({"comments._id":commentID}, {$set: {"comments.$.comment": comments.comment}}, {new: true})
-                console.log(modifyComment)
-                res.json({ success: true, response:{modifyComment}, message:"tu comentario ha sido modificado" })
-    
-            }
-            catch (error) {
-                console.log(error)
-                res.json({ success: true, message: "Algo ha salido mal intentalo en unos minutos" })
-            }
-    
-        }, */
-
-    /* modifyComment: async (req, res) => {
-        //console.log('REQ.PARAMS')
-        //console.log(req.params)
-        //console.log('REQ.BODY')
-        //console.log(req.body)
-        //console.log('REQ.USER')
-        //console.log(req.user)
-        const {comments} = req.body
-        const user = req.user._id
-        try {
-            const modifyComment = await Itineraries
-            .findOneAndUpdate({"comments._id": commentID}, {$set: {"comments.$.comment": comments.comment}}, {new: true})
-            res.json({success: true,
-                response: {modifyComment},
-                message: "the comment has been modified"})
-        }
-        catch (error) {
-            console.log(error)
-            res.json({ success: true,
-                message: "sorry! try again!" })
-        }
-    }, */
-
     modifyComment: async (req, res) => {
         const { comment } = req.body
         try {
