@@ -74,6 +74,7 @@ const Comments = (props) => {
                     <div className="card-body">
                         <p className="card-text cardText">{props.comment.comment}</p>
                     </div>
+
                 </div> :
 
                 <div className="card cardComments">
