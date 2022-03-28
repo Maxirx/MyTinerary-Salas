@@ -7,7 +7,7 @@ const ActividadesControladores = {
         var error = null
 
         try {
-            actividadLocal = await Activities.find()/* .populate('622748244d1a12d866f83838', '622748244d1a12d866f83837') */
+            actividadLocal = await Activities.find()/* .populate('ItineraryId') */
         } catch (err) {
             error = err
             console.log(error);
@@ -24,7 +24,7 @@ const ActividadesControladores = {
 
         const { activityTitle, activity,
             nameCity, nameItinerary, imageCity, ItineraryId } = required.body
-        new Ciudades({
+        new Activities({
             activityTitle,
             activity, nameCity, nameItinerary, imageCity, ItineraryId
         }).save()

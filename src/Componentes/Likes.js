@@ -50,8 +50,8 @@ const LikeButton = (props) => {
 
     console.log(itinerario);
 
-    return (<>
-        <button
+    return (<>{props.usuario ?
+        (<button
             onClick={() => {
                 setLiked(!liked);
                 setClicked(true);
@@ -84,7 +84,41 @@ const LikeButton = (props) => {
                 <span>Like</span>
                 <span className={cn("suffix", { liked })}>d</span>
             </div>
-        </button>{/* {like} */}Likes: {likes.length}</>
+        </button>)
+        : (<button
+            onClick={() => {
+                setLiked(liked);
+                setClicked(true);
+                /* setLike(+1) */
+                LikeDislike();
+            }}
+            onAnimationEnd={() => setClicked(true)}
+            className={cn("like-button-wrapper", {
+                liked,
+                clicked,
+            })}
+        >
+            {liked && (
+                <div className="particles">
+                    {particleList.map((_, index) => (
+                        <div
+                            className="particle-rotate" key={index}
+                            style={{
+                                transform: `rotate(${(360 / particleList.length) * index + 1
+                                    }deg)`,
+                            }}
+                        >
+                            <div className="particle-tick" />
+                        </div>
+                    ))}
+                </div>
+            )}
+            <div className="like-button">
+                <Hand />
+                <span>Like</span>
+                <span className={cn("suffix", { liked })}>d</span>
+            </div>
+        </button>)}{/* {like} */}Likes: {likes.length}</>
     );
 };
 

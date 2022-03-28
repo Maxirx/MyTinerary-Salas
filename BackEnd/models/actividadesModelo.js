@@ -3,11 +3,11 @@ const activitiesSchema = new mongoose.Schema({
 
 
     activityTitle: { type: String, required: true },
-    Activity: { type: String, required: true },
-    nameCity: { type: String, required: true },
-    nameItinerary: { type: String, required: true },
-    imageCity: { type: String, required: true },
-    ItineraryId: { type: mongoose.Types.ObjectId, ref: 'Itinerarios' },
+    activity: { type: String, required: true },
+    nameCity: { type: String },
+    nameItinerary: { type: String },
+    imageCity: { type: String },
+    ItineraryId: { type: mongoose.Schema.Types.ObjectId, ref: 'itinerarios' },
 
 
 

@@ -13,10 +13,13 @@ const itinerariosSchema = new mongoose.Schema({
     user: { type: String, required: true },
     photo: { type: String, required: true },
     likes: { type: Array, required: true },
+    ActivitiesId: { type: mongoose.Schema.Types.ObjectId, ref: 'activities' },
     comments: [{
+        date: { type: Date },
         comment: { type: String },
         userID: { type: mongoose.Types.ObjectId, ref: "users" },
     }],
+
 
 
 })

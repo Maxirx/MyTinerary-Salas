@@ -37,7 +37,7 @@ export default function CiudadDetalle(props) {
 
                 return (
                     <div key={carta._id}>
-                        <Card sx={{ maxWidth: 345 }} key={carta._id}>
+                        <Card sx={{ maxWidth: 345 }} key={carta._id} style={{ maxWidth: "none" }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"

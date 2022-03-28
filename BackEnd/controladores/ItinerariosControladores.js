@@ -2,19 +2,36 @@ const Itinerarios = require('../models/Itinerarios')
 
 
 const ItinerariosControladores = {
-    consultarItinerarios: async (req, res) => {
+/*     consultarItinerarios: async (req, res) => {
         try {
-            let itineraries = await Itinerarios.find()
+            let itineraries = await Itinerarios.find().populate('ActivitiesId')
             res.json({ success: true, response: itineraries })
         } catch (error) {
             res.json({ success: false, response: error.message })
         }
+    },  */   consultarItinerarios: async (require, response) => {
+        var itinerarioLocal
+        var error = null
+
+        try {
+            itinerarioLocal = await Itinerarios.find().populate('ActivitiesId')
+        } catch (err) {
+            error = err
+            console.log(error);
+        }
+        response.json({
+
+            respuesta: error ? 'ERROR' : { itinerarioLocal },
+            success: error ? false : true,
+            error: error
+        })
+
     },
     agregarItinerario: async (required, response) => {
 
-        const { itinerary, nameCity, imageCity, duration, price, places, city, hashtags, user, photo, likes, comments } = required.body
+        const { itinerary, nameCity, imageCity, duration, price, places, city, hashtags, user, photo, likes, ActivitiesId, comments } = required.body
         new Itinerarios({
-            itinerary, nameCity, imageCity, duration, price, places, city, hashtags, user, photo, likes, comments
+            itinerary, nameCity, imageCity, duration, price, places, city, hashtags, user, photo, likes, ActivitiesId, comments
         }).save()
             .then((respuesta) => response.json({ respuesta }))
             .catch(error => response.json({ error }))
@@ -47,20 +64,38 @@ const ItinerariosControladores = {
         /*         console.log(id); */
 
 
-        itinerarios = await Itinerarios.find({ _id: id })
+        itinerarios = await Itinerarios.find({ _id: id }).populate('ActivitiesId')
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
 
+    /*     consultarItinerariosPorCiudad: async (require, response) => {
+            const id = require.params.id
+            var itinerarios
+    
+    
+    
+            itinerarios = await Itinerarios.find({ _id: id }).populate('ActivitiesId')
+                .then((res) => response.json({ paso: "listo", respuesta: res }))
+                .catch(error => response.json({ error }))
+        }, */
     consultarItinerariosPorCiudad: async (require, response) => {
+        var itinerarioLocal
         const id = require.params.id
-        var itinerarios
+        var error = null
 
+        try {
+            itinerarioLocal = await Itinerarios.find({ _id: id }).populate("autor", { fullName: 1 }).populate("comments.userID", { fullName: 1 })
+        } catch (err) {
+            error = err
+            console.log(error);
+        }
+        response.json({
 
-
-        itinerarios = await Itinerarios.find({ _id: id })
-            .then((res) => response.json({ paso: "listo", respuesta: res }))
-            .catch(error => response.json({ error }))
+            respuesta: error ? 'ERROR' : { itinerarioLocal },
+            success: error ? false : true,
+            error: error
+        })
     },
 
     LikeDislike: async (req, res) => {

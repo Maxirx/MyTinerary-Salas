@@ -7,11 +7,11 @@ const ActRouter = require('express').Router()
 const { consultarActividades, agregarActividad, borrarActividad, modificarActividad, consultarActividadPorID } = ActividadesControladores
 
 
-ActRouter.route('/todaslasciudades')
+ActRouter.route('/todaslasactividades')
     .get(consultarActividades)
     .post(agregarActividad)
 
-ActRouter.route('/todaslasciudades/:id')
+ActRouter.route('/todaslasactividades/:id')
     .delete(borrarActividad)
     .put(modificarActividad)
     .get(consultarActividadPorID)
