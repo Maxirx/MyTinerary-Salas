@@ -1,16 +1,19 @@
 const comentariosControladores = require('../controladores/comentariosControladores')
 
 const ComRouter = require('express').Router()
+const passport = require("../config/passport");
 
 
 
-const { addComment, modifiComment, deleteComment } = comentariosControladores
+const { addComment, modifyComment, deleteComment } = comentariosControladores
 
 
 //PLACES ROUTES
-Router.route('/places/comment')
+ComRouter.route('/places/comment/:id')
+    .put(passport.authenticate('jwt', { session: false }), modifyComment)
     .post(passport.authenticate('jwt', { session: false }), addComment)
-    .put(passport.authenticate('jwt', { session: false }), modifiComment)
+
+ComRouter.route('/itineraries/comment/:id/:comment')
     .delete(passport.authenticate('jwt', { session: false }), deleteComment)
 
 

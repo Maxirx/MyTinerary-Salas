@@ -18,7 +18,9 @@ import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import LikeButton from './Likes';
 import { connect } from 'react-redux';
-import activitiesActions from '../Redux/action/ActivitiesAction'
+import ActivitiesActions from '../Redux/action/ActivitiesAction'
+import Comments from './Comentarios'
+import Comment from './comenta';
 
 
 function CiudadDetalle(props) {
@@ -102,9 +104,17 @@ function CiudadDetalle(props) {
                                     </Accordion>
 
 
+                                </div><div>
+                                    {carta.comments.map((comment) => (
+                                        <Comments itineraryId={props.id} commentId={comment._id} comment={comment} key={comment._id} />
+                                    ))
+
+                                    }
+                                    <Comment itineraryId={carta._id} />
                                 </div>
                             </CardContent>
                         </CardActionArea>
+
                     </Card>
                 </div>
             )
@@ -116,7 +126,7 @@ function CiudadDetalle(props) {
 
 
 const mapDispatchToProps = {
-    activityPerItinerary: activitiesActions.activityPerItinerary,
+    activityPerItinerary: ActivitiesActions.activityPerItinerary,
 
 }
 

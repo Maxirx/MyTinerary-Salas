@@ -8,6 +8,8 @@ import dataReducer from './PaisReducer'
 
 import UseReduc from './UseReduc'
 
+import activitiesReducers from './activitiesReducer'
+
 
 
 const PrincipalReducer = combineReducers({
@@ -15,7 +17,8 @@ const PrincipalReducer = combineReducers({
     CiudadesRedu,
     ItinerariosRedu,
     UseReduc,
-    dataReducer
+    dataReducer,
+    activitiesReducers
 
 
 })

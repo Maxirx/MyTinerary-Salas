@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const activitiesActions = {
+const ActivitiesActions = {
 
     activityPerItinerary: (id) => {
         console.log(id);
@@ -31,4 +31,4 @@ const activitiesActions = {
 
 }
 
-export default activitiesActions;
+export default ActivitiesActions;

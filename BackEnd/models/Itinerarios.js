@@ -7,7 +7,6 @@ const itinerariosSchema = new mongoose.Schema({
     imageCity: { type: String, required: true },
     duration: { type: Number, required: true },
     price: { type: Number, required: true },
-
     city: { type: mongoose.Types.ObjectId, ref: 'Ciudades' },
     hashtags: { type: Array, required: true },
     user: { type: String, required: true },
@@ -15,7 +14,6 @@ const itinerariosSchema = new mongoose.Schema({
     likes: { type: Array, required: true },
     ActivitiesId: { type: mongoose.Schema.Types.ObjectId, ref: 'activities' },
     comments: [{
-        date: { type: Date },
         comment: { type: String },
         userID: { type: mongoose.Types.ObjectId, ref: "users" },
     }],
