@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ActivitiesActions from '../Redux/action/ActivitiesAction';
 
-const Comment = (props) => {
+const Comenta = (props) => {
 
 
     const { id } = useParams()
@@ -84,4 +84,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Comment);
+export default connect(mapStateToProps, mapDispatchToProps)(Comenta);

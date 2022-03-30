@@ -19,8 +19,8 @@ import Button from '@mui/material/Button';
 import LikeButton from './Likes';
 import { connect } from 'react-redux';
 import ActivitiesActions from '../Redux/action/ActivitiesAction'
-import Comments from './Comentarios'
-import Comment from './comenta';
+import Comentarios from './Comentarios'
+import Comenta from './comenta';
 
 
 function CiudadDetalle(props) {
@@ -46,7 +46,7 @@ function CiudadDetalle(props) {
 
 
                 <div key={carta._id}>
-                    <Card sx={{ maxWidth: 345 }} key={carta._id} style={{ maxWidth: "none" }}>
+                    <Card sx={{ maxWidth: 700 }} key={carta._id} /* style={{ maxWidth: "none" }} */>
                         <CardActionArea>
                             <CardMedia
                                 component="img"
@@ -106,11 +106,11 @@ function CiudadDetalle(props) {
 
                                 </div><div>
                                     {carta.comments.map((comment) => (
-                                        <Comments itineraryId={props.id} commentId={comment._id} comment={comment} key={comment._id} />
+                                        <Comentarios itineraryId={props.ID} commentId={comment._id} comment={comment} key={comment._id} />
                                     ))
 
                                     }
-                                    <Comment itineraryId={carta._id} />
+                                    <Comenta itineraryId={carta._id} />
                                 </div>
                             </CardContent>
                         </CardActionArea>

@@ -1,11 +1,8 @@
 
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
+
 import { connect } from "react-redux";
-/* import citiesActions from "../Redux/action/CiudadesAct"; */
-/* import itinerariesActions from '../../Redux/actions/itinerariesActions'; */
-/* import commentsActions from '../../Redux/actions/commentsActions'; */
+
 import { useParams } from 'react-router-dom';
 import { useState, useRef } from 'react';
 
@@ -15,7 +12,7 @@ import CiudadesAct from '../Redux/action/CiudadesAct';
 import ActivitiesActions from '../Redux/action/ActivitiesAction';
 
 
-const Comments = (props) => {
+const Comentarios = (props) => {
     console.log(props)
     const [expanded, setExpanded] = React.useState(false);
     const handleExpandClick = () => {
@@ -29,6 +26,9 @@ const Comments = (props) => {
     const [reload, setReload] = useState(false)
 
     console.log(props.commentId);
+
+
+
     async function modificarComentario(commentId) {
         const commentData = {
             comment: input.current.value,
@@ -36,9 +36,9 @@ const Comments = (props) => {
         console.log(modify)
         setModify(!modify)
         await props.modifiComment(commentId, commentData)
-        props.getOneItinerary(id)
-        props.findOneCity(id)
-        props.itinerariesPerCity(id)
+        props.obtenerIti(id)
+        props.buscarCiudadesPorID(id)
+        props.filtoPorItiCiudad(id)
         setReload(!reload)
 
 
@@ -55,34 +55,33 @@ const Comments = (props) => {
         if (awaitDelete.success) {
             props.buscarCiudadesPorID(id)
             props.filtoPorItiCiudad(id)
-            console.log("eliminadoOoOOo")
-            // props.findOneCity(id)
+            console.log("Comentario Eliminado")
         }
     }
 
 
 
-
+    console.log(props.usuario)
     console.log(props.comment)
     return (
         <>
-            {props.comment.userID?._id !== props.user?.id ?
-                <div className="card cardComments " key={props.comment._id}>
-                    <div className="card-header cardHeader">
+            {props.comment.userID !== props.usuario?.id ? (
+                <div key={props.comment._id}>
+                    <div >
                         {props.comment.userID?.name}
                     </div>
-                    <div className="card-body">
-                        <p className="card-text cardText">{props.comment.comment}</p>
+                    <div >
+                        <p >{props.comment.comment}</p>
                     </div>
+                </div>)
+                :
 
-                </div> :
-
-                <div className="card cardComments">
-                    <div className="card-header cardHeader">
+                (<div >
+                    <div >
                         <p>{props.comment.userID.name}</p>
                     </div>
-                    <div className="card-body ">
-                        <div type="text" className="card-text textComments" >
+                    <div >
+                        <div type="text" >
                             {modify
                                 ? <input defaultValue={props.comment.comment} ref={input} />
                                 : <p>{props.comment.comment}</p>
@@ -91,15 +90,15 @@ const Comments = (props) => {
                         {modify
                             ? (
                                 <>
-                                    <button id={props.comment._id} onClick={() => modificarComentario(props.commentId)} className="btn btn-primary btnComments">Confirm Modify</button>
-                                    <button id={props.comment._id} onClick={() => setModify(!modify)} className="btn btn-primary">Cancel</button>
+                                    <button id={props.comment._id} onClick={() => modificarComentario(props.commentId)} >Confirm Modify</button>
+                                    <button id={props.comment._id} onClick={() => setModify(!modify)} >Cancel</button>
                                 </>
                             )
-                            : <button id={props.comment._id} onClick={() => setModify(!modify)} className="btn btn-primary">Modify</button>
+                            : <button id={props.comment._id} onClick={() => setModify(!modify)} >Modify</button>
                         }
-                        <button id={props.commentId} onClick={() => eliminarComentario(props.commentId)} className="btn btn-primary btnComments">Eliminar</button>
+                        <button id={props.commentId} onClick={() => eliminarComentario(props.commentId)} >Eliminar</button>
                     </div>
-                </div>
+                </div>)
             }
         </>
     )
@@ -121,10 +120,10 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => {
     return {
         ciudad: state.ciudad,
-        /*         itineraries: state.ItinerariesRedu.itineraries, */
+        itineraries: state.itineraries,
         usuario: state.UseReduc.usuario,
         activities: state.activitiesReducers.activities,
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Comments);
+export default connect(mapStateToProps, mapDispatchToProps)(Comentarios);

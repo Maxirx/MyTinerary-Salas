@@ -38,7 +38,7 @@
 
 .pagDetalles {
   margin-top: 0%;
-  height: 250vh;
+  height: 350vh;
 }
 
 .imagenPerdida {
@@ -49,7 +49,9 @@
 #cartasPaises3 {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:space-evenly;
+  align-items:center;
+  height: 300vh;
 }
 
 h4 {

@@ -31,14 +31,7 @@ const comentariosAcciones = {
                     'Authorization': `Bearer ${token}`
                 }
             })
-            // dispatch({
-            //     type: 'message',
-            //     payload: {
-            //         view: true,
-            //         message: res.data.message,
-            //         success: res.data.success
-            //     }
-            // })
+
 
             return { success: true, response: res.data.response }
         }
@@ -50,7 +43,8 @@ const comentariosAcciones = {
                 console.log("itineraryId", itineraryId)
                 console.log("commentId", commentId)
 
-                const res = await axios.delete(`http://localhost:4000/api/places/comment/${itineraryId}/${commentId}`, { headers: { Authorization: "Bearer " + token } }
+                const res = await axios.delete(`http://localhost:4000/api/itineraries/comment/${itineraryId}/${commentId}`,
+                    { headers: { Authorization: "Bearer " + token } }
                 )
                 console.log(res)
                 return { success: true };

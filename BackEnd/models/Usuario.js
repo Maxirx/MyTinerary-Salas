@@ -1,5 +1,4 @@
 
-const { string } = require('joi')
 const mongoose = require('mongoose')
 
 const ModeloUsuario = new mongoose.Schema({
@@ -11,6 +10,7 @@ const ModeloUsuario = new mongoose.Schema({
     image: { type: String },
     country: { type: String },
     from: { type: Array },
+    autor: { type: mongoose.Types.ObjectId, ref: "users" },
 })
 
 const User = mongoose.model('users', ModeloUsuario)
