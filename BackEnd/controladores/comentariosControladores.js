@@ -54,27 +54,7 @@ const comentariosControladores = {
         }
 
     },
-    /* deleteComment: async (req, res) => {
-        try {
-            const deleteComment = await Itineraries.findOneAndUpdate(
-                {_id: req.params.id},
-                {
-                    $pull: {
-                        comments: {
-                            _id: req.body.commentId
-                        }
-                    }
-                },
-                {new: true})
-          console.log(deleteComment)
-            res.json({ success: true, response: deleteComment, message: "has eliminado el comentario" })
 
-        }catch (error) {
-            console.log(error)
-            res.json({ success: false, message: "Algo ha salido mal intentalo en unos minutos" })
-        }
-
-    }, */
 
 
     deleteComment: async (req, res) => {
