@@ -43,7 +43,7 @@ const comentariosAcciones = {
                 console.log("itineraryId", itineraryId)
                 console.log("commentId", commentId)
 
-                const res = await axios.delete(`http://localhost:4000/api/itineraries/comment/${itineraryId}/${commentId}`,
+                const res = await axios.delete(`http://localhost:4000/api/itineraries/comment/${itineraryId}/${commentId.commentId}`,
                     { headers: { Authorization: "Bearer " + token } }
                 )
                 console.log(res)
