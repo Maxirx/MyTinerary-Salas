@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import ActionAreaCard from './Carta'
-
+import MensajeNegativo from './MensajeNegativo';
 import './barra.css'
 import axios from 'axios';
 import CiudadDetalle from './detalle'
@@ -43,7 +43,9 @@ function PaginaDetalles(props) {
         }} className="detalles">
             <div><h1>{props.ciudad.name}</h1></div>
             <div id='cartasPaises3'>
-                {props.itineraries.map((itineraries) => (<CiudadDetalle dataR={itineraries} ID={itineraries._id} />))}
+                {props.itineraries.length > 0 ?
+                    (props.itineraries.map((itineraries) => (<CiudadDetalle dataR={itineraries} ID={itineraries._id} />)))
+                    : (<MensajeNegativo />)}
             </div> </div>
         </main >
     )

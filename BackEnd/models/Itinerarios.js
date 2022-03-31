@@ -15,7 +15,7 @@ const itinerariosSchema = new mongoose.Schema({
     ActivitiesId: { type: mongoose.Schema.Types.ObjectId, ref: 'activities' },
     comments: [{
         comment: { type: String },
-        userID: { type: mongoose.Types.ObjectId, ref: "users" },
+        userID: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     }],
 
 
