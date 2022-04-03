@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#AppBar {
+  background-color: red;
+}
+
+.zero {
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.eXIdQs {
+  width: 16px !important;
+  background-color: red !important;
+  height: 8px;
+}
+
+.qbpMB {
+  background-color: pink !important;
+}
+
+main{
+  height: 100%;
+}
+
+#imagenFondo{
+  background-image: url("./recursos/peakpx\(5\).jpg");
+  width: 100%;
+  height: 50vw;
+margin-left: 0%;
+}
+
+#pantalla{
+  visibility: collapse;
+}
+
+#fondo {
+  height: 110%;
+  width: 100%;
+  z-index: -1;
+  margin-top: 0%;
+  position: absolute;
+  top: -5%;
+  left: 0%;
+  bottom: 0%;
+}
+
+#principal {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  /*   background-image: url("./recursos/peakpx\(1\).jpg"); */
+  background-color: white;
+}
+
+#principal2 {
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  position: relative;
+  /*   background-image: url("./recursos/peakpx\(1\).jpg"); */
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  color: #cc2f41;
+  font-size: 3rem;
+}
+
+h2 {
+  color: #995d81;
+  font-size: 1.7rem;
+  margin-top: 2%;
+  margin-bottom: 7%;
+}
+
+h3 {
+  color: #e61821;
+  background-color: #6689a1;
+}
+
+#llamada {
+  width: 15rem;
+  background-color: fuchsia;
+  /*   border-radius: 30rem; */
+  border-radius: 100em;
+  margin-top: 5%;
+  color: white !important;
+  font-size: 1.5rem;
+  position: relative;
+
+}
+
+#llamada:hover {
+  width: 15rem;
+  background-color: red;
+  /*   border-radius: 30rem; */
+  border-radius: 100em;
+  margin-top: 5%;
+  color: white !important;
+  font-size: 1.5rem;
+  position: relative;
+
+}
+
+#llamada1 {
+  width: 15rem;
+  background-color: fuchsia;
+  /*   border-radius: 30rem; */
+  border-radius: 100em;
+  margin-top: 5%;
+  color: white !important;
+  font-size: 1.5rem;
+  position: relative;
+  visibility: collapse;
+}
+
+#llamada1:hover {
+  width: 15rem;
+  background-color: red;
+  /*   border-radius: 30rem; */
+  border-radius: 100em;
+  margin-top: 5%;
+  color: white !important;
+  font-size: 1.5rem;
+  position: relative;
+  visibility: collapse;
+}
+
+#LetrasEnBlanco {
+  color: white;
+}
+
+#abajo {
+  display: flex;
+  justify-content: space-between;
+  background-color: #6689a1;
+  margin-bottom: 0% !important;
+  height: 20%;
+}
+
+.social {
+  display: block;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.item {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 375px) {
+
+  .App{
+height: 250vw!important;
+  }
+
+  #principal {
+    width: 100%;
+    min-height: 300vw!important;
+    display: block;
+    position: relative;
+    background-image: url("./recursos/peakpx\(3\).jpg");
+    background-color: black;
+    margin-top: 0%;
+  }
+
+  #llamada {
+    width: 15rem;
+    background-color: fuchsia;
+    /*   border-radius: 30rem; */
+    border-radius: 100em;
+    margin-top: 2%;
+    color: white !important;
+    font-size: 1.5rem;
+    position: relative;
+  }
+
+  #llamada:hover {
+    width: 15rem;
+    background-color: red;
+    /*   border-radius: 30rem; */
+    border-radius: 100em;
+    margin-top: 2%;
+    color: white !important;
+    font-size: 1.5rem;
+    position: relative;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  #principal2 {
+    width: 100%;
+    min-height: 170vw;
+    display: block;
+    position: relative;
+    background-image: url("./recursos/peakpx\(3\).jpg");
+    background-repeat: no-repeat;
+
+    background-color: black;
+  }
+
+  #imagenFondo{
+width: 0%;
+height: 0%;
+  visibility: hidden;
+  }
+
+  #pantalla{
+    background: transparent;
+    visibility: visible;
+    margin-bottom: 3rem;
+  }
+
+.gallery{
+margin-top: 3rem;
+}
+}
