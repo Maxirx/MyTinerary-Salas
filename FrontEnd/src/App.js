@@ -22,6 +22,7 @@ import Snack from './Componentes/BarraAlerta'
 import { useEffect } from 'react';
 import userActions from './Redux/action/registroAction'
 import { connect } from 'react-redux';
+import CambiarConstraseña from './Componentes/cambiasContraseña';
 
 
 
@@ -53,10 +54,12 @@ function App(props) {
           <Route path='/cities' element={<CiudadesPag />} />
           <Route path='*' element={<Main />} />
           <Route path='/User' element={<PagEntrada />} />
+          <Route path='/user/contraseña' element={<CambiarConstraseña />} />
           {!props.usuario && <Route path='/User/User' element={<PagEntrada />} />}
           <Route path="/cities/detalle/:id" element={<PaginaDetalles />} />
           {!props.usuario && <Route path='/user/signin' element={<EntradaSesion />} />}
           {!props.usuario && <Route path='/user/signup' element={<Registro />} />}
+
 
 
         </Routes>

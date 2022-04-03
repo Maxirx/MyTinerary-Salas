@@ -21,11 +21,11 @@ const comentariosControladores = {
                 },
                 { new: true }
             ).populate("comments.userID", "Name")
-            res.json({ success: true, response: nuevoComment, message: "gracias por dejarnos tu comentario" })
+            res.json({ success: true, response: nuevoComment, message: "" })
         }
         catch (error) {
             console.log(error)
-            res.json({ success: false, message: "Algo ha salido mal intentalo en unos minutos" })
+            res.json({ success: false, message: "" })
         }
 
     },
@@ -69,7 +69,7 @@ const comentariosControladores = {
                     }
                 },
                 { new: true })
-            console.log(deleteComment)
+            /*             console.log(deleteComment) */
             res.json({ success: true, response: deleteComment, message: "has eliminado el comentario" })
 
         } catch (error) {

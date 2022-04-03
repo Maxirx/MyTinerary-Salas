@@ -22,6 +22,8 @@ import ActivitiesActions from '../Redux/action/ActivitiesAction'
 import Comentarios from './Comentarios'
 import Comenta from './comenta';
 import { height } from '@mui/system';
+import "./barra.css"
+
 
 const imagenStyle = {
     width: '150px',
@@ -34,6 +36,7 @@ function CiudadDetalle(props) {
     console.log(props);
 
     const [activities, setActivities] = useState([])
+
     const carta = (props.dataR)
     console.log(carta);
 
@@ -43,7 +46,7 @@ function CiudadDetalle(props) {
         props.activityPerItinerary(carta._id)
             .then(res => { setActivities(res.response) })
 
-    }, [props.dataR])
+    }, [carta])
     console.log(activities);
 
     return (
@@ -113,13 +116,16 @@ function CiudadDetalle(props) {
 
                                         }
                                     </Typography>
+                                    <Typography>
+                                        <Comenta itineraryId={carta._id} setReload={props.setReload} reload={props.reload} />
+                                    </Typography>
                                 </AccordionDetails>
                             </Accordion>
 
 
                         </div><div>
 
-                            <Comenta itineraryId={carta._id} />
+
                         </div>
                     </CardContent>
                 </CardActionArea>

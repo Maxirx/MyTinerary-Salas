@@ -21,7 +21,7 @@ const ItinerariosAct = {
 
     },
     filtoPorItiCiudad: (city) => {
-        console.log(city);
+        /*      console.log(city); */
         return async (dispatch, getState) => {
             try {
                 var response = await axios.get(`http://localhost:4000/api/itinerarios/${city}`)
@@ -38,7 +38,7 @@ const ItinerariosAct = {
     },
     likeDislike: (id) => {
         const token = localStorage.getItem('token')
-        console.log(id);
+        /*         console.log(id); */
         return async () => {
             try {
                 let response = await axios.put(`http://localhost:4000/api/likes/${id}`, {},

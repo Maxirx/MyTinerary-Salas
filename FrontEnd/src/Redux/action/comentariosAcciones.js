@@ -37,6 +37,8 @@ const comentariosAcciones = {
         }
     },
     deleteComment: (itineraryId, commentId) => {
+        console.log(itineraryId);
+        console.log(commentId);
         return async (dispatch, getState) => {
             try {
                 const token = localStorage.getItem('token')

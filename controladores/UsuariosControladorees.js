@@ -291,7 +291,24 @@ const usuariosControlladores = {
                 message: "Please login again"
             })
         }
-    }
+    },
+    modificarContraseña: async (req, res) => {
+        const id = req.user.id
+        const contra = req.body.conseña
+
+        var cambiarContraseña
+        try {
+            cambiarContraseña = await User.findOneAndUpdate({ _id: id }, contra, { new: true })
+                .then((response) => res.json({ success: true, respuesta: response }))
+        } catch (err) {
+            error = err
+            res.json({
+                success: false,
+                response: error
+            })
+        }
+    },
+
 
 
 

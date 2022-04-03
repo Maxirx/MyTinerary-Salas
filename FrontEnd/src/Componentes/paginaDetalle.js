@@ -21,13 +21,14 @@ function PaginaDetalles(props) {
 
     const [apiCiudades, setApiCiudades] = useState([])
     const { id } = useParams()
+    const [reload, setReload] = useState(false)
 
     useEffect(() => {
         console.log(id);
         props.buscarCiudadesPorID(id)
         props.filtoPorItiCiudad(id)
 
-    }, []);
+    }, [!reload]);
 
 
     var lugares = props.ciudad.image
@@ -44,7 +45,7 @@ function PaginaDetalles(props) {
             <div><h1>{props.ciudad.name}</h1></div>
             <div id='cartasPaises3'>
                 {props.itineraries.length > 0 ?
-                    (props.itineraries.map((itineraries) => (<CiudadDetalle dataR={itineraries} ID={itineraries._id} />)))
+                    (props.itineraries.map((itineraries) => (<CiudadDetalle dataR={itineraries} ID={itineraries._id} reload={reload} setReload={setReload} />)))
                     : (<MensajeNegativo />)}
             </div> </div>
         </main >

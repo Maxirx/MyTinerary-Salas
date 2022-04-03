@@ -3,7 +3,7 @@ const passport = require("../config/passport");
 const usuariosControlladores = require('../controladores/UsuariosControladorees');
 const Validador = require('../config/Validador')
 
-const { registroUsuarios, entradaUsuario, signOut, verificarEmail, verificarToken } = usuariosControlladores
+const { registroUsuarios, entradaUsuario, signOut, verificarEmail, verificarToken, modificarContraseña } = usuariosControlladores
 
 UserRouter.route('/auth/signUp')
     .post(registroUsuarios, Validador)
@@ -19,6 +19,9 @@ UserRouter.route('/verify/:uniqueString')
 
 UserRouter.route('/auth/signInToken')
     .get(passport.authenticate('jwt', { session: false }), verificarToken)
+
+UserRouter.route('/auth/cambiarContraseña')
+    .get(passport.authenticate('jwt', { session: false }), modificarContraseña)
 
 module.exports = UserRouter
 

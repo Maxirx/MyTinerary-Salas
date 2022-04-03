@@ -48,14 +48,12 @@ const Comentarios = (props) => {
             commentId: commentId,
         }
         const awaitDelete = await props.deleteComment(props.itineraryId, commentData)
-        console.log(commentData)
-        console.log(awaitDelete)
+
 
 
         if (awaitDelete.success) {
             props.buscarCiudadesPorID(id)
             props.filtoPorItiCiudad(id)
-            console.log("Comentario Eliminado")
         }
     }
 
