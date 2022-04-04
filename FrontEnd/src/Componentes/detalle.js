@@ -108,10 +108,13 @@ function CiudadDetalle(props) {
                                     </Typography>
                                     <Typography>
                                         {carta.comments.map((comment) => (
-                                            <Comentarios itineraryId={props.ID} commentId={comment._id} comment={comment} key={comment._id} />
+                                            <Comentarios itineraryId={props.ID} commentId={comment._id} comment={comment} key={comment._id} setReload={props.setReload} reload={props.reload} />
                                         ))
 
                                         }
+                                    </Typography>
+                                    <Typography>
+                                        <Comenta itineraryId={carta._id} setReload={props.setReload} reload={props.reload} />
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>
@@ -119,7 +122,7 @@ function CiudadDetalle(props) {
 
                         </div><div>
 
-                            <Comenta itineraryId={carta._id} />
+
                         </div>
                     </CardContent>
                 </CardActionArea>

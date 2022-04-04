@@ -10,7 +10,7 @@ const ModeloUsuario = new mongoose.Schema({
     image: { type: String },
     country: { type: String },
     from: { type: Array },
-    autor: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    autor: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
 })
 
 const User = mongoose.model('users', ModeloUsuario)

@@ -10,13 +10,13 @@ import { useState, useEffect } from 'react';
 import ActivitiesActions from '../Redux/action/ActivitiesAction';
 
 const Comenta = (props) => {
-
+    console.log(props);
 
     const { id } = useParams()
 
     const [inputText, setInputText] = useState("")
     const [modify, setModify] = useState(false)
-    const [reload, setReload] = useState(false)
+
 
 
     const cargarComentario = async () => {
@@ -27,11 +27,11 @@ const Comenta = (props) => {
         console.log(commentData)
         const cargarAwait = await props.addComment(props.itineraryId, commentData)
         console.log(cargarAwait)
-        if (cargarAwait.response.success) {
+        if (cargarAwait.success === true) {
             setInputText("")
             props.buscarCiudadesPorID(id)
             props.activityPerItinerary(id)
-            setReload(!reload)
+            props.setReload(!props.reload)
         }
     }
 
