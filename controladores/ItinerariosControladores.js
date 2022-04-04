@@ -1,4 +1,4 @@
-const Itinerarios = require('../models/Itinerarios')
+const Itinerarios = require('../../models/Itinerarios')
 
 
 const ItinerariosControladores = {

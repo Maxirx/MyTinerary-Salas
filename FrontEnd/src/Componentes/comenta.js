@@ -10,30 +10,28 @@ import { useState, useEffect } from 'react';
 import ActivitiesActions from '../Redux/action/ActivitiesAction';
 
 const Comenta = (props) => {
-    console.log(props);
+
 
     const { id } = useParams()
 
     const [inputText, setInputText] = useState("")
-
-
-
-
+    const [modify, setModify] = useState(false)
+    const [reload, setReload] = useState(false)
 
 
     const cargarComentario = async () => {
         const commentData = {
             comment: inputText,
         }
+        console.log(props.itineraryId);
+        console.log(commentData)
         const cargarAwait = await props.addComment(props.itineraryId, commentData)
-
-        if (cargarAwait.success === true) {
+        console.log(cargarAwait)
+        if (cargarAwait.response.success) {
             setInputText("")
             props.buscarCiudadesPorID(id)
             props.activityPerItinerary(id)
-            console.log(cargarAwait);
-            props.setReload(!props.reload)
-            console.log(!props.reload);
+            setReload(!reload)
         }
     }
 
@@ -46,7 +44,7 @@ const Comenta = (props) => {
                     </div>
                     <div className="card-body ">
                         <div >
-                            <input type="text" id="nuevoComentario" placeholder='Ingresa aqui tu comentario...' className="card-text textComments border border-dark mb-3" value={inputText} onChange={(event) => setInputText(event.target.value)} />
+                            <input id="nuevoComentario" placeholder='Ingresa aqui tu comentario...' className="card-text textComments border border-dark mb-3" value={inputText} onChange={(event) => setInputText(event.target.value)} />
                         </div>
                         <button onClick={cargarComentario} className="btn btn-primary btnComments">Cargar</button>
                     </div>

@@ -1,12 +1,12 @@
 require('dotenv').config()
 const cors = require('cors')
 const express = require('express')
-require('./config/database')
-const Router = require('./rutas/routes')
-const ItiRouter = require('./rutas/ItiRoutes')
-const UserRouter = require('./rutas/UserRutas')
-const ActRouter = require('./rutas/ActRutas')
-const ComRouter = require('./rutas/ComRutas')
+require('./BackEnd/config/database')
+const Router = require('./BackEnd/rutas/routes')
+const ItiRouter = require('./BackEnd/rutas/ItiRoutes')
+const UserRouter = require('./BackEnd/rutas/UserRutas')
+const ActRouter = require('./BackEnd/rutas/ActRutas')
+const ComRouter = require('./BackEnd/rutas/ComRutas')
 const PORT = 4000
 
 
