@@ -4,9 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+.env
 /FrontEnd/node_modules
 /FrontEnd/.env
-FrontEnd/node_modules
+
 
 # testing
 /coverage
@@ -24,4 +25,3 @@ FrontEnd/node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-FrontEnd/node_modules/

@@ -45,7 +45,7 @@ function PaginaDetalles(props) {
             <div><h1>{props.ciudad.name}</h1></div>
             <div id='cartasPaises3'>
                 {props.itineraries.length > 0 ?
-                    (props.itineraries.map((itineraries) => (<CiudadDetalle dataR={itineraries} ID={itineraries._id} reload={reload} setReload={setReload} />)))
+                    (props.itineraries.map((itineraries) => (<CiudadDetalle dataR={itineraries} ID={itineraries._id} setReload={setReload} reload={reload} />)))
                     : (<MensajeNegativo />)}
             </div> </div>
         </main >

@@ -25,7 +25,7 @@ const Comentarios = (props) => {
     const [modify, setModify] = useState(false)
     const [reload, setReload] = useState(false)
 
-    console.log(props.commentId);
+    /*     console.log(props.commentId); */
 
 
 
@@ -48,19 +48,21 @@ const Comentarios = (props) => {
             commentId: commentId,
         }
         const awaitDelete = await props.deleteComment(props.itineraryId, commentData)
-
+        /*         console.log(commentData)
+                console.log(awaitDelete) */
 
 
         if (awaitDelete.success) {
             props.buscarCiudadesPorID(id)
             props.filtoPorItiCiudad(id)
+
         }
     }
 
 
 
-    console.log(props.usuario)
-    console.log(props.comment)
+    /*    console.log(props.usuario)
+       console.log(props.comment) */
     return (
         <>
             {props.comment.userID !== props.usuario?.id ? (

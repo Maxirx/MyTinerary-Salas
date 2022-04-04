@@ -85,7 +85,7 @@ const ItinerariosControladores = {
         var error = null
 
         try {
-            itinerarioLocal = await Itinerarios.find({ _id: id }).populate("autor", { fullName: 1 }).populate("comments.userID", { fullName: 1 })
+            itinerarioLocal = await Itinerarios.find({ _id: id }).populate("comments.userID", "Name")
         } catch (err) {
             error = err
             console.log(error);
