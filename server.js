@@ -20,7 +20,15 @@ app.use('/api', UserRouter)
 app.use('/api', ActRouter)
 app.use('/api', ComRouter)
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
 
-app.listen(PORT, () => console.log('Server ready on PORT' + PORT))
+    app.get('*', (req, res) => {
+
+        res.sendFile(path.join(_dirname + '/client/bluid/index.html'))
+    })
+}
+
+app.listen(process.env.PORT || 4000, process.env.HOST || '0.0.0.0', () => console.log(`Server ready on PORT ${process.env.PORT || 4000}`))
 
 
