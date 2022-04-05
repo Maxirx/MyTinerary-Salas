@@ -20,6 +20,7 @@ app.use('/api', UserRouter)
 app.use('/api', ActRouter)
 app.use('/api', ComRouter)
 
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
 
