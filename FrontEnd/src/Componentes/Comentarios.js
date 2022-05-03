@@ -12,6 +12,8 @@ import CiudadesAct from '../Redux/action/CiudadesAct';
 import ActivitiesActions from '../Redux/action/ActivitiesAction';
 
 
+import "./barra.css"
+
 const Comentarios = (props) => {
     console.log(props)
     const [expanded, setExpanded] = React.useState(false);
@@ -66,9 +68,9 @@ const Comentarios = (props) => {
     return (
         <>
             {props.comment.userID !== props.usuario?.id ? (
-                <div key={props.comment._id}>
-                    <div >
-                        {props.comment.userID?.name}
+                <div key={props.comment._id} style={{ borderTop: "1px solid black", borderBottom: "1px solid black" }}>
+                    <div id='comenta' >
+                        {props.comment.userID?.Name}:
                     </div>
                     <div >
                         <p >{props.comment.comment}</p>
@@ -78,7 +80,7 @@ const Comentarios = (props) => {
 
                 (<div >
                     <div >
-                        <p>{props.comment.userID.name}</p>
+                        <p>{props.comment.userID.Name}</p>
                     </div>
                     <div >
                         <div type="text" >

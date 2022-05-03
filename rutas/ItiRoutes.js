@@ -10,7 +10,7 @@ ItiRouter.route('/itinerario')
     .get(consultarItinerarios)
     .post(agregarItinerario)
 
-ItiRouter.route('/itinerario/:id')
+ItiRouter.route('/itinerariox/:id')
     .delete(borrarItinerario)
     .put(modificarItinerario)
     .get(consultarItinerariosPorID)

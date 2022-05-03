@@ -8,6 +8,7 @@ import comentariosAcciones from '../Redux/action/comentariosAcciones';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ActivitiesActions from '../Redux/action/ActivitiesAction';
+import { Link as LinkRouter } from 'react-router-dom'
 
 const Comenta = (props) => {
     console.log(props);
@@ -49,7 +50,7 @@ const Comenta = (props) => {
                         <button onClick={cargarComentario} className="btn btn-primary btnComments">Cargar</button>
                     </div>
                 </div> :
-                <h5>Please, sigIn for Comments</h5>
+                <button style={{ color: "white", backgroundColor: "hotpink" }}><LinkRouter to="/user/signin"> <h5 style={{ color: "white" }}>Please, sigIn for Comments</h5></LinkRouter></button>
             }
         </>
 

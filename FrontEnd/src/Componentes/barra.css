@@ -49,12 +49,18 @@
 #cartasPaises3 {
   display: flex;
   flex-direction: column;
-  justify-content:space-evenly;
-  align-items:center;
+  justify-content: space-evenly;
+  align-items: center;
   height: 300vh;
 }
 
 h4 {
   background-color: cornsilk;
   color: #ea0504;
+}
+
+#comenta {
+  display: flex;
+  color: black;
+  border-style: outset;
 }

@@ -14,7 +14,7 @@ const ItinerariosControladores = {
         var error = null
 
         try {
-            itinerarioLocal = await Itinerarios.find().populate('ActivitiesId')
+            itinerarioLocal = await Itinerarios.find({}).populate('ActivitiesId').populate("comments.userID", { Name: 1 }) //si trae
         } catch (err) {
             error = err
             console.log(error);
@@ -58,16 +58,7 @@ const ItinerariosControladores = {
     },
 
 
-    consultarItinerariosPorID: async (req, res) => {
-        const id = req.params.id
-        var itinerarios
-        /*         console.log(id); */
 
-
-        itinerarios = await Itinerarios.find({ _id: id }).populate('ActivitiesId')
-            .then((res) => response.json({ paso: "listo", respuesta: res }))
-            .catch(error => response.json({ error }))
-    },
 
     /*     consultarItinerariosPorCiudad: async (require, response) => {
             const id = require.params.id
@@ -79,24 +70,24 @@ const ItinerariosControladores = {
                 .then((res) => response.json({ paso: "listo", respuesta: res }))
                 .catch(error => response.json({ error }))
         }, */
-    consultarItinerariosPorCiudad: async (require, response) => {
-        var itinerarioLocal
-        const id = require.params.id
-        var error = null
-
-        try {
-            itinerarioLocal = await Itinerarios.find({ _id: id }).populate("comments.userID", "Name")
-        } catch (err) {
-            error = err
-            console.log(error);
-        }
-        response.json({
-
-            respuesta: error ? 'ERROR' : { itinerarioLocal },
-            success: error ? false : true,
-            error: error
-        })
-    },
+    /*     consultarItinerariosPorCiudad: async (require, response) => {
+            var itinerarioLocal
+            const id = require.params.id
+            var error = null
+    
+            try {
+                itinerarioLocal = await Itinerarios.find({ _id: id }).populate("comments.userID", { Name: 1 }) // no trae
+            } catch (err) {
+                error = err
+                console.log(error);
+            }
+            response.json({
+    
+                respuesta: error ? 'ERROR' : { itinerarioLocal },
+                success: error ? false : true,
+                error: error
+            })
+        }, */
 
     LikeDislike: async (req, res) => {
         const id = req.params.id;
@@ -140,7 +131,7 @@ const ItinerariosControladores = {
         /*        console.log(id); */
 
 
-        itinerarios = await Itinerarios.find({ _id: id })
+        itinerarios = await Itinerarios.find({ _id: id }).populate("comments.userID", "Name")
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
@@ -152,7 +143,7 @@ const ItinerariosControladores = {
 
 
 
-        itinerarios = await Itinerarios.find({ city: city })
+        itinerarios = await Itinerarios.find({ city: city }).populate("comments.userID", "Name")
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     }

@@ -7,7 +7,7 @@ const ActividadesControladores = {
         var error = null
 
         try {
-            actividadLocal = await Activities.find()/* .populate('ItineraryId') */
+            actividadLocal = await Activities.find().populate('ItineraryId')
         } catch (err) {
             error = err
             console.log(error);

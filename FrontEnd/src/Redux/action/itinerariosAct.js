@@ -13,10 +13,12 @@ const ItinerariosAct = {
 
     obtenerIti: (id) => {
         return async (dispatch, getState) => {
-            const res = await axios.get('http://localhost:4000/api/itinerario/' + id)
+            const res = await axios.get('http://localhost:4000/api/itinerariox/' + id)
             /* .then(res = dispatch({ tipe: 'push', payload: res.data.respuesta })) */
             /*     console.log(res); */
+            console.log(res);
             return res
+
         }
 
     },
