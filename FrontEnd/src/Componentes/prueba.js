@@ -6,6 +6,6 @@ function find_max(nums) {
         }
     } return max_num
 }
-console.log(max_num);
+
 find_max([Number.POSITIVE_INFINITY])
 

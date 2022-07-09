@@ -21,7 +21,7 @@ const Main = () => {
             <figure id="imagenFondo">            <button id="llamada" style={{ width: "20rem" }}><LinkRouter to='/cities' id="LetrasEnBlanco" >Fly to your Dreams!<sup style={{ fontSize: "1rem" }}>™</sup> </LinkRouter></button>
             </figure>
             <div className="pantalla"> <button id="llamada1" style={{ width: "20rem" }}><LinkRouter to='/cities' id="LetrasEnBlanco" >Fly to your Dreams!<sup style={{ fontSize: "1rem" }}>™</sup> </LinkRouter></button></div>
-
+            {/*             <img alt="mdif " src={process.env.PUBLIC_URL + "/assets/logo.png"} />  VERSION LLAMADA DE FOTO */}
             <Galeria />
 
         </main >

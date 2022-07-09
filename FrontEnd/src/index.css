@@ -37,18 +37,18 @@ code {
   background-color: pink !important;
 }
 
-main{
+main {
   height: 100%;
 }
 
-#imagenFondo{
+#imagenFondo {
   background-image: url("./recursos/peakpx\(5\).jpg");
   width: 100%;
   height: 50vw;
-margin-left: 0%;
+  margin-left: 0%;
 }
 
-#pantalla{
+#pantalla {
   visibility: collapse;
 }
 
@@ -68,8 +68,8 @@ margin-left: 0%;
   height: 100%;
   display: block;
   position: relative;
-  /*   background-image: url("./recursos/peakpx\(1\).jpg"); */
-  background-color: white;
+  background-color: black;
+
 }
 
 #principal2 {
@@ -179,13 +179,13 @@ a {
 
 @media only screen and (max-width: 375px) {
 
-  .App{
-height: 250vw!important;
+  .App {
+    height: 250vw !important;
   }
 
   #principal {
     width: 100%;
-    min-height: 300vw!important;
+    min-height: 300vw !important;
     display: block;
     position: relative;
     background-image: url("./recursos/peakpx\(3\).jpg");
@@ -214,6 +214,7 @@ height: 250vw!important;
     font-size: 1.5rem;
     position: relative;
   }
+
   h1 {
     font-size: 2rem;
   }
@@ -233,19 +234,19 @@ height: 250vw!important;
     background-color: black;
   }
 
-  #imagenFondo{
-width: 0%;
-height: 0%;
-  visibility: hidden;
+  #imagenFondo {
+    width: 0%;
+    height: 0%;
+    visibility: hidden;
   }
 
-  #pantalla{
+  #pantalla {
     background: transparent;
     visibility: visible;
     margin-bottom: 3rem;
   }
 
-.gallery{
-margin-top: 3rem;
-}
+  .gallery {
+    margin-top: 3rem;
+  }
 }
