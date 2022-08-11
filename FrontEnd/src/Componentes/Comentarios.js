@@ -63,11 +63,11 @@ const Comentarios = (props) => {
 
 
 
-    /*    console.log(props.usuario)
-       console.log(props.comment) */
+    console.log(props.usuario.id)
+    console.log(props.comment.userID._id)
     return (
         <>
-            {props.comment.userID !== props.usuario?.id ? (
+            {props.comment.userID._id !== props.usuario?.id ? (
                 <div key={props.comment._id} style={{ borderTop: "1px solid black", borderBottom: "1px solid black" }}>
                     <div id='comenta' >
                         {props.comment.userID?.Name}:

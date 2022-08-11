@@ -131,7 +131,7 @@ const ItinerariosControladores = {
         /*        console.log(id); */
 
 
-        itinerarios = await Itinerarios.find({ _id: id }).populate("comments.userID", "Name")
+        itinerarios = await Itinerarios.find({ _id: id }).populate("comments.userID", "Name").populate("ActivitiesId")
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     },
@@ -143,7 +143,7 @@ const ItinerariosControladores = {
 
 
 
-        itinerarios = await Itinerarios.find({ city: city }).populate("comments.userID", "Name")
+        itinerarios = await Itinerarios.find({ city: city }).populate("comments.userID", "Name").populate("ActivitiesId")
             .then((res) => response.json({ paso: "listo", respuesta: res }))
             .catch(error => response.json({ error }))
     }
